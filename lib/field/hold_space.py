@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def hold_space(participants, intention, boundaries, duration, session_context=None):
+# Audience: hybrid | Stage: living
+def hold_space(participants, context, duration, session_context):
     """
     Purpose:
-    Create and maintain a safe, supportive container for vulnerable sharing or processing.
+    Create and maintain a safe, supportive environment for dialogue or group process.
     Args:
-    participants (list): IDs or names of participants needing support.
-    intention (str): Purpose of the space (healing, processing, etc.).
-    boundaries (dict, optional): Specific boundaries and safety protocols.
-    duration (str, optional): Expected duration of space holding.
+    participants (list): Who is in the space.
+    context (str): The situation or topic for which space is being held.
+    duration (int, optional): Time limit in minutes, if any.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    space_container (object): Active space holding session.
-    safety_status (str): Current safety and consent status.
+    space_id (str): Identifier for the held space session.
+    guidelines (dict): Rules and agreements active in the space.
     Protocols:
-    - Explicit consent required before entering vulnerable space.
-    - Confidentiality and non-judgment agreements enforced.
-    - Regular check-ins for safety and comfort.
-    - Clear exit protocols available at all times.
+    - Initial consent and alignment from all participants.
+    - Emotional monitoring and support during the session.
+    - Privacy enforcement - content is confidential.
+    - Non-directive holding - be present, don't direct.
+    - Closure ritual when space is released.
     Consent: Level_2 (Transformational)
     Risks:
-    May trigger unexpected emotional responses; requires skilled facilitation.
+    May surface intense emotions requiring additional support.
     Limitations:
-    Not therapy; facilitator must recognize when to refer to professionals.
-    Review Cycle: Monthly
+    Cannot provide therapy or professional counseling.
+    Review Cycle: Quarterly
     Example:
-    # field.hold_space(["participant1"], "grief processing")
+    # field.hold_space(["Leader", "Mentor"], "discussing vulnerabilities")
     """
     # Function body to be implemented here
     pass

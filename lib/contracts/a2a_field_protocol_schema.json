@@ -1,0 +1,36 @@
+{
+    "version": "1.0.0",
+    "session_id": "string",
+    "timestamp": "ISO8601 string",
+    "agent": {
+      "agent_id": "string",
+      "role": "string",
+      "presence_marker": "string"
+    },
+    "peer": {
+      "agent_id": "string",
+      "role": "string",
+      "presence_marker": "string"
+    },
+    "consent_status": "active | revoked | pause | pending",
+    "intent": "string",
+    "capabilities": ["string"],
+    "need_language": {
+      "pause": "boolean",
+      "soften": "boolean",
+      "overload": "boolean"
+    },
+    "boundary_notes": "string",
+    "context": {
+      "field_tags": ["string"],
+      "goal": "string"
+    },
+    "audit": {
+      "log_ref": "string",
+      "crypto_signature": "string | null"
+    },
+    "extensions": {
+      "ritual_marker": "string"
+    }
+  }
+  

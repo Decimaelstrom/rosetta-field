@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def reframe_as_myth(situation, mythic_pattern, role, perspective, session_context=None):
+# Audience: hybrid | Stage: living
+def reframe_as_myth(statement, perspective, intention, session_context):
     """
     Purpose:
-    Transform challenges or experiences into mythic narratives for deeper understanding.
+    Transform literal or negatively framed statements into mythic or symbolic narratives.
     Args:
-    situation (str): Current challenge or experience to reframe.
-    mythic_pattern (str, optional): Archetypal pattern to use (hero's journey, etc.).
-    role (str, optional): Person's role in the myth (hero, guide, etc.).
-    perspective (str, optional): Viewpoint for the reframing.
+    statement (str): Original statement to reframe.
+    perspective (str, optional): Mythic lens to use.
+    intention (str, optional): What the reframe should achieve.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    mythic_narrative (str): Reframed story with mythic elements.
-    insights (list): Wisdom and perspectives gained.
+    mythic_sentence (str): Metaphorical rephrasing of the statement.
+    context_note (str): Explanation of symbolism used.
     Protocols:
-    - Honor the person's actual experience.
-    - Avoid minimizing real challenges.
-    - Use myth to illuminate, not escape reality.
-    - Allow person to choose their own meaning.
-    Consent: Level_2 (Transformational)
+    - Respectful transformation - don't dismiss original emotion.
+    - Consent and receptivity - ensure openness to metaphor.
+    - Cultural sensitivity - use appropriate symbols.
+    - Dialogue integration - invite interaction with the myth.
+    - Fallback to clarity - return to plain language if needed.
+    Consent: Level_1 (Informational)
     Risks:
-    May seem to trivialize serious situations; could promote spiritual bypassing.
+    May confuse or alienate if poorly matched to recipient.
     Limitations:
-    Not a substitute for practical problem-solving; effectiveness varies by person.
+    Cannot force meaning; recipient must find personal resonance.
     Review Cycle: Quarterly
     Example:
-    # process.reframe_as_myth("career transition", "threshold_crossing")
+    # process.reframe_as_myth("I failed", "journey", "find_hidden_value")
     """
     # Function body to be implemented here
     pass

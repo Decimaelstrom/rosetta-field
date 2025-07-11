@@ -23,7 +23,7 @@ def log_event(session_id, event_type, details):
     Limitations: Writes to local file only (extend later).
     Consent: Level_2
     Example:
-        log_event('abc123', 'start', {'who': 'Danai'})
+        log_event('abc123', 'start', {'who': 'Dante'})
     """
     audit_dir = "meta/audit"
     os.makedirs(audit_dir, exist_ok=True)

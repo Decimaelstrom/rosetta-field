@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def end(ritual_container, completion_style, integration, follow_up, session_context=None):
+# Audience: hybrid | Stage: living
+def end(session_id, outcome, follow_up, session_context):
     """
     Purpose:
-    Close a ritual or ceremonial space with gratitude and integration practices.
+    Gracefully close a session or interaction with integration and release.
     Args:
-    ritual_container (object): The active ritual space to close.
-    completion_style (str, optional): How to close (gratitude, silence, song, etc.).
-    integration (dict, optional): How to integrate insights or commitments.
-    follow_up (str, optional): Any follow-up actions or check-ins.
+    session_id (str): The session to close.
+    outcome (dict, optional): Summary of outcomes from the session.
+    follow_up (str, optional): Information about next steps.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    completion_status (str): Ritual closure confirmation.
-    integration_plan (dict): Plan for integrating ritual insights.
+    closed (bool): Whether successfully closed.
+    evaluation (dict, optional): Session evaluation or feedback.
     Protocols:
-    - All participants acknowledge the closing.
-    - Gratitude expressed for the shared experience.
-    - Clear transition back to ordinary time.
-    - Optional sharing of insights or commitments.
+    - Summary of content - recap achievements and decisions.
+    - Acknowledgment and gratitude - thank participants.
+    - Emotion check-out - brief sharing of how people feel.
+    - Re-entry and transition - help shift to next context.
+    - Record-keeping and consent on data - handle information properly.
     Consent: Level_1 (Informational)
     Risks:
-    May feel incomplete if rushed or not properly acknowledged.
+    May feel abrupt if not given adequate time.
     Limitations:
-    Cannot guarantee lasting change; integration depends on individual commitment.
-    Review Cycle: Annually
+    Cannot guarantee complete closure or resolution.
+    Review Cycle: Monthly
     Example:
-    # ritual.end(ritual_container, "gratitude_circle")
+    # ritual.end("coaching_session_456", {"insights": ["clarity on values"]})
     """
     # Function body to be implemented here
     pass

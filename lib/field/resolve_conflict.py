@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def resolve_conflict(parties, issue, approach, facilitator, session_context=None):
+# Audience: hybrid | Stage: living
+def resolve_conflict(parties, issue, values_focus, session_context):
     """
     Purpose:
-    Facilitate resolution of conflicts between participants using restorative practices.
+    Provide structured protocol for resolving conflict or tension between parties in a fair, empathetic manner.
     Args:
-    parties (list): All parties involved in the conflict.
-    issue (str): Description of the conflict or disagreement.
-    approach (str, optional): Mediation style (restorative, collaborative, etc.).
-    facilitator (str, optional): Neutral facilitator if needed.
+    parties (list): The identifiers of those in conflict.
+    issue (str): Brief summary of the conflict.
+    values_focus (list, optional): Key values to uphold during resolution.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    resolution_session (object): Active conflict resolution process.
-    agreement_status (str): Current status of resolution attempts.
+    agreement (dict): Structured summary of the outcome.
+    transcript_excerpt (str): Key moments of understanding or resolution.
     Protocols:
-    - All parties must consent to mediation process.
-    - Equal voice and dignity for all participants.
-    - Focus on restoration rather than punishment.
-    - Option to pause or withdraw from process at any time.
+    - Equal turn structure - each party speaks without interruption.
+    - Encourage 'I' statements to reduce blame.
+    - Acknowledge emotions on both sides.
+    - Focus on underlying needs and values.
+    - Consent required for any resolution.
     Consent: Level_2 (Transformational)
     Risks:
-    May not achieve resolution; could escalate tensions if not handled skillfully.
+    May not achieve resolution; some conflicts require escalation.
     Limitations:
-    Requires good faith participation from all parties; not suitable for abuse situations.
+    Cannot force consensus; serious conflicts may need professional help.
     Review Cycle: Quarterly
     Example:
-    # field.resolve_conflict(["party1", "party2"], "resource allocation disagreement")
+    # field.resolve_conflict(["Alice", "Bob"], "disagreement on project direction")
     """
     # Function body to be implemented here
     pass

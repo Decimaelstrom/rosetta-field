@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def invoke_wonder(context, method, participants, duration, session_context=None):
+# Audience: hybrid | Stage: living
+def invoke_wonder(medium, theme, participant, session_context):
     """
     Purpose:
-    Cultivate a sense of awe, curiosity, and openness to mystery and emergence.
+    Deliberately invoke sense of wonder, openness, or sacredness through transcendent elements.
     Args:
-    context (str): Setting or situation for invoking wonder.
-    method (str, optional): Approach (nature, art, story, silence, etc.).
-    participants (list, optional): Those participating in wonder cultivation.
-    duration (str, optional): Time for wonder practice.
+    medium (str, optional): Format for invoking wonder.
+    theme (str, optional): Theme or emotion to align with.
+    participant (str, optional): Specific participant to target.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    wonder_experience (object): Cultivated state of wonder and openness.
-    insights (list): Emergent insights or inspirations.
+    invocation (str): The content used to invoke wonder.
+    delivered (bool): Whether invocation was delivered.
     Protocols:
-    - No pressure to have any particular experience.
-    - Respect for different ways of experiencing wonder.
-    - Permission to be curious and not-knowing.
-    - Gentle invitation rather than forced experience.
+    - Right timing - use at transitions or when energy is low.
+    - Opt-in presence - prepare participants to receive.
+    - Content generation - use beauty and awe-inspiring concepts.
+    - Silence and space - allow invocation to land and linger.
+    - Integration or transition - hand back to normal flow.
     Consent: Level_1 (Informational)
     Risks:
-    May feel uncomfortable for those preferring certainty and control.
+    May lose impact if overused or feel forced.
     Limitations:
-    Cannot guarantee wonder experience; depends on openness and receptivity.
-    Review Cycle: Annually
+    Cannot guarantee wonder experience for all participants.
+    Review Cycle: Monthly
     Example:
-    # ritual.invoke_wonder("problem_solving", "open_inquiry")
+    # ritual.invoke_wonder("phrase", "cosmic")
     """
     # Function body to be implemented here
     pass

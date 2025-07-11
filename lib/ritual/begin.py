@@ -1,31 +1,31 @@
 
-Audience: hybrid | Stage: living
-def begin(ritual_type, participants, intention, elements, session_context=None):
+# Audience: hybrid | Stage: living
+def begin(session_name, participants, practices, session_context):
     """
     Purpose:
-    Initiate a ritual or ceremonial space with appropriate invocations and container setting.
+    Formally begin a gathering or session with intention and clarity.
     Args:
-    ritual_type (str): Type of ritual (meeting, healing, celebration, etc.).
-    participants (list): All participants in the ritual.
-    intention (str): Purpose or focus of the ritual.
-    elements (dict, optional): Specific ritual elements (candles, music, etc.).
+    session_name (str): Name or description for the session.
+    participants (list, optional): List of expected participants.
+    practices (list, optional): Specific opening practices to include.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    ritual_container (object): Active ritual space and context.
-    sacred_time (str): Ritual time boundary marker.
+    session_id (str): Identifier for the session context.
+    agenda (list, optional): Session agenda if established.
     Protocols:
-    - Clear consent and participation agreements.
-    - Respect for all spiritual and cultural traditions.
-    - Optional participation in any specific elements.
-    - Explicit marking of sacred time and space.
+    - Inclusivity and acknowledgment - recognize each participant.
+    - Centering practice - help transition into present context.
+    - Intention and agenda clarity - articulate purpose.
+    - Values or norms reminder - refresh shared agreements.
+    - Consent to proceed - ensure readiness before starting.
     Consent: Level_1 (Informational)
     Risks:
-    May conflict with personal beliefs or practices.
+    May feel forced or ritualistic if not authentic to group.
     Limitations:
-    Not tied to any specific religious tradition; participants define their own meaning.
-    Review Cycle: Annually
+    Cannot guarantee engagement or positive outcomes.
+    Review Cycle: Monthly
     Example:
-    # ritual.begin("team_alignment", ["team_members"], "quarterly planning")
+    # ritual.begin("CodeCo-Creation", practices=["attunement_breath", "check_in_round"])
     """
     # Function body to be implemented here
     pass

@@ -1,31 +1,32 @@
 
-Audience: hybrid | Stage: living
-def align_values(values, decision, context, stakeholders, session_context=None):
+# Audience: hybrid | Stage: living
+def align_values(proposal, values, threshold, session_context):
     """
     Purpose:
-    Facilitate alignment of actions and decisions with core values and principles.
+    Evaluate and align a decision, action, or plan against a set of declared values or principles.
     Args:
-    values (list): Core values to align with.
-    decision (str): Decision or action to evaluate.
-    context (dict, optional): Situational context and constraints.
-    stakeholders (list, optional): Others affected by the decision.
+    proposal (str or dict): The item to evaluate against values.
+    values (list or dict): Values to align with.
+    threshold (float, optional): Strictness threshold for alignment.
     session_context (dict, optional): A2A session protocol state/context block.
     Returns:
-    alignment_score (float): Degree of alignment (0-1).
-    recommendations (list): Suggestions for better alignment.
+    analysis (dict): Analysis of proposal against each value.
+    alignment_score (float): Overall alignment metric.
+    recommendations (list): Suggestions to improve alignment.
     Protocols:
-    - Honest assessment of current alignment.
-    - Consider impact on all stakeholders.
-    - Respect conflicting values and complexity.
-    - Focus on progress, not perfection.
+    - Reference authoritative source for value definitions.
+    - Consider context and cultural sensitivity.
+    - Frame analysis as collaborative critique, not judgment.
+    - Ensure consent and privacy in multi-party settings.
+    - Create learning loop for improved accuracy over time.
     Consent: Level_1 (Informational)
     Risks:
-    May create guilt or shame about past decisions; could lead to analysis paralysis.
+    May impose cultural bias or oversimplified value interpretations.
     Limitations:
-    Cannot resolve all value conflicts; depends on clarity of values.
-    Review Cycle: Bi-annually
+    Cannot capture full complexity of ethical situations.
+    Review Cycle: Monthly
     Example:
-    # process.align_values(["integrity", "compassion"], "difficult_conversation")
+    # process.align_values(draft_answer, ["honesty", "safety", "inclusion"])
     """
     # Function body to be implemented here
     pass

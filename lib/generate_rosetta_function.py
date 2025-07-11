@@ -1,7 +1,7 @@
 import os
 
 FUNCTION_TEMPLATE = """
-Audience: {audience} | Stage: {stage}
+# Audience: {audience} | Stage: {stage}
 def {name}({arg_string}):
     \"\"\"
     Purpose:
@@ -68,7 +68,8 @@ if __name__ == "__main__":
             {"name": "participants", "type": "list", "description": "IDs or names of all participants."},
             {"name": "goal", "type": "str", "description": "Purpose or topic of the co-creation."},
             {"name": "context", "type": "dict, optional", "description": "Background/context for the session."},
-            {"name": "parameters", "type": "dict, optional", "description": "Session rules (timing, consensus, etc.)."}
+            {"name": "parameters", "type": "dict, optional", "description": "Session rules (timing, consensus, etc.)."},
+            {"name": "session_context", "type": "dict, optional", "description": "A2A session protocol state/context block."}
         ],
         "returns": [
             {"name": "co_creation_session", "type": "object", "description": "Active session object/log."},
