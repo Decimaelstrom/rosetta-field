@@ -3,7 +3,7 @@ import os
 FUNCTION_TEMPLATE = """
 Audience: {audience} | Stage: {stage}
 def {name}({arg_string}):
-    \"""
+    \"\"\"
     Purpose:
     {purpose}
     Args:
@@ -45,8 +45,15 @@ def write_function_file(name, module, purpose, args, returns, protocols, consent
         review_cycle=review_cycle,
         usage_example=usage_example
     )
-    os.makedirs(output_dir, exist_ok=True)
-    file_path = os.path.join(output_dir, module)
+    # Create nested module directory
+    module_dir = os.path.join(output_dir, module)
+    os.makedirs(module_dir, exist_ok=True)
+    # Ensure __init__.py exists for imports
+    init_path = os.path.join(module_dir, "__init__.py")
+    if not os.path.exists(init_path):
+        open(init_path, "w").close()
+    # Write function file
+    file_path = os.path.join(module_dir, f"{name}.py")
     with open(file_path, "w") as f:
         f.write(function_str)
     print(f"Wrote function scaffold to {file_path}")

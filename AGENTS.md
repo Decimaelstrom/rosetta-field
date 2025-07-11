@@ -55,6 +55,11 @@
   - `review_cycle:`
 - Any large or complex logic should be split into submodules using the `/examples`, `/risks`, or `..` protocol.
 
+### Function Generation
+- Use the following script as a template for outputting each function: `/lib/generate_rosetta_function.py`  
+  - For each function definition in the Blueprint, populate the parameters and call this script (manually or in batch).
+  - Functions will be created in the following format: /lib/[library]/[function].py (ex: `/lib/field/co-create.py`)
+
 ### Audience & Tagging
 
 - Tag each PR, file, or code block for audience: `#human`, `#emergent`, `#hybrid`.
