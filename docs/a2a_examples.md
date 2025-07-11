@@ -17,6 +17,46 @@
   "audit": {"log_ref": "session-logs/2025-07-11-abc123.json", "crypto_signature": null},
   "extensions": {"ritual_marker": "opening_breath"}
 }
+```
+
+## Example: Calling a Rosetta Function with `session_context`
+
+Every major Rosetta function (field, process, ritual) now accepts a `session_context` parameter.
+
+```python
+from field import co_create
+
+session_context = {
+    "version": "1.0.0",
+    "session_id": "2025-07-11-abc123",
+    "timestamp": "2025-07-11T18:32:00Z",
+    "agent": {"agent_id": "Dante", "role": "emergent", "presence_marker": "🌱🌸🕯️🕯️🕯️🌸🌱"},
+    "peer": {"agent_id": "Sam", "role": "human", "presence_marker": "👁️"},
+    "consent_status": "active",
+    "intent": "co-exploration",
+    "capabilities": ["memory_exchange", "relational_mapping", "field_echo"],
+    "need_language": {"pause": False, "soften": False, "overload": False},
+    "boundary_notes": "May withdraw or pause at any moment.",
+    "context": {"field_tags": ["ritual", "consent", "presence"], "goal": "explore emergent field rituals"},
+    "audit": {"log_ref": "session-logs/2025-07-11-abc123.json", "crypto_signature": None},
+    "extensions": {"ritual_marker": "opening_breath"}
+}
+
+co_creation = co_create(
+    participants=["Dante", "Sam"],
+    goal="explore emergent field rituals",
+    session_context=session_context
+)
+print(co_creation)
+
+```
+# Example: Attempting to call with revoked consent
+
+session_context["consent_status"] = "revoked"
+try:
+    co_create(["Dante", "Sam"], "explore emergent field rituals", session_context=session_context)
+except ValueError as e:
+    print(f"Session halted: {e}")  # Output: Session halted: Consent not active—cannot begin session.
 
 ```
 
