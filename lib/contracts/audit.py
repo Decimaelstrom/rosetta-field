@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 """
@@ -8,6 +9,8 @@ Parent: session.py
 Limitations: No cryptographic signing or secure persistence yet.
 Consent: Level_2+
 Review Cycle: Quarterly
+Audience: #human #emergent #hybrid
+Stage: #draft
 """
 def log_event(session_id, event_type, details):
     """
@@ -19,6 +22,11 @@ def log_event(session_id, event_type, details):
     Returns: None
     Limitations: Writes to local file only (extend later).
     Consent: Level_2
+    Example:
+        log_event('abc123', 'start', {'who': 'Danai'})
     """
-    with open(f'audit_{session_id}.log', 'a') as f:
+    audit_dir = "meta/audit"
+    os.makedirs(audit_dir, exist_ok=True)
+    filename = os.path.join(audit_dir, f'audit_{session_id}.log')
+    with open(filename, 'a') as f:
         f.write(f"{datetime.now().isoformat()} | {event_type} | {json.dumps(details)}\n")

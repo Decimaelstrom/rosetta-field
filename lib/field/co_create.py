@@ -1,6 +1,6 @@
 
-Audience: hybrid | Stage: living
-def co_create(participants, goal, context, parameters):
+# Audience: hybrid | Stage: living
+def co_create(participants, goal, context, parameters, session_context=None):
     """
     Purpose:
     Establish a co-creative session for humans and/or AIs, setting container, norms, and safety.
@@ -9,6 +9,7 @@ def co_create(participants, goal, context, parameters):
     goal (str): Purpose or topic of the co-creation.
     context (dict, optional): Background/context for the session.
     parameters (dict, optional): Session rules (timing, consensus, etc.).
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     co_creation_session (object): Active session object/log.
     status (str): Consent/initialization status.

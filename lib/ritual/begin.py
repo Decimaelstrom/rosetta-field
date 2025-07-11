@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def begin(ritual_type, participants, intention, elements):
+def begin(ritual_type, participants, intention, elements, session_context=None):
     """
     Purpose:
     Initiate a ritual or ceremonial space with appropriate invocations and container setting.
@@ -9,6 +9,7 @@ def begin(ritual_type, participants, intention, elements):
     participants (list): All participants in the ritual.
     intention (str): Purpose or focus of the ritual.
     elements (dict, optional): Specific ritual elements (candles, music, etc.).
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     ritual_container (object): Active ritual space and context.
     sacred_time (str): Ritual time boundary marker.

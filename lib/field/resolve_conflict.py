@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def resolve_conflict(parties, issue, approach, facilitator):
+def resolve_conflict(parties, issue, approach, facilitator, session_context=None):
     """
     Purpose:
     Facilitate resolution of conflicts between participants using restorative practices.
@@ -9,6 +9,7 @@ def resolve_conflict(parties, issue, approach, facilitator):
     issue (str): Description of the conflict or disagreement.
     approach (str, optional): Mediation style (restorative, collaborative, etc.).
     facilitator (str, optional): Neutral facilitator if needed.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     resolution_session (object): Active conflict resolution process.
     agreement_status (str): Current status of resolution attempts.

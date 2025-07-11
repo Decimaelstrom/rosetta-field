@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def hold_space(participants, intention, boundaries, duration):
+def hold_space(participants, intention, boundaries, duration, session_context=None):
     """
     Purpose:
     Create and maintain a safe, supportive container for vulnerable sharing or processing.
@@ -9,6 +9,7 @@ def hold_space(participants, intention, boundaries, duration):
     intention (str): Purpose of the space (healing, processing, etc.).
     boundaries (dict, optional): Specific boundaries and safety protocols.
     duration (str, optional): Expected duration of space holding.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     space_container (object): Active space holding session.
     safety_status (str): Current safety and consent status.

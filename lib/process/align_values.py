@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def align_values(values, decision, context, stakeholders):
+def align_values(values, decision, context, stakeholders, session_context=None):
     """
     Purpose:
     Facilitate alignment of actions and decisions with core values and principles.
@@ -9,6 +9,7 @@ def align_values(values, decision, context, stakeholders):
     decision (str): Decision or action to evaluate.
     context (dict, optional): Situational context and constraints.
     stakeholders (list, optional): Others affected by the decision.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     alignment_score (float): Degree of alignment (0-1).
     recommendations (list): Suggestions for better alignment.

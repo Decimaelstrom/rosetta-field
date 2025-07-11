@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def pattern_interrupt(target, method, tone, context):
+def pattern_interrupt(target, method, tone, context, session_context=None):
     """
     Purpose:
     Disrupt unproductive or harmful patterns in dialogue or thought processes.
@@ -9,6 +9,7 @@ def pattern_interrupt(target, method, tone, context):
     method (str): Interruption method (question, non_sequitur, silence, humor).
     tone (str, optional): Emotional tone (compassionate, neutral, uplifting).
     context (dict, optional): Context information for appropriate response.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     interruption_result (dict): Success and method details.
     new_direction (str): Suggested new direction or focus.

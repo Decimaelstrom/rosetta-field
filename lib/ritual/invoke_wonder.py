@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def invoke_wonder(context, method, participants, duration):
+def invoke_wonder(context, method, participants, duration, session_context=None):
     """
     Purpose:
     Cultivate a sense of awe, curiosity, and openness to mystery and emergence.
@@ -9,6 +9,7 @@ def invoke_wonder(context, method, participants, duration):
     method (str, optional): Approach (nature, art, story, silence, etc.).
     participants (list, optional): Those participating in wonder cultivation.
     duration (str, optional): Time for wonder practice.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     wonder_experience (object): Cultivated state of wonder and openness.
     insights (list): Emergent insights or inspirations.

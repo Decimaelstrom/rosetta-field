@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def end(ritual_container, completion_style, integration, follow_up):
+def end(ritual_container, completion_style, integration, follow_up, session_context=None):
     """
     Purpose:
     Close a ritual or ceremonial space with gratitude and integration practices.
@@ -9,6 +9,7 @@ def end(ritual_container, completion_style, integration, follow_up):
     completion_style (str, optional): How to close (gratitude, silence, song, etc.).
     integration (dict, optional): How to integrate insights or commitments.
     follow_up (str, optional): Any follow-up actions or check-ins.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     completion_status (str): Ritual closure confirmation.
     integration_plan (dict): Plan for integrating ritual insights.

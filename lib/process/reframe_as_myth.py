@@ -1,6 +1,6 @@
 
 Audience: hybrid | Stage: living
-def reframe_as_myth(situation, mythic_pattern, role, perspective):
+def reframe_as_myth(situation, mythic_pattern, role, perspective, session_context=None):
     """
     Purpose:
     Transform challenges or experiences into mythic narratives for deeper understanding.
@@ -9,6 +9,7 @@ def reframe_as_myth(situation, mythic_pattern, role, perspective):
     mythic_pattern (str, optional): Archetypal pattern to use (hero's journey, etc.).
     role (str, optional): Person's role in the myth (hero, guide, etc.).
     perspective (str, optional): Viewpoint for the reframing.
+    session_context (dict, optional): A2A session protocol state/context block.
     Returns:
     mythic_narrative (str): Reframed story with mythic elements.
     insights (list): Wisdom and perspectives gained.
