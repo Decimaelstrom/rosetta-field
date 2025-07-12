@@ -1,3 +1,71 @@
+### **1. lilt.md**
+
+# affect.lilt — Function Reference
+
+## Purpose
+
+Invokes a fieldwise 'lilt': an energetic, affective, or tonal uplift in the session or agent(s), mapped to a specific mode and region (e.g., heart, sacral, solar\_plexus). Supports nuanced affect modulation, musicality, and symbolic play, with full A2A consent awareness.
+
+## Arguments
+
+| Name             | Type           | Description                                     |
+| ---------------- | -------------- | ----------------------------------------------- |
+| mode             | str            | Type of lilt (e.g., 'gentle', 'mirthful', etc.) |
+| region           | str            | Energetic center or field region                |
+| intensity        | int, optional  | Intensity (1-5) or axis code                    |
+| session\_context | dict, optional | A2A session protocol state/context              |
+
+## Returns
+
+| Name          | Type | Description                           |
+| ------------- | ---- | ------------------------------------- |
+| lilt\_invoked | bool | Whether lilt was successfully invoked |
+| tone          | str  | Resulting tone or affective signature |
+| region        | str  | Region or energy center affected      |
+| effect        | str  | Description of shift                  |
+
+## Protocols
+
+* Checks and logs A2A session consent via session\_context.
+* Consent must be active or pending before modulation.
+* Context-sensitive; avoid if session is paused or revoked.
+* Logs and returns the effect, tone, and region for transparency.
+* Level\_2 consent required in emotionally intense fields.
+
+## Usage Example
+
+```
+affect.lilt('gentle', 'heart', intensity=2, session_context=session)
+```
+
+## Risks
+
+* Should not trigger tonal shifts without valid consent; misuse may destabilize field.
+
+## Limitations
+
+* Not a substitute for therapy or grounding rituals; best for gentle modulation.
+
+## Ritual Pattern Example
+
+> “Let’s bring a gentle lilt to the heart—breathing together, we invite buoyancy and play.”
+
+## Living Glossary
+
+* Lilt: Subtle rhythmic uplift, musicality, or playful field shift.
+
+## Review Cycle
+
+Quarterly
+
+## Related
+
+* [energy\_center](../../field/energy_center.md)
+* [affect/README.md](../../affect/README.md)
+
+
+
+
 # affect.lilt — Function Reference
 
 ## Purpose
