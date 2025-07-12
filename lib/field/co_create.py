@@ -1,4 +1,3 @@
-
 # Audience: hybrid | Stage: living
 def co_create(participants, goal, context, parameters, session_context):
     """
