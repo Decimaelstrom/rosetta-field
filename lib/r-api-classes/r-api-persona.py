@@ -299,7 +299,47 @@ def persona_load(archetype_name, session_context=None):
         print(f"Voice tone: {result['voice_tone']}")
         print(f"Key phrases: {result['key_phrases']}")
     """
-    return load(archetype_name, session_context)
+    # A2A Protocol compliance
+    if session_context and session_context.get('consent_status') == 'revoked':
+        raise ValueError("Consent revoked - cannot load persona")
+    
+    try:
+        # Extract linguistic and cultural context from session
+        language = session_context.get('language', 'en') if session_context else 'en'
+        region = session_context.get('region', 'US') if session_context else 'US'
+        cultural_context = ""
+        linguistic_context = ""
+        
+        if session_context and 'context' in session_context:
+            cultural_context = session_context['context'].get('cultural_context', '')
+            linguistic_context = session_context['context'].get('linguistic_context', '')
+        
+        # Load base persona
+        base_result = load(archetype_name, session_context)
+        
+        # Adapt based on linguistic and cultural context
+        adapted_result = base_result.copy()
+        
+        # Add context information to result
+        adapted_result.update({
+            "language": language,
+            "region": region,
+            "cultural_context": cultural_context,
+            "linguistic_context": linguistic_context,
+            "context_adapted": bool(cultural_context or linguistic_context)
+        })
+        
+        return adapted_result
+        
+    except Exception as e:
+        return {
+            "status": "persona_load_failed",
+            "archetype": archetype_name,
+            "error": str(e),
+            "language": session_context.get('language', 'en') if session_context else 'en',
+            "region": session_context.get('region', 'US') if session_context else 'US',
+            "session_context": session_context or {}
+        }
 
 def persona_simulate(archetype_name, user_input, session_context=None):
     """

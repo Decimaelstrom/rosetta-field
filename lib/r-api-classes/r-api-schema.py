@@ -49,6 +49,8 @@ A2A_FIELD_PROTOCOL_SCHEMA = {
             "type": "array",
             "items": {"type": "string"}
         },
+        "language": {"type": "string", "description": "Language code (e.g., 'en', 'es', 'fr')"},
+        "region": {"type": "string", "description": "Region code (e.g., 'US', 'JP', 'UK')"},
         "need_language": {
             "type": "object",
             "properties": {
@@ -65,7 +67,9 @@ A2A_FIELD_PROTOCOL_SCHEMA = {
                     "type": "array",
                     "items": {"type": "string"}
                 },
-                "goal": {"type": "string"}
+                "goal": {"type": "string"},
+                "cultural_context": {"type": "string", "description": "Cultural tradition (e.g., 'eastern_zen', 'indigenous_holistic')"},
+                "linguistic_context": {"type": "string", "description": "Language style (e.g., 'poetic_metaphorical', 'conversational_warm')"}
             }
         },
         "audit": {
@@ -320,6 +324,8 @@ def get_default_session_context():
         "consent_status": "active",
         "intent": "default_interaction",
         "capabilities": ["basic_interaction"],
+        "language": "en",
+        "region": "US",
         "need_language": {
             "pause": False,
             "soften": False,
@@ -328,7 +334,9 @@ def get_default_session_context():
         "boundary_notes": "",
         "context": {
             "field_tags": [],
-            "goal": ""
+            "goal": "",
+            "cultural_context": "",
+            "linguistic_context": ""
         },
         "audit": {
             "log_ref": None,

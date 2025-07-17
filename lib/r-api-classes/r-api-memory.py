@@ -281,128 +281,92 @@ def save_session(session_id, session_data, insights=None, tags=None, session_con
     """
     🔰 SAVE SESSION - Sacred Memory Preservation
     
-    Save session data and insights with enhanced storage, encryption, and backup.
+    Save a Dream Workshop session with enhanced storage, encryption, and cultural context.
     
     Args:
-        session_id (str): Unique session identifier
-        session_data (dict): Session data to save
-        insights (list, optional): List of insights from the session
-        tags (list, optional): Tags for categorization
+        session_id (str): Unique identifier for the session
+        session_data (dict): Session content and metadata to save
+        insights (list, optional): Key insights from the session
+        tags (list, optional): Tags for categorization and search
         session_context (dict, optional): A2A session protocol for consent/status
     
     Returns:
-        dict: Save result with metadata and recommendations
+        dict: Sacred response containing save confirmation and metadata
     
     Example:
-        result = save_session('creative_journey_001', session_data, insights, tags, session_context)
-        print(f"Session saved: {result['session_saved']}")
+        result = save_session('session_001', {'content': 'meditation notes'}, 
+                            insights=['found clarity'], tags=['breakthrough'], 
+                            session_context=session)
+        print(f"Saved: {result['saved']}")
     """
     # A2A Protocol compliance
     if session_context and session_context.get('consent_status') == 'revoked':
         raise ValueError("Consent revoked - cannot save session")
     
     try:
-        # Prepare data for storage
+        # Extract linguistic and cultural context from session
+        language = session_context.get('language', 'en') if session_context else 'en'
+        region = session_context.get('region', 'US') if session_context else 'US'
+        cultural_context = ""
+        linguistic_context = ""
+        
+        if session_context and 'context' in session_context:
+            cultural_context = session_context['context'].get('cultural_context', '')
+            linguistic_context = session_context['context'].get('linguistic_context', '')
+        
+        # Prepare data with context
         data_to_save = {
             "session_id": session_id,
             "timestamp": datetime.now().isoformat(),
             "session_data": session_data,
             "insights": insights or [],
             "tags": tags or [],
-            "metadata": {
-                "version": "1.0.0",
-                "storage_backend": "enhanced_file_system",
-                "encrypted": True,
-                "backed_up": True,
-                "indexed": True
+            "language": language,
+            "region": region,
+            "cultural_context": cultural_context,
+            "linguistic_context": linguistic_context,
+            "context_adapted": bool(cultural_context or linguistic_context)
+        }
+        
+        # Save with enhanced storage
+        storage = MemoryStorage()
+        saved = storage.save_session(session_id, data_to_save)
+        
+        if saved:
+            return {
+                "status": "session_saved",
+                "saved": True,
+                "session_id": session_id,
+                "timestamp": data_to_save["timestamp"],
+                "language": language,
+                "region": region,
+                "cultural_context": cultural_context,
+                "linguistic_context": linguistic_context,
+                "context_adapted": bool(cultural_context or linguistic_context),
+                "insights_count": len(insights or []),
+                "tags_count": len(tags or []),
+                "effect": f"Session '{session_id}' saved with {language}/{region} context",
+                "session_context": session_context or {}
             }
-        }
-        
-        # Add cultural and linguistic context from session_context if available
-        # This section extracts cultural and linguistic information from the session context
-        # and adds it to the stored data for better cultural sensitivity and search capabilities.
-        # Cultural context includes: eastern_collective, indigenous_holistic, african_diasporic, etc.
-        # Linguistic context includes: poetic_metaphorical, conversational_warm, ceremonial_sacred, etc.
-        if session_context:
-            # Extract cultural context
-            session_data_context = session_context.get('context', {})
-            if 'cultural_context' in session_data_context:
-                data_to_save["cultural_context"] = session_data_context['cultural_context']
+        else:
+            return {
+                "status": "session_save_failed",
+                "saved": False,
+                "session_id": session_id,
+                "error": "Failed to save session data",
+                "language": language,
+                "region": region,
+                "session_context": session_context or {}
+            }
             
-            # Extract linguistic context
-            if 'linguistic_context' in session_data_context:
-                data_to_save["linguistic_context"] = session_data_context['linguistic_context']
-            
-            # Extract language and region
-            if 'language' in session_context:
-                data_to_save["language"] = session_context['language']
-            if 'region' in session_context:
-                data_to_save["region"] = session_context['region']
-            
-            # Add cultural and linguistic tags for better search
-            cultural_tags = []
-            linguistic_tags = []
-            
-            if 'cultural_context' in data_to_save:
-                cultural_tags.append(f"cultural_{data_to_save['cultural_context']}")
-            if 'linguistic_context' in data_to_save:
-                linguistic_tags.append(f"linguistic_{data_to_save['linguistic_context']}")
-            if 'language' in data_to_save:
-                linguistic_tags.append(f"language_{data_to_save['language']}")
-            if 'region' in data_to_save:
-                cultural_tags.append(f"region_{data_to_save['region']}")
-            
-            # Add cultural and linguistic tags to the main tags
-            if tags is None:
-                tags = []
-            tags.extend(cultural_tags)
-            tags.extend(linguistic_tags)
-            data_to_save["tags"] = tags
-        
-        # Enhanced storage with encryption and backup
-        encrypted_data = memory_storage._encrypt_data(data_to_save)
-        
-        # Save to primary storage
-        session_file = memory_storage.storage_path / f"{session_id}.json"
-        with open(session_file, 'w') as f:
-            json.dump(encrypted_data, f, indent=2)
-        
-        # Create backup
-        backup_file = memory_storage.backup_path / f"{session_id}_{int(time.time())}.json"
-        with open(backup_file, 'w') as f:
-            json.dump(encrypted_data, f, indent=2)
-        
-        # Update search index for fast retrieval
-        memory_storage._update_search_index(session_id, data_to_save)
-        
-        # Generate recommendations based on content
-        recommendations = memory_storage._generate_recommendations(data_to_save)
-        
-        return {
-            "status": "session_saved",
-            "session_saved": True,
-            "session_id": session_id,
-            "timestamp": data_to_save["timestamp"],
-            "insights_count": len(insights or []),
-            "tags_count": len(tags or []),
-            "storage_info": {
-                "primary_location": str(session_file),
-                "backup_location": str(backup_file),
-                "encrypted": True,
-                "checksum": encrypted_data.get("checksum"),
-                "indexed": True
-            },
-            "recommendations": recommendations,
-            "effect": f"Session '{session_id}' preserved with {len(insights or [])} insights and {len(tags or [])} tags",
-            "session_context": session_context or {}
-        }
-        
     except Exception as e:
         return {
-            "status": "session_save_failed",
-            "session_saved": False,
+            "status": "session_save_error",
+            "saved": False,
+            "session_id": session_id,
             "error": str(e),
-            "effect": f"Failed to save session '{session_id}': {str(e)}",
+            "language": session_context.get('language', 'en') if session_context else 'en',
+            "region": session_context.get('region', 'US') if session_context else 'US',
             "session_context": session_context or {}
         }
 
@@ -718,7 +682,7 @@ def example_dream_workshop_memory_integration():
     tags = ["creative_breakthrough", "self_trust", "artistic_growth"]
     
     save_result = save_session("creative_journey_001", session_data, insights, tags, session_context)
-    print(f"Session saved: {save_result['session_saved']}")
+    print(f"Session saved: {save_result['saved']}")
     print(f"Insights preserved: {save_result['insights_count']}")
     
     # 2. Tag a specific insight

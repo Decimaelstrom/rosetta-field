@@ -145,44 +145,30 @@ class LogicGenerator:
         }
     
     def _analyze_context(self, original_thought: str, session_context: Optional[Dict] = None) -> Dict:
-        """Analyze context to determine appropriate intervention."""
+        """Analyze context for appropriate intervention generation."""
         context = {
             "emotional_tone": "neutral",
-            "intensity_level": "moderate",
             "themes": [],
-            "user_state": "unknown",
-            "cultural_context": "default",
-            "linguistic_context": "default"
-        }
-        
-        # Analyze emotional content
-        emotional_indicators = {
-            "frustrated": ["can't", "stuck", "blocked", "frustrated", "angry"],
-            "overwhelmed": ["too much", "overwhelmed", "stressed", "anxious"],
-            "doubtful": ["not good enough", "can't", "won't", "impossible"],
-            "serious": ["serious", "important", "must", "need to", "have to"],
-            "playful": ["fun", "play", "enjoy", "light", "easy"]
+            "intensity_level": "moderate"
         }
         
         original_lower = original_thought.lower()
-        for emotion, indicators in emotional_indicators.items():
-            if any(indicator in original_lower for indicator in indicators):
-                context["emotional_tone"] = emotion
-                break
         
-        # Determine intensity level based on emotional tone
-        if context["emotional_tone"] in ["frustrated", "overwhelmed"]:
-            context["intensity_level"] = "gentle"
-        elif context["emotional_tone"] in ["doubtful", "serious"]:
-            context["intensity_level"] = "moderate"
-        elif context["emotional_tone"] == "playful":
-            context["intensity_level"] = "playful"
+        # Analyze emotional tone
+        if any(word in original_lower for word in ["can't", "impossible", "never", "always", "hate", "terrible"]):
+            context["emotional_tone"] = "negative"
+        elif any(word in original_lower for word in ["love", "amazing", "perfect", "wonderful", "excited"]):
+            context["emotional_tone"] = "positive"
+        elif any(word in original_lower for word in ["maybe", "perhaps", "might", "could", "possibly"]):
+            context["emotional_tone"] = "uncertain"
+        elif any(word in original_lower for word in ["must", "should", "need", "have to", "obligated"]):
+            context["emotional_tone"] = "rigid"
         
-        # Extract themes
+        # Detect themes
         theme_keywords = {
-            "creativity": ["create", "creative", "art", "inspiration", "ideas"],
-            "perfection": ["perfect", "perfectly", "best", "right", "correct"],
-            "work": ["work", "hard", "effort", "try", "struggle"],
+            "creativity": ["create", "art", "write", "design", "make", "build"],
+            "perfection": ["perfect", "best", "ideal", "flawless", "excellent"],
+            "work": ["work", "job", "career", "business", "professional"],
             "time": ["time", "deadline", "rush", "hurry", "late"],
             "comparison": ["better", "worse", "good", "bad", "compare"]
         }
@@ -191,29 +177,32 @@ class LogicGenerator:
             if any(keyword in original_lower for keyword in keywords):
                 context["themes"].append(theme)
         
-        # Extract cultural and linguistic context from session
+        # Extract linguistic and cultural context from session
+        language = session_context.get('language', 'en') if session_context else 'en'
+        region = session_context.get('region', 'US') if session_context else 'US'
+        cultural_context = ""
+        linguistic_context = ""
+        
+        if session_context and 'context' in session_context:
+            cultural_context = session_context['context'].get('cultural_context', '')
+            linguistic_context = session_context['context'].get('linguistic_context', '')
+        
+        # Consider session context for intensity adaptation
         if session_context:
-            # Check for cultural context in session data
-            session_data = session_context.get('context', {})
-            if 'cultural_context' in session_data:
-                context["cultural_context"] = session_data['cultural_context']
-            
-            # Check for linguistic context in session data
-            if 'linguistic_context' in session_data:
-                context["linguistic_context"] = session_data['linguistic_context']
-            
-            # Check for language/region in session context
-            if 'language' in session_context:
-                context["language"] = session_context['language']
-            if 'region' in session_context:
-                context["region"] = session_context['region']
-            
-            # Consider user needs
             user_needs = session_context.get('need_language', {})
             if user_needs.get('soften'):
                 context["intensity_level"] = "gentle"
             elif user_needs.get('pause'):
                 context["intensity_level"] = "gentle"
+        
+        # Add linguistic and cultural context to analysis
+        context.update({
+            "language": language,
+            "region": region,
+            "cultural_context": cultural_context,
+            "linguistic_context": linguistic_context,
+            "context_adapted": bool(cultural_context or linguistic_context)
+        })
         
         return context
     
@@ -385,6 +374,11 @@ def non_sequitur(original_thought, session_context=None):
             "intervention_type": "metaphorical_shift",
             "intensity": context["intensity_level"],
             "intended_effect": "perspective_expansion",
+            "language": context.get("language", "en"),
+            "region": context.get("region", "US"),
+            "cultural_context": context.get("cultural_context", ""),
+            "linguistic_context": context.get("linguistic_context", ""),
+            "context_adapted": context.get("context_adapted", False),
             "context_analysis": {
                 "emotional_tone": context["emotional_tone"],
                 "themes_detected": context["themes"],
@@ -474,7 +468,7 @@ def logic_metaphor(stuck_pattern, metaphor_type="nature", session_context=None):
         dict: Metaphorical intervention
     
     Example:
-        result = logic_metaphor('I can\'t create', 'nature', session_context)
+        result = logic_metaphor('I can't create', 'nature', session_context)
         print(f"Metaphor: {result['metaphor']}")
     """
     return metaphor(stuck_pattern, metaphor_type, session_context)
@@ -514,7 +508,7 @@ def logic_pattern_hack(stuck_pattern, hack_type="perspective", session_context=N
         dict: Pattern hack intervention
     
     Example:
-        result = logic_pattern_hack('I can\'t create', 'perspective', session_context)
+        result = logic_pattern_hack('I can't create', 'perspective', session_context)
         print(f"Hack intervention: {result['hack_intervention']}")
     """
     return pattern_hack(stuck_pattern, hack_type, session_context)
