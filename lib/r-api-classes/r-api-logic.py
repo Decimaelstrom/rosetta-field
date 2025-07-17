@@ -79,7 +79,61 @@ class LogicGenerator:
             "playful_alternatives": [
                 "a game", "a dance", "a story", "an adventure", "a puzzle", "a treasure hunt",
                 "a performance", "a celebration", "a discovery", "a journey"
-            ]
+            ],
+            # Cultural and linguistic context elements
+            # These elements provide culturally appropriate metaphors, processes, and paradoxes
+            # for different cultural traditions and linguistic styles.
+            # Cultural elements include: eastern_zen, indigenous_holistic, african_diasporic, etc.
+            # Linguistic elements include: poetic_metaphorical, conversational_warm, ceremonial_sacred, etc.
+            "cultural_elements": {
+                "eastern_zen": {
+                    "metaphors": ["zen garden", "empty cup", "monkey mind", "beginner's mind", "koan", "satori"],
+                    "processes": ["meditation", "mindful awareness", "non-attachment", "present moment"],
+                    "paradoxes": ["form is emptiness", "stillness in motion", "wisdom in simplicity"]
+                },
+                "indigenous_holistic": {
+                    "metaphors": ["eagle vision", "bear medicine", "wolf pack", "sacred fire", "medicine wheel"],
+                    "processes": ["vision quest", "spirit journey", "ancestral connection", "earth attunement"],
+                    "paradoxes": ["individual within community", "strength in vulnerability", "wisdom in silence"]
+                },
+                "african_diasporic": {
+                    "metaphors": ["drum beat", "ancestral voice", "village wisdom", "storytelling", "rhythm"],
+                    "processes": ["rhythmic healing", "community support", "oral tradition", "spiritual connection"],
+                    "paradoxes": ["unity in diversity", "strength in rhythm", "wisdom in story"]
+                },
+                "celtic_ancestral": {
+                    "metaphors": ["oak strength", "moon cycles", "spirit journey", "sacred grove", "bardic wisdom"],
+                    "processes": ["ancestral connection", "nature healing", "ritual transformation", "cyclical wisdom"],
+                    "paradoxes": ["strength in flexibility", "wisdom in cycles", "connection in solitude"]
+                },
+                "nordic_balance": {
+                    "metaphors": ["northern lights", "forest peace", "winter rest", "summer light", "mountain stability"],
+                    "processes": ["seasonal rhythm", "nature connection", "balance restoration", "peaceful strength"],
+                    "paradoxes": ["strength in rest", "light in darkness", "peace in challenge"]
+                }
+            },
+            "linguistic_elements": {
+                "poetic_metaphorical": {
+                    "modifiers": ["poetically", "metaphorically", "symbolically", "evocatively"],
+                    "patterns": ["like {metaphor}", "as {symbol}", "in the way of {process}"],
+                    "intensifiers": ["deeply", "profoundly", "beautifully", "mysteriously"]
+                },
+                "conversational_warm": {
+                    "modifiers": ["gently", "kindly", "warmly", "softly"],
+                    "patterns": ["what if {idea}", "imagine {possibility}", "consider {perspective}"],
+                    "intensifiers": ["really", "truly", "genuinely", "honestly"]
+                },
+                "ceremonial_sacred": {
+                    "modifiers": ["sacredly", "reverently", "ceremonially", "spiritually"],
+                    "patterns": ["in sacred space", "with {spiritual_quality}", "through {sacred_process}"],
+                    "intensifiers": ["profoundly", "sacredly", "deeply", "spiritually"]
+                },
+                "mentor_encouraging": {
+                    "modifiers": ["encouragingly", "supportively", "wisely", "gently"],
+                    "patterns": ["you might find", "consider exploring", "perhaps you could"],
+                    "intensifiers": ["truly", "genuinely", "deeply", "meaningfully"]
+                }
+            }
         }
         
         # Intensity levels for adaptation
@@ -96,7 +150,9 @@ class LogicGenerator:
             "emotional_tone": "neutral",
             "intensity_level": "moderate",
             "themes": [],
-            "user_state": "unknown"
+            "user_state": "unknown",
+            "cultural_context": "default",
+            "linguistic_context": "default"
         }
         
         # Analyze emotional content
@@ -135,8 +191,24 @@ class LogicGenerator:
             if any(keyword in original_lower for keyword in keywords):
                 context["themes"].append(theme)
         
-        # Consider session context if available
+        # Extract cultural and linguistic context from session
         if session_context:
+            # Check for cultural context in session data
+            session_data = session_context.get('context', {})
+            if 'cultural_context' in session_data:
+                context["cultural_context"] = session_data['cultural_context']
+            
+            # Check for linguistic context in session data
+            if 'linguistic_context' in session_data:
+                context["linguistic_context"] = session_data['linguistic_context']
+            
+            # Check for language/region in session context
+            if 'language' in session_context:
+                context["language"] = session_context['language']
+            if 'region' in session_context:
+                context["region"] = session_context['region']
+            
+            # Consider user needs
             user_needs = session_context.get('need_language', {})
             if user_needs.get('soften'):
                 context["intensity_level"] = "gentle"
@@ -175,7 +247,7 @@ class LogicGenerator:
             return f"What if {original_thought} is actually an opportunity for growth?"
     
     def _extract_elements(self, original_thought: str, context: Dict) -> Dict:
-        """Extract elements for pattern filling."""
+        """Extract elements for pattern filling with cultural and linguistic context."""
         elements = {
             "original": original_thought,
             "situation": original_thought,
@@ -187,7 +259,44 @@ class LogicGenerator:
             "approach": "your approach"
         }
         
-        # Add context-appropriate elements
+        # Add cultural context elements
+        cultural_context = context.get("cultural_context", "default")
+        if cultural_context in self.context_elements["cultural_elements"]:
+            cultural_elements = self.context_elements["cultural_elements"][cultural_context]
+            
+            # Add cultural metaphors
+            if "metaphors" in cultural_elements:
+                elements["metaphor"] = random.choice(cultural_elements["metaphors"])
+                elements["cultural_metaphor"] = random.choice(cultural_elements["metaphors"])
+            
+            # Add cultural processes
+            if "processes" in cultural_elements:
+                elements["natural_process"] = random.choice(cultural_elements["processes"])
+                elements["cultural_process"] = random.choice(cultural_elements["processes"])
+            
+            # Add cultural paradoxes
+            if "paradoxes" in cultural_elements:
+                elements["paradoxical"] = random.choice(cultural_elements["paradoxes"])
+                elements["cultural_paradox"] = random.choice(cultural_elements["paradoxes"])
+        
+        # Add linguistic context elements
+        linguistic_context = context.get("linguistic_context", "default")
+        if linguistic_context in self.context_elements["linguistic_elements"]:
+            linguistic_elements = self.context_elements["linguistic_elements"][linguistic_context]
+            
+            # Add linguistic modifiers
+            if "modifiers" in linguistic_elements:
+                elements["linguistic_modifier"] = random.choice(linguistic_elements["modifiers"])
+            
+            # Add linguistic patterns
+            if "patterns" in linguistic_elements:
+                elements["linguistic_pattern"] = random.choice(linguistic_elements["patterns"])
+            
+            # Add linguistic intensifiers
+            if "intensifiers" in linguistic_elements:
+                elements["linguistic_intensifier"] = random.choice(linguistic_elements["intensifiers"])
+        
+        # Add context-appropriate elements based on themes
         if context["themes"]:
             if "creativity" in context["themes"]:
                 elements["metaphor"] = random.choice(["a river flowing", "a seed growing", "a butterfly emerging"])
@@ -202,9 +311,12 @@ class LogicGenerator:
                 elements["approach"] = "working harder"
                 elements["alternative"] = "working softer"
         
-        # Add natural elements
-        elements["natural_element"] = random.choice(self.context_elements["natural_elements"])
-        elements["element"] = random.choice(self.context_elements["natural_elements"])
+        # Add natural elements (fallback if no cultural context)
+        if "metaphor" not in elements:
+            elements["natural_element"] = random.choice(self.context_elements["natural_elements"])
+        if "element" not in elements:
+            elements["element"] = random.choice(self.context_elements["natural_elements"])
+        
         elements["unexpected"] = random.choice(["a gift", "a teacher", "a friend", "a guide"])
         elements["perspective"] = random.choice(["a different angle", "a new lens", "a fresh view"])
         

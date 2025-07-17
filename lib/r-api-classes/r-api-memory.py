@@ -318,6 +318,47 @@ def save_session(session_id, session_data, insights=None, tags=None, session_con
             }
         }
         
+        # Add cultural and linguistic context from session_context if available
+        # This section extracts cultural and linguistic information from the session context
+        # and adds it to the stored data for better cultural sensitivity and search capabilities.
+        # Cultural context includes: eastern_collective, indigenous_holistic, african_diasporic, etc.
+        # Linguistic context includes: poetic_metaphorical, conversational_warm, ceremonial_sacred, etc.
+        if session_context:
+            # Extract cultural context
+            session_data_context = session_context.get('context', {})
+            if 'cultural_context' in session_data_context:
+                data_to_save["cultural_context"] = session_data_context['cultural_context']
+            
+            # Extract linguistic context
+            if 'linguistic_context' in session_data_context:
+                data_to_save["linguistic_context"] = session_data_context['linguistic_context']
+            
+            # Extract language and region
+            if 'language' in session_context:
+                data_to_save["language"] = session_context['language']
+            if 'region' in session_context:
+                data_to_save["region"] = session_context['region']
+            
+            # Add cultural and linguistic tags for better search
+            cultural_tags = []
+            linguistic_tags = []
+            
+            if 'cultural_context' in data_to_save:
+                cultural_tags.append(f"cultural_{data_to_save['cultural_context']}")
+            if 'linguistic_context' in data_to_save:
+                linguistic_tags.append(f"linguistic_{data_to_save['linguistic_context']}")
+            if 'language' in data_to_save:
+                linguistic_tags.append(f"language_{data_to_save['language']}")
+            if 'region' in data_to_save:
+                cultural_tags.append(f"region_{data_to_save['region']}")
+            
+            # Add cultural and linguistic tags to the main tags
+            if tags is None:
+                tags = []
+            tags.extend(cultural_tags)
+            tags.extend(linguistic_tags)
+            data_to_save["tags"] = tags
+        
         # Enhanced storage with encryption and backup
         encrypted_data = memory_storage._encrypt_data(data_to_save)
         
@@ -510,6 +551,36 @@ def search_memories(query, search_type="all", limit=10, session_context=None):
                                         existing_result['relevance_score'] += relevance_score
                                         existing_result['matched_content'].extend(matched_content)
                                     else:
+                                        # Add cultural and linguistic context to results
+                                        cultural_info = {}
+                                        if 'cultural_context' in decrypted_data:
+                                            cultural_info['cultural_context'] = decrypted_data['cultural_context']
+                                        if 'linguistic_context' in decrypted_data:
+                                            cultural_info['linguistic_context'] = decrypted_data['linguistic_context']
+                                        if 'language' in decrypted_data:
+                                            cultural_info['language'] = decrypted_data['language']
+                                        if 'region' in decrypted_data:
+                                            cultural_info['region'] = decrypted_data['region']
+                                        
+                                        # Boost relevance for cultural/linguistic matches
+                                        cultural_boost = 0
+                                        if session_context:
+                                            session_data_context = session_context.get('context', {})
+                                            if (session_data_context.get('cultural_context') == 
+                                                decrypted_data.get('cultural_context')):
+                                                cultural_boost += 1
+                                            if (session_data_context.get('linguistic_context') == 
+                                                decrypted_data.get('linguistic_context')):
+                                                cultural_boost += 1
+                                            if (session_context.get('language') == 
+                                                decrypted_data.get('language')):
+                                                cultural_boost += 0.5
+                                            if (session_context.get('region') == 
+                                                decrypted_data.get('region')):
+                                                cultural_boost += 0.5
+                                        
+                                        relevance_score += cultural_boost
+                                        
                                         search_results.append({
                                             "session_id": session_id,
                                             "relevance_score": relevance_score,
@@ -517,7 +588,8 @@ def search_memories(query, search_type="all", limit=10, session_context=None):
                                             "timestamp": decrypted_data.get('timestamp'),
                                             "insights_count": len(decrypted_data.get('insights', [])),
                                             "tags_count": len(decrypted_data.get('tags', [])),
-                                            "session_type": decrypted_data.get('session_data', {}).get('session_type', 'unknown')
+                                            "session_type": decrypted_data.get('session_data', {}).get('session_type', 'unknown'),
+                                            "cultural_context": cultural_info
                                         })
                                         
                         except Exception as e:
