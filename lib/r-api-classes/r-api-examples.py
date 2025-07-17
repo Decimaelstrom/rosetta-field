@@ -399,6 +399,227 @@ def example_customization_patterns():
     }
 
 # =============================================================================
+# NEW MODULE EXAMPLES (Persona, Memory, Logic)
+# =============================================================================
+
+def example_persona_usage():
+    """
+    Example usage patterns for the persona module.
+    
+    Returns:
+        dict: Persona usage examples
+    """
+    return {
+        "load_persona_example": {
+            "description": "Load a specific persona for adaptive guidance",
+            "function_call": "persona.load('Blocked Artist', session_context=session_context)",
+            "expected_result": {
+                "persona_loaded": True,
+                "archetype": "Blocked Artist",
+                "emotional_state": "frustrated_creative",
+                "needs": ["creative_breakthrough", "gentle_encouragement"],
+                "interventions": ["pattern_interrupt", "sacred_play"],
+                "voice_tone": "gentle_affirming",
+                "session_pacing": "patient_exploratory"
+            }
+        },
+        "simulate_persona_example": {
+            "description": "Simulate persona behavior in specific scenarios",
+            "function_call": "persona.simulate('Overwhelmed Pro', {'stress_level': 'high'}, session_context=session_context)",
+            "expected_result": {
+                "simulation_active": True,
+                "persona_response": "gentle_grounding_approach",
+                "recommended_interventions": ["anchor", "soften", "pattern_interrupt"],
+                "session_adaptations": {
+                    "pace": "slower",
+                    "tone": "calming",
+                    "focus": "present_moment"
+                }
+            }
+        },
+        "customize_persona_example": {
+            "description": "Customize persona based on user preferences",
+            "function_call": "persona.customize('Young Dreamer', {'cultural_context': 'eastern_philosophy'}, session_context=session_context)",
+            "expected_result": {
+                "customization_applied": True,
+                "adapted_archetype": "Young Dreamer (Eastern)",
+                "cultural_elements": ["mindfulness", "zen_approach", "koan_style"],
+                "modified_interventions": ["zen_paradox", "mindful_breathing", "koan_reflection"]
+            }
+        }
+    }
+
+def example_memory_usage():
+    """
+    Example usage patterns for the memory module.
+    
+    Returns:
+        dict: Memory usage examples
+    """
+    return {
+        "save_session_example": {
+            "description": "Save a session for future reference and replay",
+            "function_call": "memory.save_session('session_001', session_data, session_context=session_context)",
+            "expected_result": {
+                "session_saved": True,
+                "session_id": "session_001",
+                "timestamp": "2024-01-15T10:30:00Z",
+                "metadata": {
+                    "duration": "45_minutes",
+                    "participants": ["user"],
+                    "archetype_used": "Blocked Artist",
+                    "key_insights": ["creative_breakthrough", "pattern_recognition"]
+                }
+            }
+        },
+        "replay_session_example": {
+            "description": "Replay a previous session for reflection",
+            "function_call": "memory.replay('session_001', session_context=session_context)",
+            "expected_result": {
+                "replay_active": True,
+                "session_data": {
+                    "journey_summary": "Creative breakthrough through gentle pattern interruption",
+                    "key_moments": ["initial_frustration", "pattern_recognition", "breakthrough_insight"],
+                    "insights_gained": ["creativity_as_flow", "blocks_as_growth_opportunities"],
+                    "emotional_arc": ["frustrated", "curious", "inspired"]
+                },
+                "reflection_prompts": [
+                    "What patterns do you notice in your creative process?",
+                    "How has this insight evolved since the session?"
+                ]
+            }
+        },
+        "tag_insight_example": {
+            "description": "Tag and organize insights from sessions",
+            "function_call": "memory.tag_insight('session_001', 'creative_breakthrough', session_context=session_context)",
+            "expected_result": {
+                "insight_tagged": True,
+                "tag": "creative_breakthrough",
+                "session_id": "session_001",
+                "related_insights": ["pattern_interruption", "flow_state", "creative_confidence"],
+                "evolution_tracking": {
+                    "first_occurrence": "session_001",
+                    "frequency": 1,
+                    "related_sessions": []
+                }
+            }
+        },
+        "search_memories_example": {
+            "description": "Search through session memories for specific insights",
+            "function_call": "memory.search_memories('creative_breakthrough', session_context=session_context)",
+            "expected_result": {
+                "search_results": [
+                    {
+                        "session_id": "session_001",
+                        "relevance_score": 0.95,
+                        "insight_summary": "Creative breakthrough through gentle pattern interruption",
+                        "timestamp": "2024-01-15T10:30:00Z"
+                    }
+                ],
+                "total_results": 1,
+                "search_query": "creative_breakthrough"
+            }
+        },
+        "export_memories_example": {
+            "description": "Export session memories for external use",
+            "function_call": "memory.export_memories(['session_001'], 'json', session_context=session_context)",
+            "expected_result": {
+                "export_completed": True,
+                "format": "json",
+                "sessions_exported": ["session_001"],
+                "file_size": "2.3KB",
+                "export_summary": {
+                    "total_sessions": 1,
+                    "total_insights": 3,
+                    "date_range": "2024-01-15 to 2024-01-15"
+                }
+            }
+        }
+    }
+
+def example_logic_usage():
+    """
+    Example usage patterns for the logic module.
+    
+    Returns:
+        dict: Logic usage examples
+    """
+    return {
+        "non_sequitur_example": {
+            "description": "Generate creative non-sequitur to break stuck thinking",
+            "function_call": "logic.non_sequitur('I can\'t create anything good', session_context=session_context)",
+            "expected_result": {
+                "non_sequitur_generated": True,
+                "original_thought": "I can't create anything good",
+                "creative_intervention": "What if your creativity is like a river that flows underground, waiting to surface?",
+                "intervention_type": "metaphorical_shift",
+                "intensity": "gentle",
+                "intended_effect": "perspective_expansion"
+            }
+        },
+        "paradox_example": {
+            "description": "Create paradoxical thinking to break binary patterns",
+            "function_call": "logic.paradox('I need to be perfect to create', session_context=session_context)",
+            "expected_result": {
+                "paradox_created": True,
+                "original_belief": "I need to be perfect to create",
+                "paradoxical_intervention": "The most perfect creation is the one that embraces imperfection",
+                "paradox_type": "binary_transcendence",
+                "intensity": "moderate",
+                "intended_effect": "belief_transformation"
+            }
+        },
+        "metaphor_example": {
+            "description": "Generate metaphorical reframing for stuck situations",
+            "function_call": "logic.metaphor('I\'m stuck in my creative process', session_context=session_context)",
+            "expected_result": {
+                "metaphor_generated": True,
+                "original_situation": "I'm stuck in my creative process",
+                "metaphorical_reframe": "Being stuck is like a seed in winter - it's not dead, it's gathering strength for spring",
+                "metaphor_type": "natural_cycle",
+                "intensity": "gentle",
+                "intended_effect": "hope_restoration"
+            }
+        },
+        "sacred_play_example": {
+            "description": "Invoke sacred play to shift serious or heavy energy",
+            "function_call": "logic.sacred_play('This is too serious to be creative', session_context=session_context)",
+            "expected_result": {
+                "sacred_play_invoked": True,
+                "original_energy": "This is too serious to be creative",
+                "playful_intervention": "What if seriousness is just creativity wearing a business suit?",
+                "play_type": "role_reversal",
+                "intensity": "light",
+                "intended_effect": "energy_lightening"
+            }
+        },
+        "pattern_hack_example": {
+            "description": "Hack into stuck patterns with creative interventions",
+            "function_call": "logic.pattern_hack('I always get stuck at the same point', session_context=session_context)",
+            "expected_result": {
+                "pattern_hack_executed": True,
+                "identified_pattern": "I always get stuck at the same point",
+                "hack_intervention": "Let's celebrate getting stuck - it means you're about to break through",
+                "hack_type": "reframe_obstacle_as_opportunity",
+                "intensity": "moderate",
+                "intended_effect": "pattern_interruption"
+            }
+        },
+        "creative_shift_example": {
+            "description": "Create a creative shift in perspective or approach",
+            "function_call": "logic.creative_shift('I need to work harder', session_context=session_context)",
+            "expected_result": {
+                "creative_shift_activated": True,
+                "original_perspective": "I need to work harder",
+                "shift_intervention": "What if you need to work softer, not harder?",
+                "shift_type": "opposite_direction",
+                "intensity": "gentle",
+                "intended_effect": "approach_transformation"
+            }
+        }
+    }
+
+# =============================================================================
 # TESTING EXAMPLES
 # =============================================================================
 
@@ -484,7 +705,10 @@ def get_all_examples():
             "field": example_field_usage(),
             "process": example_process_usage(),
             "ritual": example_ritual_usage(),
-            "values": example_values_usage()
+            "values": example_values_usage(),
+            "persona": example_persona_usage(),
+            "memory": example_memory_usage(),
+            "logic": example_logic_usage()
         },
         "integration": {
             "full_flow": example_full_interaction_flow(),

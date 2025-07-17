@@ -201,7 +201,7 @@ def run_full_test_suite():
         "modules": {}
     }
     
-    modules_to_test = ['field', 'process', 'ritual', 'values', 'affect']
+    modules_to_test = ['field', 'process', 'ritual', 'values', 'affect', 'persona', 'memory', 'logic']
     
     for module_name in modules_to_test:
         print(f"\n🔍 Discovering functions in {module_name} module...")
@@ -284,6 +284,46 @@ def get_test_args_for_function(func_name, module_name):
     
     elif module_name == 'affect':
         return ("test_emotion", "test_context")
+    
+    elif module_name == 'persona':
+        if func_name == 'load':
+            return ("Blocked Artist",)
+        elif func_name == 'simulate':
+            return ("Overwhelmed Pro", {"stress_level": "high"})
+        elif func_name == 'customize':
+            return ("Young Dreamer", {"cultural_context": "eastern_philosophy"})
+        else:
+            return ("test_persona",)
+    
+    elif module_name == 'memory':
+        if func_name == 'save_session':
+            return ("session_001", {"test": "data"})
+        elif func_name == 'replay':
+            return ("session_001",)
+        elif func_name == 'tag_insight':
+            return ("session_001", "creative_breakthrough")
+        elif func_name == 'search_memories':
+            return ("creative_breakthrough",)
+        elif func_name == 'export_memories':
+            return (["session_001"], "json")
+        else:
+            return ("test_session",)
+    
+    elif module_name == 'logic':
+        if func_name == 'non_sequitur':
+            return ("I can't create anything good",)
+        elif func_name == 'paradox':
+            return ("I need to be perfect to create",)
+        elif func_name == 'metaphor':
+            return ("I'm stuck in my creative process",)
+        elif func_name == 'sacred_play':
+            return ("This is too serious to be creative",)
+        elif func_name == 'pattern_hack':
+            return ("I always get stuck at the same point",)
+        elif func_name == 'creative_shift':
+            return ("I need to work harder",)
+        else:
+            return ("test_thought",)
     
     else:
         return ("test_input",)
