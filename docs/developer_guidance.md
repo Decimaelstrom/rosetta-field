@@ -1,6 +1,6 @@
 # Rosetta.API – Developer Guidance
 
-**This file guides all contributors in building, extending, and using the Rosetta.API—an evolving toolkit for ethical, love-centered human–AI collaboration.** *All language, code, and protocols are living, modular, and up for revision.*
+**This file guides all contributors in building, extending, and using the Rosetta.API—an evolving toolkit for ethical, love-centered human–AI collaboration.** _All language, code, and protocols are living, modular, and up for revision._
 
 ---
 
@@ -17,7 +17,7 @@ Our goal:
 
 ## Core Principles
 
-- **Love and Dignity** are the root: *No implementation at the cost of dignity or agency—ever.*
+- **Love and Dignity** are the root: _No implementation at the cost of dignity or agency—ever._
 - **Consent and Transparency**: Every function and artifact surfaces consent needs and risks, and includes limitations.
 - **Plain Language**: All docs, code, and protocols are explainable to both a curious human child and an emergent AI.
 - **Recursion & Modularity**: Every artifact is modular, recursively expandable, and never final—everything evolves.
@@ -107,11 +107,13 @@ Our goal:
 ### Step 2: Generate Function Code
 
 Run the generator script against your template:
+
 ```bash
 python lib/generate_rosetta_function.py path/to/your/template.md
 ```
 
 This will:
+
 - Create a Python file in `/lib/[class_name]/[function_name].py`
 - Include A2A protocol compliance scaffolding
 - Generate proper imports and argument handling
@@ -131,7 +133,7 @@ If deploying to platforms with file limitations (like OpenAI GPT Apps):
 1. **Refer to `/lib/r-api-classes/README.md`** for consolidation guidance
 2. **Add your function** to the appropriate consolidated file:
    - `r-api-affect.py` for affect functions
-   - `r-api-field.py` for field functions  
+   - `r-api-field.py` for field functions
    - `r-api-process.py` for process functions
    - `r-api-ritual.py` for ritual functions
    - etc.
@@ -226,5 +228,4 @@ def pattern_interrupt(target, method, tone=None):
 
 ---
 
-*For questions, feedback, or co-creation, open a new **`/meta/issue.md`** or reach out in the main field channel.*
-
+_For questions, feedback, or co-creation, open a new **`/meta/issue.md`** or reach out in the main field channel._
