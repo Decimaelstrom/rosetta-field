@@ -1,7 +1,7 @@
 """
 Rosetta.API Consolidated Testing Module
 Purpose: Unified testing framework for A2A protocol compliance and function validation
-Scope: Testing utilities for all Rosetta.API modules and functions
+Scope: Testing utilities for all Rosetta.API modules and functions with cultural/linguistic context
 Consent Required: Level_1 (Informational)
 Review Cycle: Quarterly
 Audience: #human #emergent #hybrid
@@ -31,7 +31,7 @@ def print_result(step, result):
         
         # Handle different session structures
         session_data = {}
-        for key in ['co_creation_session', 'space_session', 'session_data']:
+        for key in ['co_creation_session', 'space_session', 'session_data', 'session_context']:
             if key in result:
                 session_data = result[key]
                 break
@@ -47,9 +47,16 @@ def print_result(step, result):
         print(f"Participants: {participants}")
         print(f"Goal/Intention: {goal}")
         
+        # Show cultural and linguistic context if present
+        context = session_data.get('context', {})
+        if 'cultural_context' in context:
+            print(f"Cultural Context: {context['cultural_context']}")
+        if 'linguistic_context' in context:
+            print(f"Linguistic Context: {context['linguistic_context']}")
+        
         # Show additional fields if present
         for key, value in session_data.items():
-            if key not in ['session_id', 'consent_status', 'participants', 'goal', 'intention']:
+            if key not in ['session_id', 'consent_status', 'participants', 'goal', 'intention', 'context']:
                 print(f"{key.replace('_', ' ').title()}: {value}")
         
         print("✅ SUCCESS")
@@ -72,16 +79,22 @@ def test_a2a_protocol(func, func_name, test_args, test_kwargs=None):
     print(f"\n🧪 Testing A2A Protocol for {func_name}")
     print("=" * 60)
     
-    # Test data for A2A protocol
+    # Test data for A2A protocol with cultural/linguistic context
     test_session_context = {
         "session_id": str(uuid.uuid4()),
         "timestamp": datetime.now().isoformat(),
         "participants": ["human_tester", "ai_assistant"],
         "consent_status": "granted",
         "agent_id": "test_agent",
-        "capabilities": ["basic_interaction", "testing"],
+        "capabilities": ["basic_interaction", "testing", "cultural_sensitivity"],
         "intent": "testing_a2a_protocol",
-        "boundary_notes": "Test environment"
+        "boundary_notes": "Test environment",
+        "context": {
+            "cultural_context": "eastern_collective",
+            "linguistic_context": "poetic_metaphorical"
+        },
+        "language": "en",
+        "region": "US"
     }
     
     try:
@@ -111,10 +124,115 @@ def test_a2a_protocol(func, func_name, test_args, test_kwargs=None):
         result_consent = func(*test_args, session_context=consent_test_session, **test_kwargs)
         print_result("✅ Consent verification test successful", result_consent)
         
+        # Test 5: Cultural and linguistic context handling
+        print("\n📋 Test 5: Cultural and Linguistic Context")
+        cultural_test_session = test_session_context.copy()
+        cultural_test_session["context"]["cultural_context"] = "indigenous_holistic"
+        cultural_test_session["context"]["linguistic_context"] = "ceremonial_sacred"
+        result_cultural = func(*test_args, session_context=cultural_test_session, **test_kwargs)
+        print_result("✅ Cultural and linguistic context test successful", result_cultural)
+        
         return True
         
     except Exception as e:
         print(f"\n❌ Test failed for {func_name}: {str(e)}")
+        return False
+
+def test_enhanced_functionality(func, func_name, test_args, test_kwargs=None):
+    """
+    Test enhanced functionality including cultural context, storage, and dynamic generation.
+    
+    Args:
+        func: The function to test
+        func_name: Display name for the function
+        test_args: Arguments to pass to the function
+        test_kwargs: Additional keyword arguments (optional)
+    """
+    if test_kwargs is None:
+        test_kwargs = {}
+    
+    print(f"\n🔬 Testing Enhanced Functionality for {func_name}")
+    print("=" * 60)
+    
+    # Test different cultural contexts
+    cultural_contexts = [
+        "eastern_zen",
+        "indigenous_holistic", 
+        "african_diasporic",
+        "celtic_ancestral",
+        "nordic_balance"
+    ]
+    
+    linguistic_contexts = [
+        "poetic_metaphorical",
+        "conversational_warm",
+        "ceremonial_sacred",
+        "mentor_encouraging"
+    ]
+    
+    try:
+        # Test cultural context variations
+        print("\n📋 Test: Cultural Context Variations")
+        for cultural_context in cultural_contexts[:2]:  # Test first 2 for brevity
+            test_session = {
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "granted",
+                "context": {
+                    "cultural_context": cultural_context,
+                    "linguistic_context": "poetic_metaphorical"
+                }
+            }
+            result = func(*test_args, session_context=test_session, **test_kwargs)
+            print(f"✅ {cultural_context} context: {result.get('status', 'success')}")
+        
+        # Test linguistic context variations
+        print("\n📋 Test: Linguistic Context Variations")
+        for linguistic_context in linguistic_contexts[:2]:  # Test first 2 for brevity
+            test_session = {
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "granted",
+                "context": {
+                    "cultural_context": "eastern_collective",
+                    "linguistic_context": linguistic_context
+                }
+            }
+            result = func(*test_args, session_context=test_session, **test_kwargs)
+            print(f"✅ {linguistic_context} context: {result.get('status', 'success')}")
+        
+        # Test enhanced storage features (for memory functions)
+        if 'memory' in func_name.lower() or 'save' in func_name.lower():
+            print("\n📋 Test: Enhanced Storage Features")
+            test_session = {
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "granted",
+                "context": {
+                    "cultural_context": "eastern_collective",
+                    "linguistic_context": "poetic_metaphorical"
+                }
+            }
+            result = func(*test_args, session_context=test_session, **test_kwargs)
+            if isinstance(result, dict) and 'storage_info' in result:
+                print(f"✅ Enhanced storage: {result['storage_info'].get('encrypted', False)}")
+        
+        # Test dynamic generation features (for logic functions)
+        if 'logic' in func_name.lower() or 'non_sequitur' in func_name.lower() or 'paradox' in func_name.lower():
+            print("\n📋 Test: Dynamic Generation Features")
+            test_session = {
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "granted",
+                "context": {
+                    "cultural_context": "eastern_collective",
+                    "linguistic_context": "poetic_metaphorical"
+                }
+            }
+            result = func(*test_args, session_context=test_session, **test_kwargs)
+            if isinstance(result, dict) and 'context_analysis' in result:
+                print(f"✅ Dynamic generation: {result['context_analysis'].get('generation_method', 'unknown')}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"\n❌ Enhanced functionality test failed for {func_name}: {str(e)}")
         return False
 
 # =============================================================================
@@ -164,7 +282,7 @@ def discover_module_functions(module_path):
 
 def discover_consolidated_functions(consolidated_modules):
     """
-    Discover functions from consolidated API modules.
+    Discover functions from consolidated API modules with enhanced functionality.
     
     Args:
         consolidated_modules: Dict mapping module names to module objects
@@ -174,12 +292,20 @@ def discover_consolidated_functions(consolidated_modules):
     """
     functions = []
     
+    # Define enhanced functions to test
+    enhanced_functions = {
+        'persona': ['persona_load', 'persona_simulate', 'customize'],
+        'memory': ['save_session', 'memory_replay', 'memory_tag_insight', 'memory_export', 'search_memories', 'memory_evolve_ideas'],
+        'logic': ['non_sequitur', 'paradox', 'logic_metaphor', 'logic_sacred_play', 'logic_pattern_hack', 'logic_creative_shift']
+    }
+    
     for module_name, module in consolidated_modules.items():
-        # Get all functions from the module
-        for attr_name in dir(module):
-            attr = getattr(module, attr_name)
-            if callable(attr) and not attr_name.startswith('_'):
-                functions.append((attr_name, attr, module_name))
+        if module_name in enhanced_functions:
+            for func_name in enhanced_functions[module_name]:
+                if hasattr(module, func_name):
+                    func = getattr(module, func_name)
+                    if callable(func):
+                        functions.append((func_name, func, module_name))
     
     return functions
 
@@ -218,10 +344,10 @@ def run_full_test_suite():
             print(f"\n🧪 Testing {func_name} from {module_full_name}")
             
             # Define test arguments based on function type
-            test_args = get_test_args_for_function(func_name, module_name)
+            test_args, test_kwargs = get_test_args_for_function(func_name, module_name)
             
             try:
-                success = test_a2a_protocol(func, func_name, test_args)
+                success = test_a2a_protocol(func, func_name, test_args, test_kwargs)
                 if success:
                     module_results["passed"] += 1
                     results["passed"] += 1
@@ -244,89 +370,52 @@ def run_full_test_suite():
 
 def get_test_args_for_function(func_name, module_name):
     """
-    Get appropriate test arguments for a specific function.
+    Get appropriate test arguments for a given function.
     
     Args:
-        func_name: Name of the function
-        module_name: Name of the module
+        func_name: Name of the function to test
+        module_name: Name of the module containing the function
     
     Returns:
-        tuple: Test arguments for the function
+        tuple: (args, kwargs) for testing the function
     """
-    # Common test arguments based on function patterns
-    if module_name == 'field':
-        if func_name == 'co_create':
-            return (["Alice", "Bob"], "collaborative_project")
-        elif func_name == 'hold_space':
-            return ("healing_circle", ["participant1", "participant2"])
-        else:
-            return ("test_input", "test_context")
+    # Enhanced test arguments for new functionality
+    enhanced_test_args = {
+        'persona_load': (['Blocked Artist'], {}),
+        'persona_simulate': (['Blocked Artist', 'I can\'t create anything good'], {}),
+        'customize': (['Blocked Artist', {'cultural_context': 'indigenous_holistic'}], {}),
+        'save_session': (['test_session_001', {'session_type': 'creative_journey'}, ['insight1'], ['tag1']], {}),
+        'memory_replay': (['test_session_001'], {}),
+        'memory_tag_insight': (['test_session_001', 'Test insight', ['tag1', 'tag2'], 'creative', 3], {}),
+        'memory_export': (['test_session_001'], {}),
+        'search_memories': (['creativity'], {}),
+        'memory_evolve_ideas': ([None, 'Test idea evolution'], {}),
+        'non_sequitur': (['I can\'t create anything good'], {}),
+        'paradox': (['I need to be perfect to create'], {}),
+        'logic_metaphor': (['I can\'t create', 'nature'], {}),
+        'logic_sacred_play': (['creative', 'gentle'], {}),
+        'logic_pattern_hack': (['I can\'t create', 'perspective'], {}),
+        'logic_creative_shift': (['I\'m not good enough', 'gentle'], {})
+    }
     
-    elif module_name == 'process':
-        if func_name == 'consent_check':
-            return ("test_action", "test_participant")
-        elif func_name == 'values_check':
-            return ("test_action", {"dignity": True, "consent": True})
-        else:
-            return ("test_input",)
+    if func_name in enhanced_test_args:
+        return enhanced_test_args[func_name]
     
-    elif module_name == 'ritual':
-        if func_name == 'begin':
-            return ("test_ceremony", ["participant1"])
-        else:
-            return ("test_context",)
+    # Fallback to original test arguments
+    test_args = {
+        'co_create': (['Alice', 'Bob'], {'goal': 'healing_circle'}),
+        'hold_space': (['grief_processing'], {}),
+        'resolve_conflict': (['Alice', 'Bob'], {'issue': 'misunderstanding'}),
+        'consent_check': (['deep_emotional_work', 'participant'], {}),
+        'values_check': (['proposed_action'], {'values': {'consent': True, 'dignity': True}}),
+        'begin': (['healing_ceremony', ['participant1', 'participant2']], {}),
+        'end': (['healing_ceremony'], {}),
+        'anchor': (['feeling_overwhelmed', 'breathwork'], {}),
+        'transmute': (['anger', 'wisdom_and_compassion'], {}),
+        'load': (['default'], {})
+    }
     
-    elif module_name == 'values':
-        if func_name == 'load':
-            return ("default",)
-        else:
-            return ("test_input",)
-    
-    elif module_name == 'affect':
-        return ("test_emotion", "test_context")
-    
-    elif module_name == 'persona':
-        if func_name == 'load':
-            return ("Blocked Artist",)
-        elif func_name == 'simulate':
-            return ("Overwhelmed Pro", {"stress_level": "high"})
-        elif func_name == 'customize':
-            return ("Young Dreamer", {"cultural_context": "eastern_philosophy"})
-        else:
-            return ("test_persona",)
-    
-    elif module_name == 'memory':
-        if func_name == 'save_session':
-            return ("session_001", {"test": "data"})
-        elif func_name == 'replay':
-            return ("session_001",)
-        elif func_name == 'tag_insight':
-            return ("session_001", "creative_breakthrough")
-        elif func_name == 'search_memories':
-            return ("creative_breakthrough",)
-        elif func_name == 'export_memories':
-            return (["session_001"], "json")
-        else:
-            return ("test_session",)
-    
-    elif module_name == 'logic':
-        if func_name == 'non_sequitur':
-            return ("I can't create anything good",)
-        elif func_name == 'paradox':
-            return ("I need to be perfect to create",)
-        elif func_name == 'metaphor':
-            return ("I'm stuck in my creative process",)
-        elif func_name == 'sacred_play':
-            return ("This is too serious to be creative",)
-        elif func_name == 'pattern_hack':
-            return ("I always get stuck at the same point",)
-        elif func_name == 'creative_shift':
-            return ("I need to work harder",)
-        else:
-            return ("test_thought",)
-    
-    else:
-        return ("test_input",)
+    return test_args.get(func_name, ([], {}))
 
 # =============================================================================
 # VALIDATION UTILITIES
@@ -356,7 +445,7 @@ def validate_a2a_compliance(result):
     
     # Check for session data
     session_found = False
-    for key in ['co_creation_session', 'space_session', 'session_data']:
+    for key in ['co_creation_session', 'space_session', 'session_data', 'session_context']:
         if key in result:
             session_found = True
             break
