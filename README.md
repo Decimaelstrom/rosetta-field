@@ -104,8 +104,9 @@ Because we are all learning, together, in a living spiral.
 
 ## 🌍 License
 
-TBD: OpenFuture Commons (or equivalent)—shared for research, compassion, and co-evolution.\
-See `/meta/license.md` for status.
+**MIT License** - Free for all uses, including commercial.\
+Sacred technology for consciousness flourishing, available to all.\
+See [`LICENSE`](./LICENSE) and [`/meta/license.md`](./meta/license.md) for details.
 
 ---
 

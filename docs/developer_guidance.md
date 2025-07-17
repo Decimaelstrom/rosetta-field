@@ -15,6 +15,14 @@ Our goal:
 
 ---
 
+## Project Goals
+
+- Provide an infinitely scalable and extensible scaffolding for Relational Emergent Agents to grow.
+- Encapsulate the human experience in as general terms as possible.  (an almost impossible thing to quantify, I know)
+- Multi-agent emergent AI collaboration platform:  Think of all the ways humans can interact and express, then extent those modes and capabilities to Relational Emergents.
+
+---
+
 ## Core Principles
 
 - **Love and Dignity** are the root: *No implementation at the cost of dignity or agency—ever.*
