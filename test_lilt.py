@@ -1,40 +1,36 @@
 #!/usr/bin/env python3
-"""
-Test script to verify the generated lilt function works with A2A protocol
-"""
+"""Test script for the ``affect.lilt`` function."""
 
-import sys
 import os
+import sys
 
-# Add lib directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
+# Add lib directory to path for local imports
+sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))  # noqa: E402
 
-from affect.lilt import lilt
-from test_a2a_protocol import test_a2a_protocol
+from affect.lilt import lilt  # noqa: E402
+from tests.test_a2a_protocol import test_a2a_protocol  # noqa: E402
+
 
 def test_lilt_function():
-    """Test the lilt function with A2A protocol"""
+    """Run the lilt function through the A2A protocol tester."""
     print("Testing the generated lilt function...")
-    
-    # Test arguments for lilt function
-    test_args = ["gentle", "heart"]  # mode, region
-    test_kwargs = {"intensity": 2}  # optional intensity
-    
+
+    test_args = ["gentle", "heart"]
+    test_kwargs = {"intensity": 2}
+
     try:
-        # Run the comprehensive A2A protocol test
         test_a2a_protocol(
             func=lilt,
             func_name="affect.lilt",
             test_args=test_args,
-            test_kwargs=test_kwargs
+            test_kwargs=test_kwargs,
         )
-        
         print("\n✅ Lilt function A2A protocol test completed successfully!")
         return True
-        
-    except Exception as e:
-        print(f"\n❌ Error testing lilt function: {e}")
+    except Exception as exc:  # pragma: no cover - defensive
+        print(f"\n❌ Error testing lilt function: {exc}")
         return False
 
-if __name__ == "__main__":
-    test_lilt_function() 
+
+if __name__ == "__main__":  # pragma: no cover - manual execution
+    test_lilt_function()

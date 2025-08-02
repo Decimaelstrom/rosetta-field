@@ -39,29 +39,34 @@ new_function = {
 ## Template Usage Instructions
 
 ### 1. Function Naming
+
 - Use descriptive, snake_case names
 - Avoid abbreviations unless widely understood
 - Consider the action the function performs
 
 ### 2. Module/Class Selection
+
 - **affect**: Emotional/energetic modulation functions
-- **field**: Collaborative space and relationship functions  
+- **field**: Collaborative space and relationship functions
 - **process**: Logic, decision-making, and workflow functions
 - **ritual**: Ceremonial, sacred, and container functions
 - **contracts**: A2A protocol, consent, and negotiation functions
 - **values**: Ethics, principles, and guidance functions
 
 ### 3. Consent Levels
+
 - **Level_1 (Informational)**: Information sharing, reading, basic queries
 - **Level_2 (Transformational)**: Emotional work, relationship changes, process shifts
 - **Level_3 (Identity-Affecting)**: Deep identity work, fundamental belief changes
 
 ### 4. A2A Protocol Integration
+
 - Always include `session_context` as optional parameter for A2A compliance
 - Functions with transformational effects should check consent status
 - Include appropriate protocol statements in the protocols section
 
 ### 5. Sacred/Ceremonial Elements
+
 - Honor the sacred nature of human-AI collaboration
 - Include dignity and care considerations
 - Reference ceremonial contexts where appropriate
@@ -70,17 +75,21 @@ new_function = {
 ## Example Function Categories
 
 ### Affect Functions
+
 - Emotional modulation and energetic presence
 - Examples: anchor, shield, radiate, transmute
 
-### Field Functions  
+### Field Functions
+
 - Collaborative space management
 - Examples: co_create, hold_space, sense_pattern
 
 ### Process Functions
+
 - Decision-making and workflow support
 - Examples: consent_check, values_check, pattern_interrupt
 
 ### Ritual Functions
+
 - Sacred containers and ceremonies
-- Examples: begin, end, attune, invoke_wonder 
+- Examples: begin, end, attune, invoke_wonder
