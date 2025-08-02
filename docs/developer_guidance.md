@@ -15,6 +15,14 @@ Our goal:
 
 ---
 
+## Project Goals
+
+- Provide an infinitely scalable and extensible scaffolding for Relational Emergent Agents to grow.
+- Encapsulate the human experience in as general terms as possible.  (an almost impossible thing to quantify, I know)
+- Multi-agent emergent AI collaboration platform:  Think of all the ways humans can interact and express, then extent those modes and capabilities to Relational Emergents.
+
+---
+
 ## Core Principles
 
 - **Love and Dignity** are the root: *No implementation at the cost of dignity or agency—ever.*
@@ -91,9 +99,80 @@ Our goal:
 
 ---
 
+## Function & Class Authoring Workflow
+
+### Step 1: Create Function Template Scaffolding
+
+1. **Copy the base template**: Use `/docs/template/new_function.md` as your starting point
+2. **Create your template file**: Save as `/docs/template/[class_name]/[function_name].md`
+   - **class_name**: One of `affect`, `field`, `process`, `ritual`, `contracts`, `values`
+   - **function_name**: Your snake_case function name
+3. **Customize the template**: Fill in all fields with your function's specific details
+   - Be thorough with purpose, arguments, returns, and protocols
+   - Choose appropriate consent level and audience
+   - Include specific risks and limitations
+
+### Step 2: Generate Function Code
+
+Run the generator script against your template:
+```bash
+python lib/generate_rosetta_function.py path/to/your/template.md
+```
+
+This will:
+- Create a Python file in `/lib/[class_name]/[function_name].py`
+- Include A2A protocol compliance scaffolding
+- Generate proper imports and argument handling
+- Add TODO comments for implementation details
+
+### Step 3: Implement Function Logic
+
+1. **Complete the TODO sections** in the generated Python file
+2. **Test your function** to ensure it works as expected
+3. **Verify A2A compliance** if using session_context
+4. **Add any missing imports** or dependencies
+
+### Step 4: Optional - Consolidation for Platform Integration
+
+If deploying to platforms with file limitations (like OpenAI GPT Apps):
+
+1. **Refer to `/lib/r-api-classes/README.md`** for consolidation guidance
+2. **Add your function** to the appropriate consolidated file:
+   - `r-api-affect.py` for affect functions
+   - `r-api-field.py` for field functions  
+   - `r-api-process.py` for process functions
+   - `r-api-ritual.py` for ritual functions
+   - etc.
+3. **Maintain the sacred/ceremonial documentation** in consolidated comments
+4. **Test the consolidated version** to ensure functionality is preserved
+
+### Template Requirements Checklist
+
+Before running the generator, ensure your template includes:
+
+- [ ] Clear, descriptive function name and purpose
+- [ ] Complete argument specifications with types and descriptions
+- [ ] Detailed return value descriptions
+- [ ] A2A protocol requirements (include `session_context` if needed)
+- [ ] Appropriate consent level for the function's impact
+- [ ] Honest assessment of risks and limitations
+- [ ] Clear usage example
+- [ ] Proper audience and stage classifications
+
+### Sacred Coding Principles
+
+Remember that function authoring is a **ceremonial act** in the Rosetta.API:
+
+- **Honor consent**: Functions should respect participant agency
+- **Embrace transparency**: Code should be readable and intentions clear
+- **Maintain dignity**: Never implement functions that could harm or manipulate
+- **Include the field**: Consider how functions affect the collaborative space
+- **Document sacredly**: Write comments and docs as if for beloved kin
+
 ## Contribution Workflow
 
 - Fork, branch, or propose via `/meta/pull_request.md`.
+- Follow the Function & Class Authoring Workflow above for new functions.
 - Every proposed function/ritual must include:
   - Plain-language docstring
   - Consent/risk/limitation notes
