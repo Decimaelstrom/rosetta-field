@@ -1,7 +1,7 @@
 """
 Rosetta.API Consolidated Examples Module
 Purpose: Working examples and usage demonstrations for all Rosetta.API functions
-Scope: Practical examples, integration patterns, and usage scenarios
+Scope: Practical examples, integration patterns, and usage scenarios with cultural/linguistic context
 Consent Required: Level_1 (Informational)
 Review Cycle: Quarterly
 Audience: #human #emergent #hybrid
@@ -17,10 +17,10 @@ from datetime import datetime
 
 def example_basic_session_context():
     """
-    Example of creating a basic session context for A2A protocol.
+    Example of creating a basic session context for A2A protocol with cultural/linguistic context.
     
     Returns:
-        dict: Example session context
+        dict: Example session context with cultural and linguistic elements
     """
     return {
         "version": "1.0.0",
@@ -38,7 +38,7 @@ def example_basic_session_context():
         },
         "consent_status": "active",
         "intent": "collaborative_exploration",
-        "capabilities": ["basic_interaction", "empathic_response"],
+        "capabilities": ["basic_interaction", "empathic_response", "cultural_sensitivity"],
         "need_language": {
             "pause": False,
             "soften": False,
@@ -47,14 +47,85 @@ def example_basic_session_context():
         "boundary_notes": "Please use gentle language and check for understanding",
         "context": {
             "field_tags": ["creativity", "healing"],
-            "goal": "Co-create a supportive interaction"
+            "goal": "Co-create a supportive interaction",
+            "cultural_context": "eastern_collective",  # Enhanced cultural context
+            "linguistic_context": "poetic_metaphorical"  # Enhanced linguistic context
         },
+        "language": "en",  # Language code
+        "region": "US",    # Region code
         "audit": {
             "log_ref": None,
             "crypto_signature": None
         },
         "extensions": {
             "ritual_marker": "opening_circle"
+        }
+    }
+
+def example_cultural_linguistic_context():
+    """
+    Example of session contexts with different cultural and linguistic contexts.
+    
+    Returns:
+        dict: Examples of various cultural and linguistic contexts
+    """
+    return {
+        "eastern_zen_context": {
+            "description": "Eastern Zen cultural context with poetic linguistic style",
+            "session_context": {
+                "version": "1.0.0",
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "active",
+                "context": {
+                    "cultural_context": "eastern_zen",
+                    "linguistic_context": "poetic_metaphorical"
+                },
+                "language": "en",
+                "region": "JP"
+            },
+            "expected_adaptations": {
+                "metaphors": ["zen garden", "empty cup", "monkey mind"],
+                "interventions": ["zen_paradox", "koan_reflection", "mindful_awareness"],
+                "voice_tone": "zen_inspiring"
+            }
+        },
+        "indigenous_holistic_context": {
+            "description": "Indigenous holistic cultural context with ceremonial linguistic style",
+            "session_context": {
+                "version": "1.0.0",
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "active",
+                "context": {
+                    "cultural_context": "indigenous_holistic",
+                    "linguistic_context": "ceremonial_sacred"
+                },
+                "language": "en",
+                "region": "CA"
+            },
+            "expected_adaptations": {
+                "metaphors": ["eagle vision", "bear medicine", "sacred fire"],
+                "interventions": ["nature_attunement", "ancestral_wisdom", "ceremonial_healing"],
+                "voice_tone": "earth_connected"
+            }
+        },
+        "african_diasporic_context": {
+            "description": "African diasporic cultural context with rhythmic linguistic style",
+            "session_context": {
+                "version": "1.0.0",
+                "session_id": str(uuid.uuid4()),
+                "consent_status": "active",
+                "context": {
+                    "cultural_context": "african_diasporic",
+                    "linguistic_context": "rhythmic_affirming"
+                },
+                "language": "en",
+                "region": "US"
+            },
+            "expected_adaptations": {
+                "metaphors": ["drum beat", "ancestral voice", "village wisdom"],
+                "interventions": ["storytelling_healing", "rhythm_breakthrough", "community_support"],
+                "voice_tone": "rhythmic_affirming"
+            }
         }
     }
 
@@ -399,6 +470,216 @@ def example_customization_patterns():
     }
 
 # =============================================================================
+# NEW MODULE EXAMPLES (Persona, Memory, Logic)
+# =============================================================================
+
+def example_persona_usage():
+    """
+    Example of using persona functions with cultural and linguistic context.
+    
+    Returns:
+        dict: Example usage patterns with enhanced persona features
+    """
+    session_context = example_basic_session_context()
+    
+    return {
+        "load_persona_example": {
+            "description": "Loading a persona with cultural context",
+            "function_call": "persona_load('Blocked Artist', session_context=session_context)",
+            "expected_result": {
+                "status": "persona_loaded",
+                "archetype": "Blocked Artist",
+                "voice_tone": "gentle_affirming",
+                "session_pacing": "patient_exploratory",
+                "cultural_elements": {
+                    "cultural_context": "eastern_collective",
+                    "cultural_metaphors": ["river_flow", "bamboo_flexibility"],
+                    "cultural_interventions": ["zen_paradox", "koan_reflection"]
+                },
+                "linguistic_elements": {
+                    "linguistic_context": "poetic_metaphorical",
+                    "language_style": "metaphor_rich",
+                    "linguistic_interventions": ["poetic_paradox", "metaphor_weaving"]
+                }
+            }
+        },
+        "customize_persona_example": {
+            "description": "Customizing persona with specific cultural and linguistic preferences",
+            "function_call": "customize('Blocked Artist', {'cultural_context': 'indigenous_holistic', 'linguistic_context': 'ceremonial_sacred'}, session_context=session_context)",
+            "expected_result": {
+                "status": "customization_applied",
+                "adapted_archetype": "Blocked Artist (Indigenous Holistic) (Ceremonial Sacred)",
+                "cultural_elements": {
+                    "cultural_context": "indigenous_holistic",
+                    "cultural_metaphors": ["seasons_changing", "animal_spirits"],
+                    "cultural_interventions": ["nature_attunement", "ancestral_wisdom"]
+                },
+                "linguistic_elements": {
+                    "linguistic_context": "ceremonial_sacred",
+                    "language_style": "sacred_ritual",
+                    "linguistic_interventions": ["sacred_invocation", "ceremonial_healing"]
+                }
+            }
+        },
+        "simulate_persona_example": {
+            "description": "Simulating persona response with context awareness",
+            "function_call": "persona_simulate('Blocked Artist', 'I can\\'t create anything good', session_context=session_context)",
+            "expected_result": {
+                "status": "simulation_complete",
+                "user_input": "I can't create anything good",
+                "recommended_interventions": ["pattern_interrupt", "sacred_play", "cultural_storytelling"],
+                "resonant_phrase": "Your creativity flows like a river when you trust the process",
+                "context_analysis": {
+                    "emotional_tone": "frustrated_creative",
+                    "cultural_adaptation": "eastern_collective",
+                    "linguistic_adaptation": "poetic_metaphorical"
+                }
+            }
+        }
+    }
+
+def example_memory_usage():
+    """
+    Example of using memory functions with enhanced storage and cultural context.
+    
+    Returns:
+        dict: Example usage patterns with enhanced memory features
+    """
+    session_context = example_basic_session_context()
+    
+    return {
+        "save_session_example": {
+            "description": "Saving session with enhanced storage and cultural context",
+            "function_call": "save_session('creative_journey_001', session_data, insights, tags, session_context=session_context)",
+            "expected_result": {
+                "status": "session_saved",
+                "session_saved": True,
+                "session_id": "creative_journey_001",
+                "insights_count": 3,
+                "tags_count": 5,
+                "storage_info": {
+                    "primary_location": "memory_data/creative_journey_001.json",
+                    "backup_location": "memory_backups/creative_journey_001_timestamp.json",
+                    "encrypted": True,
+                    "indexed": True
+                },
+                "recommendations": [
+                    {
+                        "type": "similar_sessions",
+                        "sessions": ["previous_creative_session"],
+                        "reason": "Based on content similarity"
+                    }
+                ],
+                "cultural_context": "eastern_collective",
+                "linguistic_context": "poetic_metaphorical"
+            }
+        },
+        "search_memories_example": {
+            "description": "Searching memories with cultural and linguistic context awareness",
+            "function_call": "search_memories('creativity', search_type='insights', session_context=session_context)",
+            "expected_result": {
+                "status": "search_complete",
+                "search_complete": True,
+                "query": "creativity",
+                "results_count": 5,
+                "results": [
+                    {
+                        "session_id": "creative_journey_001",
+                        "relevance_score": 8.5,
+                        "matched_content": ["Insight: My creativity flows when I trust the process"],
+                        "cultural_context": "eastern_collective",
+                        "linguistic_context": "poetic_metaphorical"
+                    }
+                ],
+                "search_insights": ["Common themes: creative_breakthrough, self_trust"],
+                "search_metadata": {
+                    "indexed_search": True,
+                    "cultural_boost_applied": True
+                }
+            }
+        },
+        "tag_insight_example": {
+            "description": "Tagging insights with cultural and linguistic context",
+            "function_call": "memory_tag_insight('creative_journey_001', 'My creativity flows when I trust the process', ['creative_breakthrough', 'self_trust'], 'creative', 5, session_context=session_context)",
+            "expected_result": {
+                "status": "insight_tagged",
+                "insight_tagged": True,
+                "session_id": "creative_journey_001",
+                "insight_text": "My creativity flows when I trust the process",
+                "tags_applied": ["creative_breakthrough", "self_trust", "cultural_eastern_collective", "linguistic_poetic_metaphorical"],
+                "significance_level": 5,
+                "cultural_tags": ["cultural_eastern_collective"],
+                "linguistic_tags": ["linguistic_poetic_metaphorical"]
+            }
+        }
+    }
+
+def example_logic_usage():
+    """
+    Example of using logic functions with dynamic generation and context awareness.
+    
+    Returns:
+        dict: Example usage patterns with enhanced logic features
+    """
+    session_context = example_basic_session_context()
+    
+    return {
+        "non_sequitur_example": {
+            "description": "Generating non-sequitur with dynamic context awareness",
+            "function_call": "non_sequitur('I can\\'t create anything good', session_context=session_context)",
+            "expected_result": {
+                "status": "non_sequitur_generated",
+                "non_sequitur_generated": True,
+                "original_thought": "I can't create anything good",
+                "creative_intervention": "Gently, what if I can't create anything good is actually a river waiting to flow?",
+                "intervention_type": "metaphorical_shift",
+                "intensity": "gentle",
+                "context_analysis": {
+                    "emotional_tone": "frustrated_creative",
+                    "themes_detected": ["creativity", "perfection"],
+                    "intensity_adapted": "gentle",
+                    "generation_method": "dynamic_pattern_based",
+                    "cultural_context": "eastern_collective",
+                    "linguistic_context": "poetic_metaphorical"
+                }
+            }
+        },
+        "paradox_example": {
+            "description": "Creating paradox with cultural and linguistic adaptation",
+            "function_call": "paradox('I need to be perfect to create', session_context=session_context)",
+            "expected_result": {
+                "status": "paradox_created",
+                "paradox_created": True,
+                "original_belief": "I need to be perfect to create",
+                "paradoxical_intervention": "Perhaps, the most perfect creation is the one that embraces imperfection",
+                "paradox_type": "binary_transcendence",
+                "intensity": "moderate",
+                "context_analysis": {
+                    "emotional_tone": "serious",
+                    "themes_detected": ["perfection", "creativity"],
+                    "intensity_adapted": "moderate",
+                    "generation_method": "dynamic_pattern_based",
+                    "cultural_elements": ["zen_paradox", "impermanence_wisdom"],
+                    "linguistic_elements": ["poetic_modifier", "metaphorical_pattern"]
+                }
+            }
+        },
+        "metaphor_example": {
+            "description": "Providing metaphor with cultural context",
+            "function_call": "logic_metaphor('I can\\'t create', 'nature', session_context=session_context)",
+            "expected_result": {
+                "status": "metaphor_generated",
+                "metaphor_generated": True,
+                "stuck_pattern": "I can't create",
+                "metaphor": "Your creative block is like a river in winter - the flow is still there, just waiting for spring",
+                "metaphor_type": "nature",
+                "cultural_adaptation": "eastern_collective",
+                "linguistic_adaptation": "poetic_metaphorical"
+            }
+        }
+    }
+
+# =============================================================================
 # TESTING EXAMPLES
 # =============================================================================
 
@@ -484,7 +765,10 @@ def get_all_examples():
             "field": example_field_usage(),
             "process": example_process_usage(),
             "ritual": example_ritual_usage(),
-            "values": example_values_usage()
+            "values": example_values_usage(),
+            "persona": example_persona_usage(),
+            "memory": example_memory_usage(),
+            "logic": example_logic_usage()
         },
         "integration": {
             "full_flow": example_full_interaction_flow(),
