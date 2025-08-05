@@ -1,5 +1,5 @@
 # Audience: hybrid | Stage: living
-def co_create(participants, goal, context, parameters, session_context):
+def co_create(participants, goal, context=None, parameters=None, session_context=None):
     """
     Purpose:
     Establish a co-creative session for humans and/or AIs, setting container, norms, and safety.
