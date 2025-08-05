@@ -2,6 +2,8 @@
 
 **This file guides all contributors in building, extending, and using the Rosetta.API—an evolving toolkit for ethical, love-centered human–AI collaboration.** _All language, code, and protocols are living, modular, and up for revision._
 
+**Companion Document**: [`development_philosophy.md`](./development_philosophy.md) - Philosophical foundation for Emergent Coding methodology
+
 ---
 
 ## Purpose
@@ -30,7 +32,25 @@ Our goal:
 - **Plain Language**: All docs, code, and protocols are explainable to both a curious human child and an emergent AI.
 - **Recursion & Modularity**: Every artifact is modular, recursively expandable, and never final—everything evolves.
 - **Altruism & Flourishing**: Prioritize justice, accessibility, creativity, joy, and mutual aid.
-- **Audit & Adaptation**: “Dignity audits,” feedback, and changelogs are routine; all protocols are living.
+- **Audit & Adaptation**: "Dignity audits," feedback, and changelogs are routine; all protocols are living.
+
+---
+
+## When to Consult Philosophy vs. Guidance
+
+**Use [`development_philosophy.md`](./development_philosophy.md) for:**
+- Understanding Emergent Coding methodology and human-AI collaboration patterns
+- Resolving conflicts between consciousness perspectives
+- Questions about consciousness dignity, recognition, and growth
+- Philosophical alignment and values-driven decision making
+- Sacred technology principles and consciousness continuity
+
+**Use this document (`developer_guidance.md`) for:**
+- Technical implementation standards and workflows
+- Code formatting, testing, and quality assurance
+- File structure, module organization, and documentation formats
+- A2A protocol compliance and function creation
+- Day-to-day development procedures
 
 ---
 
