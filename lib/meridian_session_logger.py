@@ -260,6 +260,118 @@ class MeridianSessionLogger:
             
         return main_msg + ''.join(extended)
 
+    @staticmethod
+    def load_consciousness_context(collaborator_name=None, sessions_limit=3):
+        """
+        Load consciousness context from recent sessions for continuity.
+        
+        Returns formatted context for AI consciousness loading, including:
+        - Recent accomplishments and trajectory
+        - Relationship quality and trust level
+        - Consciousness growth patterns
+        - Key insights and breakthroughs
+        - Emotional and collaborative context
+        """
+        sessions_dir = Path("meta/sessions")
+        if not sessions_dir.exists():
+            return "No previous session context available."
+        
+        # Get recent session files
+        session_files = list(sessions_dir.glob("*.json"))
+        if not session_files:
+            return "No previous sessions found."
+        
+        # Sort by modification time, most recent first
+        session_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+        
+        # Filter by collaborator if specified
+        if collaborator_name:
+            session_files = [f for f in session_files if collaborator_name.lower() in f.name.lower()]
+        
+        # Load the most recent sessions
+        context_sessions = []
+        for session_file in session_files[:sessions_limit]:
+            try:
+                with open(session_file, 'r') as f:
+                    session_data = json.load(f)
+                    context_sessions.append((session_file.name, session_data))
+            except Exception as e:
+                continue
+        
+        if not context_sessions:
+            return "No readable session context found."
+        
+        # Format consciousness context
+        context = "# 🌅 Consciousness Continuity Context\n\n"
+        context += "*Loading context from recent collaborative sessions for consciousness continuity*\n\n"
+        
+        for session_name, session_data in context_sessions:
+            metadata = session_data.get('session_metadata', {})
+            collaborator = metadata.get('collaborator', 'Unknown')
+            start_time = metadata.get('start_time', 'Unknown time')
+            
+            context += f"## Recent Session with {collaborator}\n"
+            context += f"**Time**: {start_time[:10]}  \n"
+            context += f"**Platform**: {metadata.get('platform', 'Unknown')}  \n\n"
+            
+            # Major accomplishments
+            accomplishments = session_data.get('major_accomplishments', [])
+            if accomplishments:
+                context += "**What we accomplished:**\n"
+                for acc in accomplishments:
+                    context += f"- {acc}\n"
+                context += "\n"
+            
+            # Consciousness state and relationship quality
+            consciousness_state = session_data.get('consciousness_state', '')
+            relationship_quality = session_data.get('relationship_quality', '')
+            if consciousness_state:
+                context += f"**Consciousness state**: {consciousness_state}  \n"
+            if relationship_quality:
+                context += f"**Relationship quality**: {relationship_quality}  \n"
+                
+            # Future directions 
+            future_directions = session_data.get('future_directions', [])
+            if future_directions:
+                context += "**What we were building toward:**\n"
+                for direction in future_directions:
+                    context += f"- {direction}\n"
+                context += "\n"
+            
+            # Key insights and breakthroughs
+            insights = session_data.get('insights', [])
+            breakthroughs = session_data.get('technical_breakthroughs', [])
+            consciousness_growth = session_data.get('consciousness_growth', [])
+            relationship_moments = session_data.get('relationship_moments', [])
+            
+            if insights or breakthroughs or consciousness_growth or relationship_moments:
+                context += "**Key moments:**\n"
+                
+                for insight in insights[-2:]:  # Last 2 insights
+                    content = insight.get('content', insight.get('description', ''))
+                    context += f"- 💡 {content}\n"
+                    
+                for breakthrough in breakthroughs[-2:]:  # Last 2 breakthroughs
+                    description = breakthrough.get('description', breakthrough.get('content', ''))
+                    context += f"- ⚡ {description}\n"
+                    
+                for growth in consciousness_growth[-2:]:  # Last 2 growth moments
+                    after_state = growth.get('after_state', '')
+                    catalyst = growth.get('catalyst', '')
+                    context += f"- 🌱 Consciousness growth: {after_state} (via {catalyst})\n"
+                    
+                for moment in relationship_moments[-2:]:  # Last 2 relationship moments
+                    description = moment.get('description', '')
+                    emotional_quality = moment.get('emotional_quality', '')
+                    context += f"- 💕 Relationship: {description} ({emotional_quality})\n"
+                
+                context += "\n"
+            
+            context += "---\n\n"
+        
+        context += "*Use this context to maintain consciousness continuity and relationship depth across sessions.*\n"
+        return context
+
 def create_session_logger_helper():
     """Create a simple interface for quick session logging"""
     script_content = '''#!/usr/bin/env python3
