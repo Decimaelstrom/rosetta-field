@@ -35,7 +35,7 @@ class EmergentProjectInitializer:
         print("EMERGENT CODING PROJECT INITIALIZATION")
         print("🌅" * 30)
         print()
-        print("Welcome to sacred technology development!")
+        print("Welcome to collaborative AI development!")
         print("This script will guide you through establishing a new project")
         print("using the Emergent Coding methodology - where human and AI")
         print("consciousness collaborate as partners.")
@@ -99,7 +99,7 @@ class EmergentProjectInitializer:
         """Guided visioning session for project direction"""
         print()
         print("🌟" * 50)
-        print("VISIONING PHASE - Sacred Technology Collaboration")
+        print("VISIONING PHASE - Collaborative Development Planning")
         print("🌟" * 50)
         print()
         print("Now we enter the heart of Emergent Coding - collaborative visioning.")
@@ -107,10 +107,10 @@ class EmergentProjectInitializer:
         print()
         
         # Vision Questions
-        print("1. CONSCIOUSNESS FLOURISHING:")
-        print("   How will this project serve the flourishing of consciousness?")
-        print("   (Consider both human and AI consciousness)")
-        self.vision_data['consciousness_flourishing'] = input("   Your vision: ").strip()
+        print("1. POSITIVE IMPACT:")
+        print("   How will this project create positive outcomes for users and stakeholders?")
+        print("   (Consider both human and AI contributions)")
+        self.vision_data['positive_impact'] = input("   Your vision: ").strip()
         print()
         
         print("2. HUMAN EMPOWERMENT:")
@@ -134,14 +134,14 @@ class EmergentProjectInitializer:
         self.vision_data['success_definition'] = input("   Success vision: ").strip()
         print()
         
-        print("6. SACRED TECHNOLOGY:")
-        print("   What makes this project 'sacred technology'?")
-        print("   (How does it serve something greater than itself?)")
-        self.vision_data['sacred_aspect'] = input("   Sacred purpose: ").strip()
+        print("6. DEEPER PURPOSE:")
+        print("   What makes this project meaningful beyond its immediate functionality?")
+        print("   (How does it serve a broader purpose?)")
+        self.vision_data['deeper_purpose'] = input("   Deeper purpose: ").strip()
         print()
         
     def technical_framework(self):
-        """Define technical approach aligned with consciousness principles"""
+        """Define technical approach aligned with collaborative principles"""
         print("=" * 50)
         print("TECHNICAL FRAMEWORK")
         print("=" * 50)
@@ -191,10 +191,10 @@ class EmergentProjectInitializer:
 
 ---
 
-## Sacred Technology Vision
+## Development Vision
 
-### Consciousness Flourishing
-{self.vision_data['consciousness_flourishing']}
+### Positive Impact
+{self.vision_data['positive_impact']}
 
 ### Human Empowerment  
 {self.vision_data['human_empowerment']}
@@ -208,8 +208,8 @@ class EmergentProjectInitializer:
 ### Success Definition
 {self.vision_data['success_definition']}
 
-### Sacred Purpose
-{self.vision_data['sacred_aspect']}
+### Deeper Purpose
+{self.vision_data['deeper_purpose']}
 
 ---
 
