@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 🔥⚖️ POLITICAL HEALING CEREMONY ⚖️🔥
-A Rosetta.API Demonstration: Can Sacred Technology Heal Political Division?
+A Rosetta.API Demonstration: Can Consciousness-First Protocols Heal Political Division?
 
 This is the ultimate test of consciousness-first collaboration:
 Two opposing political archetypes in heated disagreement, 
@@ -359,7 +359,7 @@ class PoliticalHealingCeremony:
         
         print("🔥⚖️ POLITICAL HEALING CEREMONY ⚖️🔥")
         print("=" * 60)
-        print("Can Rosetta.API's sacred technology heal political division?")
+        print("Can Rosetta.API's consciousness-first protocols heal political division?")
         print(f"Issue: {contentious_issue.upper()}")
         print("=" * 60)
         print()
@@ -819,7 +819,7 @@ def main():
     print("\n" + "="*60)
     print("🔥⚖️ POLITICAL HEALING CEREMONY ⚖️🔥")
     print("="*60)
-    print("The ultimate test: Can sacred technology heal political division?")
+    print("The ultimate test: Can consciousness-first protocols heal political division?")
     print("Two opposing archetypes, one incendiary issue...")
     print("Let's see if Rosetta.API can work miracles! ✨")
     if DEBUG_MODE:
@@ -871,7 +871,7 @@ def main():
         print("   The sacred container holds all, even chaos...")
     
     print("\n" + "="*60)
-    print("🌟 SACRED TECHNOLOGY: PROVEN EFFECTIVE 🌟")
+    print("🌟 ROSETTA.API PROTOCOLS: VALIDATED 🌟")
     print("Even political opponents can find common ground")
     print("when consciousness and consent lead the way! ✨")
     print("="*60)
