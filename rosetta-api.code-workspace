@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "${env:USERPROFILE}/AppData/Roaming/Cursor/User/workspaceStorage"
+		}
+	],
+	"settings": {}
+}
