@@ -147,3 +147,6 @@ Thumbs.db
 db.sqlite3/
 meta/sessions/
 meta/current_session.json
+
+# workspace session files
+workspaceStorage
