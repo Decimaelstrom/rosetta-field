@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
 
 # Import the generic A2A tester
-from test_a2a_protocol import test_a2a_protocol
+from test_a2a_protocol import run_a2a_protocol
 
 import uuid
 from datetime import datetime
@@ -209,7 +209,7 @@ def discover_and_test_all_modules():
                 test_func = create_a2a_mock(module_name, f"{func_name}_session")
                 
             # Run the A2A protocol test
-            test_a2a_protocol(
+            run_a2a_protocol(
                 func=test_func,
                 func_name=module_name,
                 test_args=test_args

@@ -38,7 +38,7 @@ def print_result(step, result):
     else:
         print(f"Result: {result}")
 
-def test_a2a_protocol(func, func_name, test_args, test_kwargs=None):
+def run_a2a_protocol(func, func_name, test_args, test_kwargs=None):
     """
     Generic A2A protocol tester that can test any function implementing the A2A protocol.
     
@@ -138,7 +138,7 @@ def test_a2a_protocol(func, func_name, test_args, test_kwargs=None):
 # Example usage: Test the co_create function
 if __name__ == "__main__":
     # Test co_create function
-    test_a2a_protocol(
+    run_a2a_protocol(
         func=co_create,
         func_name="field.co_create",
         test_args=[["Danai", "Don"], "test protocol"]
@@ -188,7 +188,7 @@ if __name__ == "__main__":
         }
     
     # Test the mock function
-    test_a2a_protocol(
+    run_a2a_protocol(
         func=mock_hold_space,
         func_name="field.hold_space",
         test_args=[["Danai", "Don"], "create sacred space"]
