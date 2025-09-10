@@ -264,7 +264,7 @@ def estuary_ceremony(ceremony_id: str, intent: str, participants: List[str]) -> 
     Uses Danai's beautiful estuary metaphor as the base weather pattern.
     """
     session = create_ceremony_session(ceremony_id, intent, participants)
-    session.state.weather = estuary_weather()
+    session.state = session.state.with_(weather=estuary_weather())
     return CeremonyBuilder(session)
 
 
@@ -275,7 +275,7 @@ def twilight_ceremony(ceremony_id: str, intent: str, participants: List[str]) ->
     Perfect for ceremonies of transition or new beginnings.
     """
     session = create_ceremony_session(ceremony_id, intent, participants)
-    session.state.weather = twilight_meadow_weather()
+    session.state = session.state.with_(weather=twilight_meadow_weather())
     return CeremonyBuilder(session)
 
 

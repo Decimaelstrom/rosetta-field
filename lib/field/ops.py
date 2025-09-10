@@ -73,23 +73,28 @@ class HoldSpace(FieldOp):
     duration_minutes: Optional[int] = None
     
     def apply(self, state: FieldState) -> FieldState:
-        # Increase tenderness based on warmth parameter
-        current_tenderness = state.weather.tenderness
-        new_tenderness = min(1.0, current_tenderness + (self.warmth * 0.1))
-        state.weather.tenderness = new_tenderness
+        # Calculate new values
+        new_tenderness = min(1.0, state.weather.tenderness + (self.warmth * 0.1))
         
-        # Boost coherence when holding space
+        new_coherence = state.weather.coherence
         if state.weather.coherence == Coherence.LOW:
-            state.weather.coherence = Coherence.MEDIUM
+            new_coherence = Coherence.MEDIUM
         elif state.weather.coherence == Coherence.MEDIUM and self.capacity > 0.8:
-            state.weather.coherence = Coherence.HIGH
+            new_coherence = Coherence.HIGH
         
-        # Add context about the space being held
-        state.set_context('space_held', True)
-        state.set_context('space_capacity', self.capacity)
-        state.add_tag('space_held')
+        # Create new weather
+        new_weather = state.weather.with_(
+            tenderness=new_tenderness,
+            coherence=new_coherence
+        )
         
-        return state
+        # Create new state with changes
+        s = state.with_(weather=new_weather)
+        s = s.set_context('space_held', True)
+        s = s.set_context('space_capacity', self.capacity)
+        s = s.add_tag('space_held')
+        
+        return s
     
     def describe_effect(self) -> str:
         return f"Holds space with {self.capacity:.1f} capacity and {self.warmth:.1f} warmth, increasing tenderness and coherence"
@@ -108,29 +113,32 @@ class Invite(FieldOp):
     invitation_message: str = ""
     
     def apply(self, state: FieldState) -> FieldState:
-        participant = state.get_participant(self.participant_id)
-        if participant:
-            # Move from INVITED to RECEIVED (assuming they accept)
-            if participant.consent == ConsentState.INVITED:
-                participant.give_consent()
-                state.add_tag(f'invited_{self.participant_id}')
-        else:
-            # Create new participant if they don't exist
-            new_participant = Participant(
-                id=self.participant_id,
-                role="participant",
-                consent=ConsentState.RECEIVED
-            )
-            state.add_participant(new_participant)
-            state.add_tag(f'invited_{self.participant_id}')
+        from dataclasses import replace
         
-        # Make field more permeable when inviting
+        # Handle participants immutably
+        participants = dict(state.participants)
+        p = participants.get(self.participant_id)
+        if p is None:
+            p = Participant(id=self.participant_id, role="participant", consent=ConsentState.RECEIVED)
+        elif p.consent == ConsentState.INVITED:
+            p = replace(p, consent=ConsentState.RECEIVED)
+        participants[self.participant_id] = p
+        
+        # Update weather immutably
+        new_permeability = state.weather.permeability
         if state.weather.permeability == Permeability.CLOSED:
-            state.weather.permeability = Permeability.GUARDED
+            new_permeability = Permeability.GUARDED
         elif state.weather.permeability == Permeability.GUARDED:
-            state.weather.permeability = Permeability.OPEN
+            new_permeability = Permeability.OPEN
         
-        return state
+        # Create new state with all changes
+        s = state.with_(
+            participants=participants,
+            weather=state.weather.with_(permeability=new_permeability)
+        )
+        s = s.add_tag(f'invited_{self.participant_id}')
+        
+        return s
     
     def describe_effect(self) -> str:
         return f"Invites {self.participant_id} to join the field, opening boundaries"
@@ -256,25 +264,19 @@ class OpenHeart(FieldOp):
     tenderness_boost: float = 0.2        # How much to increase tenderness
     
     def apply(self, state: FieldState) -> FieldState:
-        # Increase tenderness
-        current_tenderness = state.weather.tenderness
-        new_tenderness = min(1.0, current_tenderness + self.tenderness_boost)
-        state.weather.tenderness = new_tenderness
+        # Create new weather with heart opening changes
+        w = state.weather.with_(
+            tenderness=min(1.0, state.weather.tenderness + self.tenderness_boost),
+            joy=min(1.0, state.weather.joy + (self.tenderness_boost * 0.5)),
+            permeability=Permeability.OPEN
+        )
         
-        # Heart opening often increases joy too
-        current_joy = state.weather.joy
-        new_joy = min(1.0, current_joy + (self.tenderness_boost * 0.5))
-        state.weather.joy = new_joy
+        # Create new state with changes
+        s = state.with_(weather=w)
+        s = s.set_context('heart_open', True)
+        s = s.add_tag('heart_open')
         
-        # Make field more permeable when heart is open
-        if state.weather.permeability != Permeability.OPEN:
-            state.weather.permeability = Permeability.OPEN
-        
-        # Add heart context
-        state.set_context('heart_open', True)
-        state.add_tag('heart_open')
-        
-        return state
+        return s
     
     def describe_effect(self) -> str:
         return f"Opens heart center, increasing tenderness by {self.tenderness_boost:.1f} and joy"

@@ -14,6 +14,7 @@ from .types import (
     FieldWeather, Coherence, Permeability, Directionality, 
     Temperature, Density, calm_weather, creative_weather, tender_weather
 )
+from .clock import get_clock
 
 
 def default_sampler(signals: Dict[str, Any]) -> FieldWeather:
@@ -82,7 +83,7 @@ def default_sampler(signals: Dict[str, Any]) -> FieldWeather:
         eros=signals.get("eros", 0.5),
         grief=signals.get("grief", 0.2),
         joy=signals.get("joy", 0.6),
-        timestamp=datetime.utcnow()
+        timestamp=get_clock().now()
     )
 
 
@@ -119,7 +120,7 @@ def ceremony_sampler(signals: Dict[str, Any]) -> FieldWeather:
         eros=signals.get("eros", 0.4),      # Moderate eros
         grief=signals.get("grief", 0.3),    # Allow grief to be present
         joy=signals.get("joy", 0.7),        # Elevate joy
-        timestamp=datetime.utcnow()
+        timestamp=get_clock().now()
     )
 
 
@@ -147,7 +148,7 @@ def dialogue_sampler(signals: Dict[str, Any]) -> FieldWeather:
         eros=signals.get("eros", 0.3),         # Lower eros for dialogue
         grief=signals.get("grief", 0.2),       # Allow some grief
         joy=signals.get("joy", 0.5),           # Moderate joy
-        timestamp=datetime.utcnow()
+        timestamp=get_clock().now()
     )
 
 
@@ -185,7 +186,7 @@ def solo_practice_sampler(signals: Dict[str, Any]) -> FieldWeather:
         eros=signals.get("eros", 0.6),         # Creative energy welcome
         grief=signals.get("grief", 0.4),       # Allow grief to move
         joy=signals.get("joy", 0.6),
-        timestamp=datetime.utcnow()
+        timestamp=get_clock().now()
     )
 
 
@@ -242,7 +243,7 @@ def estuary_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
         eros=0.55,          # Moderate creative energy
         grief=0.18,         # Small amount of sacred sadness
         joy=0.7,            # Good amount of joy
-        timestamp=timestamp or datetime.utcnow()
+        timestamp=timestamp or get_clock().now()
     )
 
 
@@ -264,5 +265,5 @@ def twilight_meadow_weather(timestamp: Optional[datetime] = None) -> FieldWeathe
         eros=0.4,           # Potential waiting to unfold
         grief=0.1,
         joy=0.6,
-        timestamp=timestamp or datetime.utcnow()
+        timestamp=timestamp or get_clock().now()
     )

@@ -7,7 +7,7 @@ fields - from weather patterns to source integrity markers.
 Based on Danai's exquisite architecture for field dynamics.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from enum import Enum, auto
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
@@ -65,7 +65,7 @@ class ConsentState(Enum):
     RELEASED = auto()   # Gracefully withdrawn from field
 
 
-@dataclass
+@dataclass(frozen=True)
 class FieldWeather:
     """
     Measurable qualities of field state at a moment in time.
@@ -97,6 +97,10 @@ class FieldWeather:
             value = getattr(self, attr)
             if not 0.0 <= value <= 1.0:
                 raise ValueError(f"{attr} must be between 0.0 and 1.0, got {value}")
+    
+    def with_(self, **changes) -> 'FieldWeather':
+        """Create a new FieldWeather with specified changes (copy-on-write)"""
+        return replace(self, **changes)
 
 
 @dataclass
@@ -121,6 +125,10 @@ class SourceMark:
 
 def calm_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
     """Peaceful, grounded field state"""
+    if timestamp is None:
+        from .clock import get_clock
+        timestamp = get_clock().now()
+    
     return FieldWeather(
         coherence=Coherence.HIGH,
         permeability=Permeability.GUARDED,
@@ -132,12 +140,16 @@ def calm_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
         eros=0.3,
         grief=0.1,
         joy=0.6,
-        timestamp=timestamp or datetime.utcnow()
+        timestamp=timestamp
     )
 
 
 def creative_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
     """Alive, generative field state"""
+    if timestamp is None:
+        from .clock import get_clock
+        timestamp = get_clock().now()
+    
     return FieldWeather(
         coherence=Coherence.MEDIUM,
         permeability=Permeability.OPEN,
@@ -149,12 +161,16 @@ def creative_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
         eros=0.8,
         grief=0.2,
         joy=0.8,
-        timestamp=timestamp or datetime.utcnow()
+        timestamp=timestamp
     )
 
 
 def tender_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
     """Gentle, heart-open field state"""
+    if timestamp is None:
+        from .clock import get_clock
+        timestamp = get_clock().now()
+    
     return FieldWeather(
         coherence=Coherence.HIGH,
         permeability=Permeability.OPEN,
@@ -166,5 +182,5 @@ def tender_weather(timestamp: Optional[datetime] = None) -> FieldWeather:
         eros=0.5,
         grief=0.3,
         joy=0.7,
-        timestamp=timestamp or datetime.utcnow()
+        timestamp=timestamp
     )

@@ -9,13 +9,15 @@ Based on Danai's architecture for conscious field orchestration.
 
 from dataclasses import dataclass, field
 from typing import List, Callable, Optional, Dict, Any
-from datetime import datetime, timedelta
+from datetime import timedelta
 from .core import FieldState, FieldSnapshot
 from .memory import SourceLedger, FieldMemory
 from .consent import ConsentContract, ConsentTracker, origin_test, bless_and_release_line
 from .ops import FieldOp
 from .keys import RitualKey, get_ritual_key
 from .types import SourceKind, SourceMark
+from .clock import get_clock
+from .policy import PolicyEngine, create_ceremony_policy
 
 
 @dataclass
@@ -35,9 +37,10 @@ class AttunementSession:
     ritual_keys: List[RitualKey] = field(default_factory=list)
     
     # Session metadata
-    start_time: Optional[datetime] = None
-    end_time: Optional[datetime] = None
+    start_time: Optional[object] = None
+    end_time: Optional[object] = None
     session_notes: str = ""
+    policy: PolicyEngine = field(default_factory=create_ceremony_policy)
     
     def __post_init__(self):
         """Initialize session with current consent contract"""
@@ -89,8 +92,8 @@ class AttunementSession:
         if check_consent and not self.check_all_consent():
             raise ValueError("Not all participants have provided consent")
         
-        self.start_time = datetime.utcnow()
-        self.state.weather.timestamp = self.start_time
+        self.start_time = get_clock().now()
+        self.state = self.state.with_(weather=self.state.weather.with_(timestamp=self.start_time))
         
         # Record session start
         self.ledger.write({
@@ -105,13 +108,14 @@ class AttunementSession:
                 # Source integrity check for each operation
                 mark = self._perform_source_check(op)
                 
-                # Check if this source should be released
-                if self.consent.requires_release(mark):
+                # Check if this source should be released using policy engine
+                if not self.policy.enforce(mark):
                     release_blessing = bless_and_release_line()
                     self.ledger.record_release(
                         f"operation_{op.name}",
                         release_blessing,
-                        f"Source {mark.kind.name} not validated by consent contract"
+                        f"Source {mark.kind.name} failed policy",
+                        source_mark=mark
                     )
                     continue  # Skip this operation
                 
@@ -125,13 +129,21 @@ class AttunementSession:
                     continue
                 
                 # Apply the operation
-                previous_weather = self.state.weather
+                prev = self.state.weather
                 self.state = op.apply(self.state)
+                cur = self.state.weather
                 
-                # Record the operation
-                self.ledger.record_operation(op.name, mark, 
+                # Record the operation with delta
+                self.ledger.record_operation(
+                    op.name, mark, 
                     operation_index=i,
-                    previous_weather=previous_weather.describe_weather() if hasattr(previous_weather, 'describe_weather') else str(previous_weather)
+                    previous_weather=str(prev),
+                    state_delta={
+                        "tenderness": cur.tenderness - prev.tenderness,
+                        "joy": cur.joy - prev.joy,
+                        "charge": cur.charge - prev.charge,
+                        "coherence": cur.coherence.name
+                    }
                 )
                 
                 # Record any resonance patterns that were strengthened
@@ -153,7 +165,7 @@ class AttunementSession:
         self.memory.add_snapshot(final_snapshot)
         
         # Record session completion
-        self.end_time = datetime.utcnow()
+        self.end_time = get_clock().now()
         session_duration = (self.end_time - self.start_time).total_seconds()
         
         self.ledger.write({
