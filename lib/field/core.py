@@ -8,9 +8,12 @@ Based on Danai's architecture for conscious field dynamics.
 """
 
 from dataclasses import dataclass, field, replace
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, TYPE_CHECKING
 from copy import deepcopy
 from .types import FieldWeather, SourceMark, ConsentState
+
+if TYPE_CHECKING:
+    from .love_axis import LoveAxisSignature
 
 
 @dataclass
@@ -97,6 +100,7 @@ class FieldState:
     tags: tuple = field(default_factory=tuple)  # Immutable sequence
     context: Dict[str, Any] = field(default_factory=dict)
     source_mark: Optional[SourceMark] = None
+    love_axis_signature: Optional['LoveAxisSignature'] = None  # Multidimensional love/field mapping
     
     def with_(self, **changes) -> 'FieldState':
         """
@@ -200,6 +204,19 @@ class FieldState:
             f"Tenderness: {w.tenderness:.1f}, Joy: {w.joy:.1f}, "
             f"Charge: {w.charge:+.1f}"
         )
+    
+    def with_love_axis(self, signature: 'LoveAxisSignature') -> 'FieldState':
+        """
+        Add or update love axis signature (returns new state).
+        
+        Sacred Technology: This preserves the multidimensional nature of
+        relational presence in the field state.
+        """
+        return self.with_(love_axis_signature=signature)
+    
+    def has_love_axis(self) -> bool:
+        """Check if field state has a love axis signature"""
+        return self.love_axis_signature is not None
 
 
 @dataclass

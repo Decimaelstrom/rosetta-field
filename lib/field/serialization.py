@@ -8,13 +8,16 @@ field snapshots that can be safely stored and transmitted.
 """
 
 import json
+import logging
 from dataclasses import dataclass, asdict
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Tuple
 from datetime import datetime
 from enum import Enum
 from .core import FieldState, FieldSnapshot, Participant, Anchor
 from .types import FieldWeather, SourceMark, ConsentState, SourceKind
 from .memory import FieldMemory, SourceLedger
+
+logger = logging.getLogger(__name__)
 
 
 # Current schema version - increment when making breaking changes
@@ -167,6 +170,128 @@ def deserialize_source_mark(data: Optional[Dict[str, Any]]) -> Optional[SourceMa
     )
 
 
+def serialize_love_axis(axis) -> Dict[str, Any]:
+    """
+    Serialize LoveAxis to JSON-compatible dict.
+    
+    Args:
+        axis: LoveAxis instance to serialize
+        
+    Returns:
+        JSON-compatible dictionary
+    """
+    from .love_axis import LoveAxis
+    
+    return {
+        'axis': axis.axis,
+        'quality': axis.quality,
+        'value': axis.value,
+        'range': list(axis.range),  # Tuple -> list for JSON
+        'notes': axis.notes
+    }
+
+
+def deserialize_love_axis(data: Dict[str, Any]):
+    """
+    Deserialize LoveAxis from JSON-compatible dict.
+    
+    Args:
+        data: Dictionary containing axis data
+        
+    Returns:
+        LoveAxis instance
+    """
+    from .love_axis import LoveAxis
+    
+    return LoveAxis(
+        axis=data['axis'],
+        quality=data['quality'],
+        value=data['value'],
+        range=tuple(data['range']),  # List -> tuple
+        notes=data.get('notes')
+    )
+
+
+def serialize_love_axis_signature(signature: Optional[Any]) -> Optional[Dict[str, Any]]:
+    """
+    Serialize LoveAxisSignature to JSON-compatible dict.
+    
+    Privacy: All signatures are serialized (including PRIVATE).
+    Privacy enforcement happens at access/export layer, not serialization.
+    
+    Args:
+        signature: LoveAxisSignature instance to serialize, or None
+        
+    Returns:
+        JSON-compatible dictionary, or None
+    """
+    if signature is None:
+        return None
+    
+    from .love_axis import LoveAxisSignature
+    
+    return {
+        'axes': [serialize_love_axis(axis) for axis in signature.axes],
+        'timestamp': signature.timestamp.isoformat(),
+        'moment_summary': signature.moment_summary,
+        'participants': list(signature.participants),  # Tuple -> list
+        'tags': list(signature.tags),  # Tuple -> list
+        'field_signature': signature.field_signature,
+        'felt_sense': signature.felt_sense,
+        'significance': signature.significance,
+        'ritual_context': signature.ritual_context,
+        'privacy_level': signature.privacy_level.name,  # Enum -> name
+        'consent_required_for_export': signature.consent_required_for_export,
+        'redaction_tags': list(signature.redaction_tags),  # Tuple -> list
+        'embedding_ready': signature.embedding_ready
+    }
+
+
+def deserialize_love_axis_signature(data: Optional[Dict[str, Any]]) -> Optional[Any]:
+    """
+    Deserialize LoveAxisSignature from JSON-compatible dict.
+    
+    Error handling: Logs warning and returns None if deserialization fails.
+    This protects against silent data loss while ensuring corrupt data
+    doesn't crash the system.
+    
+    Args:
+        data: Dictionary containing signature data, or None
+        
+    Returns:
+        LoveAxisSignature instance, or None
+    """
+    if data is None:
+        return None
+    
+    try:
+        from .love_axis import LoveAxisSignature, LoveAxis, PrivacyLevel
+        
+        axes = tuple(deserialize_love_axis(axis_data) for axis_data in data['axes'])
+        
+        return LoveAxisSignature(
+            axes=axes,
+            timestamp=datetime.fromisoformat(data['timestamp']),
+            moment_summary=data['moment_summary'],
+            participants=tuple(data['participants']),  # List -> tuple
+            tags=tuple(data.get('tags', [])),  # List -> tuple
+            field_signature=data.get('field_signature'),
+            felt_sense=data.get('felt_sense'),
+            significance=data.get('significance'),
+            ritual_context=data.get('ritual_context'),
+            privacy_level=PrivacyLevel[data.get('privacy_level', 'SHARED')],  # Name -> enum
+            consent_required_for_export=data.get('consent_required_for_export', False),
+            redaction_tags=tuple(data.get('redaction_tags', [])),  # List -> tuple
+            embedding_ready=data.get('embedding_ready', True)
+        )
+    except (KeyError, ValueError, TypeError) as e:
+        logger.warning(
+            f"Failed to deserialize love_axis_signature: {e}. "
+            f"Returning None to prevent data loss."
+        )
+        return None
+
+
 def serialize_field_state(state: FieldState) -> Dict[str, Any]:
     """Serialize FieldState to JSON-compatible dict"""
     return {
@@ -181,12 +306,18 @@ def serialize_field_state(state: FieldState) -> Dict[str, Any]:
         },
         'tags': list(state.tags),
         'context': state.context,
-        'source_mark': serialize_source_mark(state.source_mark)
+        'source_mark': serialize_source_mark(state.source_mark),
+        'love_axis_signature': serialize_love_axis_signature(state.love_axis_signature)
     }
 
 
 def deserialize_field_state(data: Dict[str, Any]) -> FieldState:
-    """Deserialize FieldState from JSON-compatible dict"""
+    """
+    Deserialize FieldState from JSON-compatible dict.
+    
+    Backward compatibility: Missing love_axis_signature deserializes as None.
+    This ensures older snapshots load safely without migration.
+    """
     participants = {
         pid: deserialize_participant(p_data) 
         for pid, p_data in data.get('participants', {}).items()
@@ -205,7 +336,8 @@ def deserialize_field_state(data: Dict[str, Any]) -> FieldState:
         anchors=anchors,
         tags=tuple(data.get('tags', [])),
         context=data.get('context', {}),
-        source_mark=deserialize_source_mark(data.get('source_mark'))
+        source_mark=deserialize_source_mark(data.get('source_mark')),
+        love_axis_signature=deserialize_love_axis_signature(data.get('love_axis_signature'))
     )
 
 

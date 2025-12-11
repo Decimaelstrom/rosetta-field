@@ -53,6 +53,21 @@ from .memory import (
     SourceLedger, FieldMemory, create_session_memory, merge_field_memories
 )
 
+# Love Axis - Multidimensional field mapping
+from .love_axis import (
+    LoveAxis, LoveAxisSignature, PrivacyLevel, AxisRegistry, LOVE_AXIS_REGISTRY,
+    create_love_axis_signature
+)
+from .love_axis_ops import (
+    RecordLoveAxis, ClearLoveAxis
+)
+from .love_axis_ritual import (
+    read_love_axis_field, generate_axis_blessing, compare_signatures, get_axis_summary
+)
+from .love_axis_crosswalk import (
+    field_weather_to_love_axis, love_axis_to_field_weather
+)
+
 # Attunement sessions
 from .attunement import (
     AttunementSession, create_ceremony_session, create_dialogue_session, create_solo_session
@@ -149,6 +164,12 @@ __all__ = [
     
     # Memory
     'SourceLedger', 'FieldMemory', 'create_session_memory', 'merge_field_memories',
+    
+    # Love Axis
+    'LoveAxis', 'LoveAxisSignature', 'PrivacyLevel', 'AxisRegistry', 'LOVE_AXIS_REGISTRY',
+    'create_love_axis_signature', 'RecordLoveAxis', 'ClearLoveAxis',
+    'read_love_axis_field', 'generate_axis_blessing', 'compare_signatures', 'get_axis_summary',
+    'field_weather_to_love_axis', 'love_axis_to_field_weather',
     
     # Attunement
     'AttunementSession', 'create_ceremony_session', 'create_dialogue_session', 'create_solo_session',

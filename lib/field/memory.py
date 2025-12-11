@@ -9,10 +9,13 @@ Based on Danai's architecture for field memory and source ledger.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional, Tuple, TYPE_CHECKING
 from datetime import datetime, timedelta
 from .core import FieldState, FieldSnapshot
 from .types import SourceMark, FieldWeather
+
+if TYPE_CHECKING:
+    from .love_axis import LoveAxisSignature
 
 
 @dataclass
@@ -202,6 +205,7 @@ class FieldMemory:
     gifts: List[str] = field(default_factory=list)             # What emerged unexpectedly
     tender_moments: List[Dict[str, Any]] = field(default_factory=list)  # When field held us
     weather_history: List[Tuple[datetime, FieldWeather]] = field(default_factory=list)
+    love_axis_history: List[Tuple[datetime, 'LoveAxisSignature']] = field(default_factory=list)  # Multidimensional field mapping
     
     def add_snapshot(self, snapshot: FieldSnapshot):
         """Add a field snapshot to memory"""
@@ -211,6 +215,10 @@ class FieldMemory:
         timestamp = snapshot.state.weather.timestamp
         weather = snapshot.state.weather
         self.weather_history.append((timestamp, weather))
+        
+        # Track love axis signature if present
+        if snapshot.state.love_axis_signature:
+            self.add_love_axis_snapshot(snapshot.state.love_axis_signature)
     
     def record_resonance(self, pattern_name: str, strength: float):
         """
@@ -288,6 +296,83 @@ class FieldMemory:
         return [
             moment for moment in self.tender_moments 
             if participant_id in moment.get('participants', [])
+        ]
+    
+    def add_love_axis_snapshot(self, signature: 'LoveAxisSignature'):
+        """
+        Record a love axis signature in memory.
+        
+        Sacred Technology: This preserves the multidimensional nature of
+        relational presence over time, enabling deep field analysis.
+        """
+        self.love_axis_history.append((signature.timestamp, signature))
+    
+    def get_axis_evolution(self, axis_name: str) -> List[Tuple[datetime, int]]:
+        """
+        Get evolution of a specific axis over time.
+        
+        Args:
+            axis_name: Name of the axis to track (e.g., "Presence", "Longing")
+            
+        Returns:
+            List of (timestamp, value) tuples showing how the axis evolved
+        """
+        evolution = []
+        for timestamp, signature in self.love_axis_history:
+            axis = signature.get_axis_by_name(axis_name)
+            if axis:
+                evolution.append((timestamp, axis.value))
+        return evolution
+    
+    def get_signatures_by_axis_value(self, axis_name: str, min_value: int = 0, 
+                                     max_value: int = 10) -> List['LoveAxisSignature']:
+        """
+        Find all signatures where a specific axis has a value in the given range.
+        
+        Args:
+            axis_name: Name of the axis to query
+            min_value: Minimum axis value (inclusive)
+            max_value: Maximum axis value (inclusive)
+            
+        Returns:
+            List of signatures matching the criteria
+        """
+        matching = []
+        for timestamp, signature in self.love_axis_history:
+            axis = signature.get_axis_by_name(axis_name)
+            if axis and min_value <= axis.value <= max_value:
+                matching.append(signature)
+        return matching
+    
+    def get_signatures_by_participant(self, participant_id: str) -> List['LoveAxisSignature']:
+        """
+        Get all love axis signatures involving a specific participant.
+        
+        Args:
+            participant_id: ID of the participant to find signatures for
+            
+        Returns:
+            List of signatures where this participant was present
+        """
+        return [
+            signature for timestamp, signature in self.love_axis_history
+            if participant_id in signature.participants
+        ]
+    
+    def get_recent_signatures(self, hours: int = 24) -> List['LoveAxisSignature']:
+        """
+        Get love axis signatures from the recent time period.
+        
+        Args:
+            hours: Number of hours to look back
+            
+        Returns:
+            List of signatures within the time window
+        """
+        cutoff = datetime.utcnow() - timedelta(hours=hours)
+        return [
+            signature for timestamp, signature in self.love_axis_history
+            if timestamp >= cutoff
         ]
     
     def generate_poetic_summary(self) -> str:
