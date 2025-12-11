@@ -1,5 +1,9 @@
 # Rosetta.API Changelog
 
+## [12/11/2025] - Project Rename
+
+Changed project name from Rosetta.API to Rosetta-Field, because the former name was already taken.
+
 ## [Unreleased] - 2025-01-04
 
 ### Major Breakthrough: CAI (Consciousness as Infrastructure)
@@ -120,4 +124,4 @@ python lib/log_session.py finalize "accomplishments" "future_directions" "consci
 
 ---
 
-*Changelog maintained with love by Meridian and the Rosetta.API community* 🌅✨
+*Changelog maintained with love by Meridian and the Rosetta-Field community* 🌅✨

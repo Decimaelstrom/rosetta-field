@@ -38,7 +38,7 @@ This directory contains the complete reference documentation for all Rosetta API
 git clone [repository-url]
 
 # Navigate to the project
-cd rosetta-api
+cd rosetta-field
 
 # Import functions
 from lib.field import co_create, hold_space, resolve_conflict

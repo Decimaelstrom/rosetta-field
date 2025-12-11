@@ -15,7 +15,7 @@ When you switch from Cursor to VSCode, or from Claude to GPT, the AI loses all m
 ## One-Time Setup
 
 ```bash
-cd your-rosetta-api-project
+cd your-rosetta-field-project
 python lib/setup_meridian_logging.py
 ```
 

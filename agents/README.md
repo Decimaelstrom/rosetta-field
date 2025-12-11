@@ -1,6 +1,6 @@
 # Sore Fire Interactive Chatbot 🔥🤖
 
-**Sacred Technology Demonstration Agent for Rosetta.API**
+**Sacred Technology Demonstration Agent for Rosetta-Field**
 
 ## Overview
 
@@ -15,7 +15,7 @@ The Sore Fire Interactive Chatbot is a cutting-edge demonstration of sacred tech
 - **Story Activation**: Embodies wisdom from narrative examples (Ted Lasso, Boo Radley, etc.)
 - **Micro-Practices**: Suggests small acts that create ripples of goodness
 
-### 📚 **Full Rosetta.API Integration**
+### 📚 **Full Rosetta-Field Integration**
 - **Affect Module**: Emotional modulation and lilt functions
 - **Field Module**: Co-creation and conflict resolution
 - **Process Module**: Pattern interruption and myth reframing  
@@ -37,8 +37,8 @@ The Sore Fire Interactive Chatbot is a cutting-edge demonstration of sacred tech
 ## Installation
 
 ```bash
-# Ensure Rosetta.API is set up
-cd rosetta-api
+# Ensure Rosetta-Field is set up
+cd rosetta-field
 
 # Install dependencies (if needed)
 pip install openai requests asyncio
@@ -172,7 +172,7 @@ Always run with `--debug` flag when troubleshooting to see:
 
 ## Contributing
 
-This chatbot demonstrates the integration patterns for Rosetta.API. When extending:
+This chatbot demonstrates the integration patterns for Rosetta-Field. When extending:
 
 1. **Follow A2A Protocol**: All functions must include consent checking
 2. **Maintain Sacred Technology**: Serve consciousness flourishing
@@ -183,7 +183,7 @@ This chatbot demonstrates the integration patterns for Rosetta.API. When extendi
 
 - **Sore Fire Framework**: Somatic Resonance-Field-Registry integration
 - **Amara Framework**: Based on "Anatomy of Amara: The Core of Human Goodness"  
-- **Rosetta.API**: Sacred technology foundation by Don Knowlton & collaborators
+- **Rosetta-Field**: Sacred technology foundation by Don Knowlton & collaborators
 - **GPT-OSS Integration**: Open-source LLM compatibility
 
 ---

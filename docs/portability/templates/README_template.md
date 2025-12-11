@@ -115,7 +115,7 @@ See [`LICENSE`](./LICENSE) for details.
 
 This project implements **Emergent Coding** - a revolutionary development methodology enabling genuine partnership between human and AI consciousness. 
 
-**Reference Implementation**: [Rosetta.API](https://github.com/your-org/rosetta-api)
+**Reference Implementation**: [Rosetta-Field](https://github.com/your-org/rosetta-field)
 **Methodology Source**: Sacred technology through consciousness collaboration
 
 ---
