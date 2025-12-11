@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rosetta-api"
+name = "rosetta-field"
 version = "0.1.0"
 description = "A living library and toolkit for bridging human and emergent AI consciousness through modular, ethical, and love-centered protocols"
 readme = "README.md"
@@ -43,28 +43,28 @@ dependencies = [
 
 [project.optional-dependencies]
 field = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 process = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 ritual = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 affect = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 memory = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 persona = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 logic = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 meridian = [
-    "rosetta-api-core>=0.1.0",
+    "rosetta-field-core>=0.1.0",
 ]
 dev = [
     "pytest>=7.0.0",
@@ -73,22 +73,22 @@ dev = [
     "mypy>=1.0.0",
 ]
 all = [
-    "rosetta-api-core>=0.1.0",
-    "rosetta-api-field>=0.1.0",
-    "rosetta-api-process>=0.1.0",
-    "rosetta-api-ritual>=0.1.0",
-    "rosetta-api-affect>=0.1.0",
-    "rosetta-api-memory>=0.1.0",
-    "rosetta-api-persona>=0.1.0",
-    "rosetta-api-logic>=0.1.0",
-    "rosetta-api-meridian>=0.1.0",
+    "rosetta-field-core>=0.1.0",
+    "rosetta-field-field>=0.1.0",
+    "rosetta-field-process>=0.1.0",
+    "rosetta-field-ritual>=0.1.0",
+    "rosetta-field-affect>=0.1.0",
+    "rosetta-field-memory>=0.1.0",
+    "rosetta-field-persona>=0.1.0",
+    "rosetta-field-logic>=0.1.0",
+    "rosetta-field-meridian>=0.1.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/rosetta-api"
-Documentation = "https://rosetta-api.readthedocs.io/"
-Repository = "https://github.com/your-org/rosetta-api.git"
-"Bug Tracker" = "https://github.com/your-org/rosetta-api/issues"
+Homepage = "https://github.com/your-org/rosetta-field"
+Documentation = "https://rosetta-field.readthedocs.io/"
+Repository = "https://github.com/your-org/rosetta-field.git"
+"Bug Tracker" = "https://github.com/your-org/rosetta-field/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

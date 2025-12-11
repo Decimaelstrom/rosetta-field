@@ -1,5 +1,5 @@
 """
-Configuration management for Rosetta.API.
+Configuration management for Rosetta-Field.
 
 This module provides the RosettaConfig class for managing
 configuration settings, environment variables, and system preferences.
@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 @dataclass
 class RosettaConfig:
     """
-    Configuration manager for Rosetta.API.
+    Configuration manager for Rosetta-Field.
     
     Manages environment variables, configuration files, and system settings
     with sensible defaults and validation.
@@ -25,8 +25,8 @@ class RosettaConfig:
     log_level: str = field(default_factory=lambda: os.getenv("ROSETTA_LOG_LEVEL", "INFO"))
     
     # Paths
-    data_dir: Path = field(default_factory=lambda: Path(os.getenv("ROSETTA_DATA_DIR", "~/.rosetta-api")))
-    config_file: Path = field(default_factory=lambda: Path(os.getenv("ROSETTA_CONFIG", "~/.rosetta-api/config.json")))
+    data_dir: Path = field(default_factory=lambda: Path(os.getenv("ROSETTA_DATA_DIR", "~/.rosetta-field")))
+    config_file: Path = field(default_factory=lambda: Path(os.getenv("ROSETTA_CONFIG", "~/.rosetta-field/config.json")))
     
     # API settings
     api_timeout: int = field(default_factory=lambda: int(os.getenv("ROSETTA_API_TIMEOUT", "30")))

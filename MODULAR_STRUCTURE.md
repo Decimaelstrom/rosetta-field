@@ -1,14 +1,14 @@
-# Rosetta.API Modular Package Structure
+# Rosetta-Field Modular Package Structure
 
 ## Overview
 
-This document describes the new modular, class-based package structure for Rosetta.API that follows Python pip module standards. The new structure provides a clean, importable interface while maintaining backward compatibility with existing functionality.
+This document describes the new modular, class-based package structure for Rosetta-Field that follows Python pip module standards. The new structure provides a clean, importable interface while maintaining backward compatibility with existing functionality.
 
 ## Package Architecture
 
-### 1. Core Package: `rosetta-api`
+### 1. Core Package: `rosetta-field`
 
-The main package that users install with `pip install rosetta-api`. This provides:
+The main package that users install with `pip install rosetta-field`. This provides:
 
 - **Core Classes**: `RosettaAPI`, `RosettaSession`, `RosettaConfig`
 - **Session Management**: Create, manage, and track collaborative sessions
@@ -21,26 +21,26 @@ These can be installed separately or as extras:
 
 ```bash
 # Install specific modules
-pip install rosetta-api[field]      # Field work protocols
-pip install rosetta-api[process]    # Process facilitation tools
-pip install rosetta-api[ritual]     # Ceremonial frameworks
-pip install rosetta-api[affect]     # Emotional protocols
-pip install rosetta-api[memory]     # Memory systems
-pip install rosetta-api[persona]    # Identity tools
-pip install rosetta-api[logic]      # Creative logic tools
-pip install rosetta-api[meridian]   # Consciousness systems
+pip install rosetta-field[field]      # Field work protocols
+pip install rosetta-field[process]    # Process facilitation tools
+pip install rosetta-field[ritual]     # Ceremonial frameworks
+pip install rosetta-field[affect]     # Emotional protocols
+pip install rosetta-field[memory]     # Memory systems
+pip install rosetta-field[persona]    # Identity tools
+pip install rosetta-field[logic]      # Creative logic tools
+pip install rosetta-field[meridian]   # Consciousness systems
 
 # Install all modules
-pip install rosetta-api[all]
+pip install rosetta-field[all]
 
 # Install with development tools
-pip install rosetta-api[dev]
+pip install rosetta-field[dev]
 ```
 
 ## Directory Structure
 
 ```
-rosetta-api/
+rosetta-field/
 ├── rosetta_api/                    # Main package directory
 │   ├── __init__.py                # Package initialization
 │   ├── core/                      # Core functionality
@@ -158,25 +158,25 @@ config.set("log_level", "INFO")
 
 ### Available Modules
 
-1. **Field Work** (`rosetta-api[field]`)
+1. **Field Work** (`rosetta-field[field]`)
    - `co_create`: Collaborative creation protocols
    - `hold_space`: Space holding and facilitation
    - `resolve_conflict`: Conflict resolution tools
    - `sense_pattern`: Pattern recognition
 
-2. **Process Facilitation** (`rosetta-api[process]`)
+2. **Process Facilitation** (`rosetta-field[process]`)
    - `pattern_interrupt`: Pattern interruption tools
    - `reframe_as_myth`: Mythological reframing
    - `align_values`: Value alignment processes
    - `mediate_conflict`: Conflict mediation
 
-3. **Ritual and Ceremony** (`rosetta-api[ritual]`)
+3. **Ritual and Ceremony** (`rosetta-field[ritual]`)
    - `begin`: Session initiation
    - `end`: Session closure
    - `invoke_wonder`: Wonder invocation
    - `grounding_breath`: Grounding practices
 
-4. **Affect Protocols** (`rosetta-api[affect]`)
+4. **Affect Protocols** (`rosetta-field[affect]`)
    - `lilt`: Light emotional touch
    - `anchor`: Emotional anchoring
    - `clarify`: Clarity protocols
@@ -187,18 +187,18 @@ config.set("log_level", "INFO")
    - `soften`: Softening approaches
    - `transmute`: Transformation protocols
 
-5. **Memory and Consciousness** (`rosetta-api[memory]`)
+5. **Memory and Consciousness** (`rosetta-field[memory]`)
    - `evolve_ideas`: Idea evolution
    - `replay`: Memory replay
    - `search_memories`: Memory search
    - `tag_insight`: Insight tagging
 
-6. **Persona and Identity** (`rosetta-api[persona]`)
+6. **Persona and Identity** (`rosetta-field[persona]`)
    - `load_persona`: Persona loading
    - `customize_persona`: Persona customization
    - `simulate_persona`: Persona simulation
 
-7. **Creative Logic** (`rosetta-api[logic]`)
+7. **Creative Logic** (`rosetta-field[logic]`)
    - `creative_shift`: Creative shifts
    - `metaphor`: Metaphorical thinking
    - `non_sequitur`: Non-sequential logic
@@ -206,7 +206,7 @@ config.set("log_level", "INFO")
    - `pattern_hack`: Pattern hacking
    - `sacred_play`: Sacred play
 
-8. **Meridian System** (`rosetta-api[meridian]`)
+8. **Meridian System** (`rosetta-field[meridian]`)
    - `start_session`: Session initiation
    - `log_session`: Session logging
    - `explore_memory`: Memory exploration
@@ -218,16 +218,16 @@ config.set("log_level", "INFO")
 
 ```bash
 # Install base package
-pip install rosetta-api
+pip install rosetta-field
 
 # Install with specific modules
-pip install rosetta-api[field,process,ritual]
+pip install rosetta-field[field,process,ritual]
 
 # Install all modules
-pip install rosetta-api[all]
+pip install rosetta-field[all]
 
 # Development installation
-pip install rosetta-api[dev]
+pip install rosetta-field[dev]
 ```
 
 ### Basic Usage
@@ -307,8 +307,8 @@ export ROSETTA_DEBUG=true
 export ROSETTA_LOG_LEVEL=DEBUG
 
 # Paths
-export ROSETTA_DATA_DIR=~/.rosetta-api
-export ROSETTA_CONFIG=~/.rosetta-api/config.json
+export ROSETTA_DATA_DIR=~/.rosetta-field
+export ROSETTA_CONFIG=~/.rosetta-field/config.json
 
 # API settings
 export ROSETTA_API_TIMEOUT=30
@@ -360,7 +360,7 @@ from rosetta_api.core import SessionType
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd rosetta-api
+cd rosetta-field
 
 # Install in development mode
 pip install -e .
@@ -455,4 +455,4 @@ For questions and support:
 
 ---
 
-This modular structure provides a solid foundation for the future development of Rosetta.API while maintaining the ethical principles and collaborative spirit of the original system.
+This modular structure provides a solid foundation for the future development of Rosetta-Field while maintaining the ethical principles and collaborative spirit of the original system.

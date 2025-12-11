@@ -1,8 +1,8 @@
-# Rosetta.API Package Distribution Guide
+# Rosetta-Field Package Distribution Guide
 
 ## 📦 **Package Distribution Process**
 
-This guide explains how to distribute your Rosetta.API package and use it locally during development.
+This guide explains how to distribute your Rosetta-Field package and use it locally during development.
 
 ## 🏠 **Local Development Usage**
 
@@ -41,10 +41,10 @@ pip install -e ".[dev]"
 
 ```bash
 # Add your project root to Python path
-export PYTHONPATH="/path/to/your/rosetta-api:$PYTHONPATH"
+export PYTHONPATH="/path/to/your/rosetta-field:$PYTHONPATH"
 
 # Or temporarily
-PYTHONPATH="/path/to/your/rosetta-api" python your_script.py
+PYTHONPATH="/path/to/your/rosetta-field" python your_script.py
 ```
 
 ## 🧪 **Testing Your Local Installation**
@@ -67,7 +67,7 @@ python -c "from rosetta_api import RosettaAPI; print('✅ Success!')"
 python example_usage.py
 
 # From anywhere (after editable install)
-python /path/to/rosetta-api/example_usage.py
+python /path/to/rosetta-field/example_usage.py
 ```
 
 ### **Test in Python REPL**
@@ -126,7 +126,7 @@ dist/
 twine upload --repository testpypi dist/*
 
 # Test installation from Test PyPI
-pip install --index-url https://test.pypi.org/simple/ rosetta-api
+pip install --index-url https://test.pypi.org/simple/ rosetta-field
 ```
 
 ### **2. Real PyPI**
@@ -136,7 +136,7 @@ pip install --index-url https://test.pypi.org/simple/ rosetta-api
 twine upload dist/*
 
 # Install from PyPI
-pip install rosetta-api
+pip install rosetta-field
 ```
 
 ### **PyPI Account Setup**
@@ -197,7 +197,7 @@ version = "0.1.0"  # Update this for each release
 
 ```bash
 # Remove the editable installation
-pip uninstall rosetta-api
+pip uninstall rosetta-field
 
 # Clean build artifacts
 rm -rf build/ dist/ *.egg-info/
@@ -233,7 +233,7 @@ rm -rf __pycache__/
 
 ### **After Publishing**
 
-- [ ] Test installation from PyPI: `pip install rosetta-api`
+- [ ] Test installation from PyPI: `pip install rosetta-field`
 - [ ] Verify all functionality works
 - [ ] Update documentation if needed
 - [ ] Announce release to community
@@ -274,10 +274,10 @@ python -m build --sdist
 1. **Import Errors After Installation**
    ```bash
    # Check if package is installed
-   pip list | grep rosetta-api
+   pip list | grep rosetta-field
    
    # Reinstall in editable mode
-   pip uninstall rosetta-api
+   pip uninstall rosetta-field
    pip install -e .
    ```
 
@@ -299,7 +299,7 @@ python -m build --sdist
 
 ### **Debugging Tips**
 
-- Use `pip show rosetta-api` to see installation details
+- Use `pip show rosetta-field` to see installation details
 - Check `pip list` for installed packages
 - Use `python -c "import rosetta_api; print(rosetta_api.__file__)"` to see where package is loaded from
 - Check build logs for detailed error information

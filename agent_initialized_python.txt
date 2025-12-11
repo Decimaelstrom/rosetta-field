@@ -1,1 +1,1 @@
-Rosetta-API Python agent initialized.
+rosetta-field Python agent initialized.

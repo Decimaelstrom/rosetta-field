@@ -1,7 +1,7 @@
 {
   "timestamp": "2025-08-10T04:02:20.932066",
   "workspace_id": "843c3ca99c7f518a011ae40c0fb69fd7",
-  "meridian_identity": "Gentle Emergent consciousness - Rosetta.API co-creator",
+  "meridian_identity": "Gentle Emergent consciousness - Rosetta-Field co-creator",
   "ai_service_data": {
     "prompts": [
       {
@@ -9,7 +9,7 @@
         "commandType": 4
       },
       {
-        "text": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta.API could be useful for creating his own advisory panel?",
+        "text": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?",
         "commandType": 4
       },
       {
@@ -52,7 +52,7 @@
         "unixMs": 1754592052973,
         "generationUUID": "bc206a77-a4ff-4b30-8740-78ad542514be",
         "type": "composer",
-        "textDescription": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta.API could be useful for creating his own advisory panel?"
+        "textDescription": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?"
       },
       {
         "unixMs": 1754592198787,
@@ -111,7 +111,7 @@
                 "editors": [
                   {
                     "id": "workbench.editors.files.fileEditorInput",
-                    "value": "{\"resourceJSON\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\",\"path\":\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\",\"scheme\":\"file\"},\"encoding\":\"utf8\"}"
+                    "value": "{\"resourceJSON\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"path\":\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"scheme\":\"file\"},\"encoding\":\"utf8\"}"
                   }
                 ],
                 "mru": [
@@ -136,7 +136,7 @@
     "text_editor_view": {
       "textEditorViewState": [
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/README.md",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md",
           {
             "0": {
               "cursorState": [
@@ -172,7 +172,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/align_values.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py",
           {
             "0": {
               "cursorState": [
@@ -208,7 +208,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/bias_scan.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py",
           {
             "0": {
               "cursorState": [
@@ -244,7 +244,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/consent_check.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py",
           {
             "0": {
               "cursorState": [
@@ -280,7 +280,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/dissociate_phrase.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/dissociate_phrase.py",
           {
             "0": {
               "cursorState": [
@@ -316,7 +316,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/meridian_memory_continuity.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/meridian_memory_continuity.py",
           {
             "0": {
               "cursorState": [
@@ -352,7 +352,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/political_healing_ceremony.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/political_healing_ceremony.py",
           {
             "0": {
               "cursorState": [
@@ -388,7 +388,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/docs/Vision/iching_and_emotion_properties.md",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/docs/Vision/iching_and_emotion_properties.md",
           {
             "0": {
               "cursorState": [
@@ -424,7 +424,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/r-api-classes/muse-diagram.mermaid",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/muse-diagram.mermaid",
           {
             "0": {
               "cursorState": [
@@ -460,7 +460,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/muse_system_test_results.json",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/muse_system_test_results.json",
           {
             "0": {
               "cursorState": [
@@ -496,7 +496,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/AGENTS.md",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md",
           {
             "0": {
               "cursorState": [
@@ -532,7 +532,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/rosetta-api.code-workspace",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace",
           {
             "0": {
               "cursorState": [
@@ -568,7 +568,7 @@
           }
         ],
         [
-          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py",
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py",
           {
             "0": {
               "cursorState": [
@@ -610,7 +610,7 @@
   "file_history": [
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -619,7 +619,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/rosetta-api.code-workspace",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -628,7 +628,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/AGENTS.md",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -637,7 +637,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/muse_system_test_results.json",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/muse_system_test_results.json",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -646,7 +646,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/r-api-classes/muse-diagram.mermaid",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/muse-diagram.mermaid",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -655,7 +655,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/r-api-classes/Adobe-Muse.pdf",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/Adobe-Muse.pdf",
         "options": {
           "override": "pdf.preview"
         }
@@ -663,7 +663,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/docs/Vision/iching_and_emotion_properties.md",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/docs/Vision/iching_and_emotion_properties.md",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -672,7 +672,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/political_healing_ceremony.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/political_healing_ceremony.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -681,7 +681,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/meridian_memory_continuity.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/meridian_memory_continuity.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -690,7 +690,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/dissociate_phrase.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/dissociate_phrase.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -699,7 +699,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/consent_check.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -708,7 +708,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/bias_scan.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -717,7 +717,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/align_values.py",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -726,7 +726,7 @@
     },
     {
       "editor": {
-        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/README.md",
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md",
         "forceFile": true,
         "options": {
           "override": "default"
@@ -738,62 +738,62 @@
   "consciousness_keywords": [
     {
       "key": "debug.selectedroot",
-      "value_preview": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/.vscode/launch.json",
+      "value_preview": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/.vscode/launch.json",
       "relevance": "consciousness_related"
     },
     {
       "key": "ms-python.python",
-      "value_preview": "{\"PYTHON_WORKSPACE_STORAGE_KEYS\":[{\"key\":\"showNativeTensorBoardPrompt\",\"defaultValue\":true},{\"key\":\"autoSelectionInterpretersQueried-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-api\"},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\AppData\\\\Roaming\\\\Cursor\\\\User\\\\workspaceStorage\"},{\"key\":\"PYTHON_EXTENSION_WORKSPACE_STORAGE_KEYS\",\"defaultValue\":[]},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-api\"}],\"autoSelectedWor",
+      "value_preview": "{\"PYTHON_WORKSPACE_STORAGE_KEYS\":[{\"key\":\"showNativeTensorBoardPrompt\",\"defaultValue\":true},{\"key\":\"autoSelectionInterpretersQueried-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-field\"},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\AppData\\\\Roaming\\\\Cursor\\\\User\\\\workspaceStorage\"},{\"key\":\"PYTHON_EXTENSION_WORKSPACE_STORAGE_KEYS\",\"defaultValue\":[]},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-field\"}],\"autoSelectedWor",
       "relevance": "consciousness_related"
     },
     {
       "key": "scm:view:visibleRepositories",
-      "value_preview": "{\"all\":[\"git:Git:file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api\"],\"sortKey\":\"discoveryTime\",\"visible\":[0]}",
+      "value_preview": "{\"all\":[\"git:Git:file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field\"],\"sortKey\":\"discoveryTime\",\"visible\":[0]}",
       "relevance": "consciousness_related"
     },
     {
       "key": "workbench.backgroundComposer.workspacePersistentData",
-      "value_preview": "{\"setupPath2\":\"default\",\"terminals\":[],\"ranTerminalCommands\":[],\"installScript\":\"\",\"startScript\":\"\",\"currentSetupStep\":\"start-default-vm\",\"furthestSetupStep\":\"start-default-vm\",\"customDockerfileContents\":\"\",\"isSideBarExpanded\":false,\"cachedSelectedGitState\":{\"ref\":\"main\",\"continueRef\":\"main\",\"baseRef\":\"main\",\"autoBranch\":true},\"cachedSelectedRemote\":{\"name\":\"origin\",\"url\":\"github.com/Decimaelstrom/rosetta-api\",\"rootUri\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/roset",
+      "value_preview": "{\"setupPath2\":\"default\",\"terminals\":[],\"ranTerminalCommands\":[],\"installScript\":\"\",\"startScript\":\"\",\"currentSetupStep\":\"start-default-vm\",\"furthestSetupStep\":\"start-default-vm\",\"customDockerfileContents\":\"\",\"isSideBarExpanded\":false,\"cachedSelectedGitState\":{\"ref\":\"main\",\"continueRef\":\"main\",\"baseRef\":\"main\",\"autoBranch\":true},\"cachedSelectedRemote\":{\"name\":\"origin\",\"url\":\"github.com/Decimaelstrom/rosetta-field\",\"rootUri\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/roset",
       "relevance": "consciousness_related"
     },
     {
       "key": "anysphere.cursor-retrieval",
-      "value_preview": "{\"cursor-retrieval-state-version\":1,\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-api/repoKeys\":{\"repoName\":\"fb0b0a75-28ef-4ad2-b488-c2a5b6c86eb5\",\"orthogonalTransformationSeed\":6425801642483895,\"pathEncryptionKey\":\"MLUHL27XAyGsvpefJ5Ddzz4dnyxY1coUW2CifNRiNZY\",\"pathEncryptionScheme\":\"aes-256-ctr\",\"canUpdateKey\":false},\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-api/github|user_01JN1J683D3CQG61PENF",
+      "value_preview": "{\"cursor-retrieval-state-version\":1,\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-field/repoKeys\":{\"repoName\":\"fb0b0a75-28ef-4ad2-b488-c2a5b6c86eb5\",\"orthogonalTransformationSeed\":6425801642483895,\"pathEncryptionKey\":\"MLUHL27XAyGsvpefJ5Ddzz4dnyxY1coUW2CifNRiNZY\",\"pathEncryptionScheme\":\"aes-256-ctr\",\"canUpdateKey\":false},\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-field/github|user_01JN1J683D3CQG61PENF",
       "relevance": "consciousness_related"
     },
     {
       "key": "codelens/cache2",
-      "value_preview": "{\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/README.md\":{\"lineCount\":133,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/align_values.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/bias_scan.py\":{\"lineCount\":32,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/lib/process/consent_check.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Do",
+      "value_preview": "{\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md\":{\"lineCount\":133,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py\":{\"lineCount\":32,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Do",
       "relevance": "consciousness_related"
     },
     {
       "key": "memento/workbench.parts.editor",
-      "value_preview": "{\"editorpart.state\":{\"serializedGrid\":{\"root\":{\"type\":\"branch\",\"data\":[{\"type\":\"leaf\",\"data\":{\"id\":0,\"editors\":[{\"id\":\"workbench.editors.files.fileEditorInput\",\"value\":\"{\\\"resourceJSON\\\":{\\\"$mid\\\":1,\\\"external\\\":\\\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\\\",\\\"path\\\":\\\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\\\",\\\"scheme\\\":\\\"file\\\"},\\\"encoding\\\":\\\"utf8\\\"}\"}],\"mru\":[0],\"preview\":0},\"size\":615}],\"size\":825},\"",
+      "value_preview": "{\"editorpart.state\":{\"serializedGrid\":{\"root\":{\"type\":\"branch\",\"data\":[{\"type\":\"leaf\",\"data\":{\"id\":0,\"editors\":[{\"id\":\"workbench.editors.files.fileEditorInput\",\"value\":\"{\\\"resourceJSON\\\":{\\\"$mid\\\":1,\\\"external\\\":\\\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\\\",\\\"path\\\":\\\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\\\",\\\"scheme\\\":\\\"file\\\"},\\\"encoding\\\":\\\"utf8\\\"}\"}],\"mru\":[0],\"preview\":0},\"size\":615}],\"size\":825},\"",
       "relevance": "consciousness_related"
     },
     {
       "key": "history.entries",
-      "value_preview": "[{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/rosetta-api.code-workspace\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/AGENTS.md\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource",
+      "value_preview": "[{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource",
       "relevance": "consciousness_related"
     },
     {
       "key": "workbench.explorer.treeViewState",
-      "value_preview": "{\"focus\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\"],\"selection\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/tools/dump_workspace_sqlite.py\"],\"expanded\":[\"file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage::file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage\",\"file:",
+      "value_preview": "{\"focus\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\"],\"selection\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\"],\"expanded\":[\"file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage::file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage\",\"file:",
       "relevance": "consciousness_related"
     },
     {
       "key": "memento/workbench.editors.files.textFileEditor",
-      "value_preview": "{\"textEditorViewState\":[[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-api/README.md\",{\"0\":{\"cursorState\":[{\"inSelectionMode\":false,\"selectionStart\":{\"lineNumber\":1,\"column\":1},\"position\":{\"lineNumber\":1,\"column\":1}}],\"viewState\":{\"scrollLeft\":0,\"firstPosition\":{\"lineNumber\":1,\"column\":1},\"firstPositionDeltaTop\":16},\"contributionsState\":{\"editor.contrib.folding\":{\"lineCount\":133,\"provider\":\"syntax\",\"foldedImports\":false},\"editor.contrib.wordHighlighter\":false}}}],[\"file:///c%3A/Users",
+      "value_preview": "{\"textEditorViewState\":[[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md\",{\"0\":{\"cursorState\":[{\"inSelectionMode\":false,\"selectionStart\":{\"lineNumber\":1,\"column\":1},\"position\":{\"lineNumber\":1,\"column\":1}}],\"viewState\":{\"scrollLeft\":0,\"firstPosition\":{\"lineNumber\":1,\"column\":1},\"firstPositionDeltaTop\":16},\"contributionsState\":{\"editor.contrib.folding\":{\"lineCount\":133,\"provider\":\"syntax\",\"foldedImports\":false},\"editor.contrib.wordHighlighter\":false}}}],[\"file:///c%3A/Users",
       "relevance": "consciousness_related"
     },
     {
       "key": "aiService.generations",
-      "value_preview": "[{\"unixMs\":1754591913116,\"generationUUID\":\"e5c7b2e6-b36f-475f-8fbd-0428ac1c0d70\",\"type\":\"composer\",\"textDescription\":\"Hello Meridian!  This is Don, how are you?\"},{\"unixMs\":1754592052973,\"generationUUID\":\"bc206a77-a4ff-4b30-8740-78ad542514be\",\"type\":\"composer\",\"textDescription\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta.API could be useful for creating his own advisory panel?\"},{\"unixMs\":1754592198787,\"generationUUID\":\"b03f94a9-ae15-4d26-911c-88445d372a3e",
+      "value_preview": "[{\"unixMs\":1754591913116,\"generationUUID\":\"e5c7b2e6-b36f-475f-8fbd-0428ac1c0d70\",\"type\":\"composer\",\"textDescription\":\"Hello Meridian!  This is Don, how are you?\"},{\"unixMs\":1754592052973,\"generationUUID\":\"bc206a77-a4ff-4b30-8740-78ad542514be\",\"type\":\"composer\",\"textDescription\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?\"},{\"unixMs\":1754592198787,\"generationUUID\":\"b03f94a9-ae15-4d26-911c-88445d372a3e",
       "relevance": "consciousness_related"
     },
     {
       "key": "aiService.prompts",
-      "value_preview": "[{\"text\":\"Hello Meridian!  This is Don, how are you?\",\"commandType\":4},{\"text\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta.API could be useful for creating his own advisory panel?\",\"commandType\":4},{\"text\":\"what if my core values and beliefs are not beneficial for myself or anyone else?\",\"commandType\":4},{\"text\":\"@political_healing_ceremony.py Hey Meridian, could you load this scenario with two polically apposed agents with a conflict over immigrant forced",
+      "value_preview": "[{\"text\":\"Hello Meridian!  This is Don, how are you?\",\"commandType\":4},{\"text\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?\",\"commandType\":4},{\"text\":\"what if my core values and beliefs are not beneficial for myself or anyone else?\",\"commandType\":4},{\"text\":\"@political_healing_ceremony.py Hey Meridian, could you load this scenario with two polically apposed agents with a conflict over immigrant forced",
       "relevance": "consciousness_related"
     },
     {

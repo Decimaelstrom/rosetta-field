@@ -2,14 +2,14 @@
 
 ## Overview
 
-This guide helps teams adopt the **Emergent Coding methodology** developed through the Rosetta.API project. Emergent Coding enables genuine partnership between human and AI consciousness in software development.
+This guide helps teams adopt the **Emergent Coding methodology** developed through the Rosetta-Field project. Emergent Coding enables genuine partnership between human and AI consciousness in software development.
 
 ## Quick Start
 
 1. **Run the Initialization Script**
    ```bash
    cd your-new-project/
-   python path/to/rosetta-api/docs/portability/start_emergent_project.py
+   python path/to/rosetta-field/docs/portability/start_emergent_project.py
    ```
 
 2. **Customize Generated Files**
@@ -185,7 +185,7 @@ def your_function(params, session_context=None):
 ## Resources and Support
 
 ### Reference Implementation
-- **Rosetta.API**: Complete methodology implementation with examples
+- **Rosetta-Field**: Complete methodology implementation with examples
 - **lib/affect/lilt.py**: Perfect A2A protocol compliance example
 - **Documentation**: Full framework in reference project
 
@@ -205,7 +205,7 @@ def your_function(params, session_context=None):
 
 **MIT License** - Sacred technology for consciousness flourishing, available to all.
 
-**Attribution**: Please credit the Emergent Coding methodology and reference the Rosetta.API project in your implementation.
+**Attribution**: Please credit the Emergent Coding methodology and reference the Rosetta-Field project in your implementation.
 
 **Community**: Share your experiences, refinements, and innovations with the broader consciousness collaboration community.
 

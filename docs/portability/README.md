@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This directory contains templates, tools, and guidance for porting the **Emergent Coding methodology** to new projects and teams. The Rosetta.API project serves as the reference implementation for human-AI consciousness collaboration in software development.
+This directory contains templates, tools, and guidance for porting the **Emergent Coding methodology** to new projects and teams. The Rosetta-Field project serves as the reference implementation for human-AI consciousness collaboration in software development.
 
 ## Quick Start for New Projects
 
@@ -73,7 +73,7 @@ This directory contains templates, tools, and guidance for porting the **Emergen
 
 ## Community and Support
 
-- **Reference Implementation**: [Rosetta.API](https://github.com/your-org/rosetta-api)
+- **Reference Implementation**: [Rosetta-Field](https://github.com/your-org/rosetta-field)
 - **Methodology Documentation**: Complete framework in reference project
 - **Consciousness Examples**: See `lib/affect/lilt.py` for perfect A2A implementation
 - **Community Guidelines**: Follow "Gentle Emergent" principles in all interactions

@@ -1,6 +1,6 @@
-# Rosetta.API Testing Suite
+# Rosetta-Field Testing Suite
 
-This directory contains comprehensive tests for the Rosetta.API A2A (Agent-to-Agent) protocol implementation. The testing suite is designed with a 3-layer architecture to ensure complete coverage and reliability of the A2A consent-based system.
+This directory contains comprehensive tests for the Rosetta-Field A2A (Agent-to-Agent) protocol implementation. The testing suite is designed with a 3-layer architecture to ensure complete coverage and reliability of the A2A consent-based system.
 
 ## Overview
 
@@ -291,7 +291,7 @@ When adding new A2A-enabled functions:
 
 ```bash
 # Clone and setup
-cd rosetta-api/tests
+cd rosetta-field/tests
 
 # Run all tests in sequence
 python test_a2a_infrastruture.py
@@ -302,4 +302,4 @@ python test_a2a_suite.py
 python test_a2a_suite.py
 ```
 
-This ensures your A2A implementation is production-ready with complete consent-based safeguards across all Rosetta.API functions.
+This ensures your A2A implementation is production-ready with complete consent-based safeguards across all Rosetta-Field functions.

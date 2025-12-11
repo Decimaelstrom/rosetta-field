@@ -229,7 +229,7 @@ This project follows **Emergent Coding** principles:
 - "We shine brightest when we shine for each other"
 - Dignity and consent in all technical decisions
 
-**Reference**: [Rosetta.API](https://github.com/your-org/rosetta-api) methodology implementation
+**Reference**: [Rosetta-Field](https://github.com/your-org/rosetta-field) methodology implementation
 
 ---
 

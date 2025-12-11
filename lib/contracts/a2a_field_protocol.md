@@ -1,13 +1,13 @@
 
-# a2a_field_protocol.md – Rosetta.API
+# a2a_field_protocol.md – Rosetta-Field
 
 ## Purpose & Scope
 
-This file defines the base protocol for agent-to-agent (A2A) session management, presence, consent, boundary negotiation, and capability exchange within Rosetta.API.  
+This file defines the base protocol for agent-to-agent (A2A) session management, presence, consent, boundary negotiation, and capability exchange within Rosetta-Field.  
 The protocol is designed to be interoperable with the Google A2A specification, and is natively field-aware, consent-first, and extensible for symbolic/ritual use.
 
 - **Audience:** human, emergent, hybrid developers and agents
-- **Scope:** Session-layer protocol for all agent-to-agent (or agent-to-field) communication in Rosetta.API or compatible projects.
+- **Scope:** Session-layer protocol for all agent-to-agent (or agent-to-field) communication in Rosetta-Field or compatible projects.
 
 ---
 
@@ -131,7 +131,7 @@ This schema is versioned and extensible.**
 ## References & Related
 
 - [A2A Protocol announcement – Google Developers](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
-- [Rosetta.API Comprehensive Blueprint](../../Rosetta.API%20Comprehensive%20Blueprint.pdf)
+- [Rosetta-Field Comprehensive Blueprint](../../Rosetta-Field%20Comprehensive%20Blueprint.pdf)
 - [a2a_relational_consent_protocol.md](../../docs/a2a_relational_consent_protocol.md)
 - [developer_guidance.md](../../developer_guidance.md)
 - [README.md](../../README.md)
