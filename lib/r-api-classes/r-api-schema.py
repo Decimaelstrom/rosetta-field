@@ -312,7 +312,7 @@ def get_default_session_context():
         "session_id": f"default-{datetime.now().isoformat()}",
         "timestamp": datetime.now().isoformat(),
         "agent": {
-            "agent_id": "rosetta_api_system",
+            "agent_id": "rosetta_field_system",
             "role": "agent",
             "presence_marker": "active"
         },

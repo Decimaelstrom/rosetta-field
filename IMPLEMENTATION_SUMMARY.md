@@ -6,7 +6,7 @@ This implementation successfully transformed the Rosetta-Field project from a fl
 
 ## New Structure Created
 
-### 1. **Main Package: `rosetta_api/`**
+### 1. **Main Package: `rosetta_field/`**
 - **`__init__.py`**: Main package initialization with graceful fallbacks
 - **`core/`**: Core system classes and functionality
   - **`api.py`**: Main `RosettaAPI` orchestrator class
@@ -90,8 +90,8 @@ pip install rosetta-field[dev]
 
 ### Basic Usage
 ```python
-from rosetta_api import RosettaAPI
-from rosetta_api.core import SessionType
+from rosetta_field import RosettaAPI
+from rosetta_field.core import SessionType
 
 api = RosettaAPI()
 session = api.create_session(
@@ -102,7 +102,7 @@ session = api.create_session(
 
 ### Advanced Usage
 ```python
-from rosetta_api import RosettaAPI, RosettaConfig
+from rosetta_field import RosettaAPI, RosettaConfig
 
 config = RosettaConfig(
     debug=True,
@@ -127,7 +127,7 @@ session = api.create_session(...)
 
 ## Testing Results
 
-✅ **Import Test**: `from rosetta_api import RosettaAPI` - SUCCESS
+✅ **Import Test**: `from rosetta_field import RosettaAPI` - SUCCESS
 ✅ **Example Script**: Full functionality demonstration - SUCCESS
 ✅ **Session Management**: Create, manage, close sessions - SUCCESS
 ✅ **Participant Management**: Add, consent, track participants - SUCCESS
@@ -185,12 +185,12 @@ session = api.create_session(...)
 ## Files Created/Modified
 
 ### New Files
-- `rosetta_api/__init__.py` - Main package
-- `rosetta_api/core/__init__.py` - Core module
-- `rosetta_api/core/api.py` - Main API class
-- `rosetta_api/core/config.py` - Configuration class
-- `rosetta_api/core/session.py` - Session management
-- `rosetta_api/lib/__init__.py` - Library bridge
+- `rosetta_field/__init__.py` - Main package
+- `rosetta_field/core/__init__.py` - Core module
+- `rosetta_field/core/api.py` - Main API class
+- `rosetta_field/core/config.py` - Configuration class
+- `rosetta_field/core/session.py` - Session management
+- `rosetta_field/lib/__init__.py` - Library bridge
 - `example_usage.py` - Usage demonstration
 - `MODULAR_STRUCTURE.md` - Comprehensive documentation
 - `IMPLEMENTATION_SUMMARY.md` - This summary

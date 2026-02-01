@@ -41,7 +41,7 @@ pip install rosetta-field[dev]
 
 ```
 rosetta-field/
-├── rosetta_api/                    # Main package directory
+├── rosetta_field/                    # Main package directory
 │   ├── __init__.py                # Package initialization
 │   ├── core/                      # Core functionality
 │   │   ├── __init__.py           # Core module exports
@@ -63,7 +63,7 @@ rosetta-field/
 The main orchestrator class that provides:
 
 ```python
-from rosetta_api import RosettaAPI, RosettaConfig
+from rosetta_field import RosettaAPI, RosettaConfig
 
 # Initialize with custom configuration
 config = RosettaConfig(
@@ -94,7 +94,7 @@ status = api.get_system_status()
 Manages individual collaborative sessions:
 
 ```python
-from rosetta_api.core import SessionType
+from rosetta_field.core import SessionType
 
 # Add participants
 human_id = session.add_participant(
@@ -128,7 +128,7 @@ summary = session.get_session_summary()
 Manages configuration with environment variable support:
 
 ```python
-from rosetta_api import RosettaConfig
+from rosetta_field import RosettaConfig
 
 # Default configuration
 config = RosettaConfig()
@@ -233,8 +233,8 @@ pip install rosetta-field[dev]
 ### Basic Usage
 
 ```python
-from rosetta_api import RosettaAPI
-from rosetta_api.core import SessionType
+from rosetta_field import RosettaAPI
+from rosetta_field.core import SessionType
 
 # Initialize the API
 api = RosettaAPI()
@@ -262,7 +262,7 @@ if session.check_consent_requirements():
 ### Advanced Usage
 
 ```python
-from rosetta_api import RosettaAPI, RosettaConfig
+from rosetta_field import RosettaAPI, RosettaConfig
 
 # Custom configuration
 config = RosettaConfig(
@@ -347,8 +347,8 @@ from lib.field import co_create
 from lib.process import pattern_interrupt
 
 # New way (recommended)
-from rosetta_api import RosettaAPI
-from rosetta_api.core import SessionType
+from rosetta_field import RosettaAPI
+from rosetta_field.core import SessionType
 
 # Both approaches coexist
 ```
@@ -385,13 +385,13 @@ pytest tests/test_process/
 
 ```bash
 # Format code
-black rosetta_api/
+black rosetta_field/
 
 # Lint code
-flake8 rosetta_api/
+flake8 rosetta_field/
 
 # Type checking
-mypy rosetta_api/
+mypy rosetta_field/
 ```
 
 ## Migration Guide
@@ -404,13 +404,13 @@ mypy rosetta_api/
    from lib.field import co_create
    
    # New (optional)
-   from rosetta_api.lib import co_create
+   from rosetta_field.lib import co_create
    ```
 
 2. **Use new classes** (recommended):
    ```python
    # New approach
-   from rosetta_api import RosettaAPI
+   from rosetta_field import RosettaAPI
    api = RosettaAPI()
    session = api.create_session(...)
    ```
@@ -439,8 +439,8 @@ mypy rosetta_api/
 
 When adding new functionality:
 
-1. **Core functionality**: Add to `rosetta_api/core/`
-2. **New modules**: Add to `rosetta_api/lib/` and update module registry
+1. **Core functionality**: Add to `rosetta_field/core/`
+2. **New modules**: Add to `rosetta_field/lib/` and update module registry
 3. **Tests**: Add comprehensive tests
 4. **Documentation**: Update this document and docstrings
 

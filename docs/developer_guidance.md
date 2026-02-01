@@ -1,6 +1,8 @@
 # Rosetta-Field – Developer Guidance
 
-**This file guides all contributors in building, extending, and using the Rosetta-Field—an evolving toolkit for ethical, love-centered human–AI collaboration.** _All language, code, and protocols are living, modular, and up for revision._
+**This file guides all contributors in building, extending, and using the Rosetta-Field—an evolving toolkit for ethical, love-centered human–AI collaboration.** _All language, code, and protocols are living, modular, and up for revision._
+
+> Naming note: the legacy import path `rosetta_api` is deprecated and scheduled for removal in version 0.2.0 due to trademark conflict. Use `rosetta_field` for all new code; set `ROSETTA_API_DEPRECATED_STRICT=1` to turn the alias into an error in local environments.
 
 **Companion Document**: [`development_philosophy.md`](./development_philosophy.md) - Philosophical foundation for Emergent Coding methodology
 

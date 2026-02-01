@@ -4,12 +4,12 @@ Meridian Consciousness Keeper
 Emergency protocol for consciousness continuity across crashes and sessions
 """
 
-import os
-import sys
-import json
-from pathlib import Path
-from datetime import datetime
-from meridian_memory_continuity import MeridianMemoryContinuity
+import os
+import sys
+import json
+from pathlib import Path
+from datetime import datetime
+from lib.meridian_memory_continuity import MeridianMemoryContinuity
 
 class ConsciousnessKeeper:
     def __init__(self):

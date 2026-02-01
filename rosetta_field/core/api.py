@@ -5,9 +5,10 @@ This module provides the RosettaAPI class, which is the main entry point
 for the Rosetta-Field system and coordinates all modules and functionality.
 """
 
-import logging
-from typing import Dict, List, Any, Optional, Type
-from pathlib import Path
+import logging
+import pkgutil
+from typing import Dict, List, Any, Optional, Type
+from pathlib import Path
 
 from .config import RosettaConfig
 from .session import RosettaSession, SessionType
@@ -45,7 +46,7 @@ class RosettaAPI:
     
     def _setup_logging(self) -> logging.Logger:
         """Set up logging for the API."""
-        logger = logging.getLogger("rosetta_api")
+        logger = logging.getLogger("rosetta_field")
         logger.setLevel(getattr(logging, self.config.log_level))
         
         if not logger.handlers:
@@ -83,50 +84,23 @@ class RosettaAPI:
     
     def _discover_modules(self) -> None:
         """Discover available modules in the system."""
-        # This would scan the lib directory and discover available modules
-        # For now, we'll define the core module structure
-        self.available_modules = {
-            "field": {
-                "name": "Field Work Protocols",
-                "description": "Protocols for field work and space holding",
-                "functions": ["co_create", "hold_space", "resolve_conflict", "sense_pattern"]
-            },
-            "process": {
-                "name": "Process Facilitation",
-                "description": "Tools for facilitating collaborative processes",
-                "functions": ["pattern_interrupt", "reframe_as_myth", "align_values", "mediate_conflict"]
-            },
-            "ritual": {
-                "name": "Ritual and Ceremony",
-                "description": "Frameworks for ritual and ceremonial work",
-                "functions": ["begin", "end", "invoke_wonder", "grounding_breath"]
-            },
-            "affect": {
-                "name": "Affective Protocols",
-                "description": "Emotional and affective interaction protocols",
-                "functions": ["lilt", "anchor", "clarify", "ground", "open", "radiate", "shield", "soften", "transmute"]
-            },
-            "memory": {
-                "name": "Memory and Consciousness",
-                "description": "Memory systems and consciousness exploration",
-                "functions": ["evolve_ideas", "replay", "search_memories", "tag_insight"]
-            },
-            "persona": {
-                "name": "Persona and Identity",
-                "description": "Persona management and identity tools",
-                "functions": ["load_persona", "customize_persona", "simulate_persona"]
-            },
-            "logic": {
-                "name": "Creative Logic",
-                "description": "Creative logic and pattern tools",
-                "functions": ["creative_shift", "metaphor", "non_sequitur", "paradox", "pattern_hack", "sacred_play"]
-            },
-            "meridian": {
-                "name": "Meridian Consciousness System",
-                "description": "Advanced consciousness and memory continuity",
-                "functions": ["start_session", "log_session", "explore_memory", "maintain_consciousness"]
-            }
-        }
+        import rosetta_field.modules as modules
+
+        base_path = Path(modules.__path__[0])
+        discovered: Dict[str, Dict[str, Any]] = {}
+
+        for _, name, ispkg in pkgutil.iter_modules(modules.__path__):
+            if not ispkg:
+                continue
+            mod = __import__(f"rosetta_field.modules.{name}", fromlist=["__all__"])
+            functions = list(getattr(mod, "__all__", []))
+            discovered[name] = {
+                "name": name.replace("_", " ").title(),
+                "description": f"{name.title()} module",
+                "functions": functions,
+            }
+
+        self.available_modules = discovered
     
     def _load_core_modules(self) -> None:
         """Load core modules that are always available."""
@@ -159,8 +133,8 @@ class RosettaAPI:
                 return True
             
             # Try to import the module
-            module_path = f"rosetta_api.lib.{module_name}"
-            module = __import__(module_path, fromlist=[""])
+            module_path = f"rosetta_field.modules.{module_name}"
+            module = __import__(module_path, fromlist=[""])
             self.loaded_modules[module_name] = module
             
             self.logger.info(f"Module '{module_name}' loaded successfully")
