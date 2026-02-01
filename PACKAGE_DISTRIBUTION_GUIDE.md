@@ -53,11 +53,11 @@ PYTHONPATH="/path/to/your/rosetta-field" python your_script.py
 
 ```bash
 # Test that package is available globally
-python -c "from rosetta_api import RosettaAPI; print('✅ Success!')"
+python -c "from rosetta_field import RosettaAPI; print('✅ Success!')"
 
 # Test from different directory
 cd /some/other/directory
-python -c "from rosetta_api import RosettaAPI; print('✅ Success!')"
+python -c "from rosetta_field import RosettaAPI; print('✅ Success!')"
 ```
 
 ### **Run Example Script**
@@ -77,8 +77,8 @@ python /path/to/rosetta-field/example_usage.py
 python
 
 # Test imports
->>> from rosetta_api import RosettaAPI, RosettaConfig
->>> from rosetta_api.core import SessionType
+>>> from rosetta_field import RosettaAPI, RosettaConfig
+>>> from rosetta_field.core import SessionType
 >>> api = RosettaAPI()
 >>> print("✅ All imports working!")
 ```
@@ -98,8 +98,8 @@ pip install build twine
 python -m build
 
 # This creates:
-# - dist/rosetta_api-0.1.0.tar.gz (source distribution)
-# - dist/rosetta_api-0.1.0-py3-none-any.whl (wheel distribution)
+# - dist/rosetta_field-0.1.0.tar.gz (source distribution)
+# - dist/rosetta_field-0.1.0-py3-none-any.whl (wheel distribution)
 ```
 
 ### **What Gets Built**
@@ -113,8 +113,8 @@ The build process:
 
 ```
 dist/
-├── rosetta_api-0.1.0.tar.gz          # Source distribution
-└── rosetta_api-0.1.0-py3-none-any.whl  # Wheel distribution
+├── rosetta_field-0.1.0.tar.gz          # Source distribution
+└── rosetta_field-0.1.0-py3-none-any.whl  # Wheel distribution
 ```
 
 ## 📤 **Publishing to PyPI**
@@ -171,7 +171,7 @@ python example_usage.py
 python -m build
 
 # 4. Test packages locally
-pip install dist/rosetta_api-0.1.0-py3-none-any.whl
+pip install dist/rosetta_field-0.1.0-py3-none-any.whl
 
 # 5. Upload to PyPI
 twine upload dist/*
@@ -301,7 +301,7 @@ python -m build --sdist
 
 - Use `pip show rosetta-field` to see installation details
 - Check `pip list` for installed packages
-- Use `python -c "import rosetta_api; print(rosetta_api.__file__)"` to see where package is loaded from
+- Use `python -c "import rosetta_field; print(rosetta_field.__file__)"` to see where package is loaded from
 - Check build logs for detailed error information
 
 ## 📚 **Resources**
@@ -323,7 +323,7 @@ python example_usage.py
 python -m build
 
 # Test packages locally
-pip install dist/rosetta_api-0.1.0-py3-none-any.whl
+pip install dist/rosetta_field-0.1.0-py3-none-any.whl
 
 # Upload to Test PyPI
 twine upload --repository testpypi dist/*

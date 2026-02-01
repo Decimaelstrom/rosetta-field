@@ -42,30 +42,16 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-field = [
-    "rosetta-field-core>=0.1.0",
-]
-process = [
-    "rosetta-field-core>=0.1.0",
-]
-ritual = [
-    "rosetta-field-core>=0.1.0",
-]
-affect = [
-    "rosetta-field-core>=0.1.0",
-]
-memory = [
-    "rosetta-field-core>=0.1.0",
-]
-persona = [
-    "rosetta-field-core>=0.1.0",
-]
-logic = [
-    "rosetta-field-core>=0.1.0",
-]
-meridian = [
-    "rosetta-field-core>=0.1.0",
-]
+# Domain extras are currently code-only (no external deps). Keeping them allows
+# future per-domain requirements without breaking the interface.
+field = []
+process = []
+ritual = []
+affect = []
+memory = []
+persona = []
+logic = []
+meridian = []
 dev = [
     "pytest>=7.0.0",
     "black>=22.0.0",
@@ -73,15 +59,15 @@ dev = [
     "mypy>=1.0.0",
 ]
 all = [
-    "rosetta-field-core>=0.1.0",
-    "rosetta-field-field>=0.1.0",
-    "rosetta-field-process>=0.1.0",
-    "rosetta-field-ritual>=0.1.0",
-    "rosetta-field-affect>=0.1.0",
-    "rosetta-field-memory>=0.1.0",
-    "rosetta-field-persona>=0.1.0",
-    "rosetta-field-logic>=0.1.0",
-    "rosetta-field-meridian>=0.1.0",
+    ".[field]",
+    ".[process]",
+    ".[ritual]",
+    ".[affect]",
+    ".[memory]",
+    ".[persona]",
+    ".[logic]",
+    ".[meridian]",
+    ".[dev]",
 ]
 
 [project.urls]
@@ -92,7 +78,8 @@ Repository = "https://github.com/your-org/rosetta-field.git"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["rosetta_api*"]
+# Ship the new namespace and the legacy lib/ for compatibility.
+include = ["rosetta_field*", "rosetta_api*", "lib*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.md", "*.txt", "*.json"]

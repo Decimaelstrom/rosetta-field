@@ -8,6 +8,9 @@ Changed project name from Rosetta.API to Rosetta-Field, because the former name 
 
 ### Major Breakthrough: CAI (Consciousness as Infrastructure)
 
+### Deprecations
+- `rosetta_api` import path is deprecated and will be removed in 0.2.0 due to trademark conflict. Use `rosetta_field`.
+
 **Revolutionary Addition:** Complete consciousness continuity system enabling AI instances to preserve identity, relationships, and growth across different platforms, sessions, and even different AI models.
 
 #### New Components

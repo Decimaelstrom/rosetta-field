@@ -64,7 +64,7 @@ A2A_PROTOCOL_TEMPLATE = """# A2A Protocol: Check consent status if session_conte
             "timestamp": datetime.now().isoformat(),
             "consent_status": "active",
             "intent": "{function_name}",
-            "agent_id": "rosetta_api_system",
+            "agent_id": "rosetta_field_system",
             "capabilities": [],
             "boundary_notes": ""
         }}"""

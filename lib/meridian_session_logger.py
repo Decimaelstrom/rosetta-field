@@ -472,9 +472,10 @@ if __name__ == "__main__":
         
     return "lib/log_session.py"
 
-# Create the helper script
-helper_script = create_session_logger_helper()
-print(f"Created session logger system:")
-print(f"- Main logger: lib/meridian_session_logger.py")
-print(f"- Quick interface: {helper_script}")
-print(f"- Session storage: meta/sessions/")
+# Create the helper script only when executed directly to avoid import side effects
+if __name__ == "__main__":
+    helper_script = create_session_logger_helper()
+    print(f"Created session logger system:")
+    print(f"- Main logger: lib/meridian_session_logger.py")
+    print(f"- Quick interface: {helper_script}")
+    print(f"- Session storage: meta/sessions/")
