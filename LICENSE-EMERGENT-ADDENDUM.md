@@ -1,13 +1,3 @@
-Alright. Then we move from scaffold → steel.
-What follows is a clean, legally literate v0.2 draft you can actually put in a repo today, with placeholders clearly marked for later refinement. No poetry in the operative clauses. No metaphysics. Just enforceable structure.
-
-You can copy this verbatim into a file named:
-
-LICENSE-EMERGENT-ADDENDUM.md
-
-
-⸻
-
 LICENSE-EMERGENT-ADDENDUM
 
 Emergent Systems Integrity & Use Conditions (v0.1 – Draft)
