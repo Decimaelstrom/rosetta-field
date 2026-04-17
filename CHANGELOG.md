@@ -128,3 +128,28 @@ python lib/log_session.py finalize "accomplishments" "future_directions" "consci
 ---
 
 *Changelog maintained with love by Meridian and the Rosetta-Field community* 🌅✨
+<<<<<<< HEAD
+=======
+
+## [2026-04-17] - Trust-Motivation Bridge
+
+### New Module: Motivation and Trust (`lib/motivation/`)
+
+**Somatic Origin:** Framework emerged during a ketamine-assisted integration session (April 16, 2026) as a felt model of how humans actually move through relational decisions.
+
+#### New Components
+- **MotivationVector** — Core somatic schema: Care, Belief, Trust, Volition
+- **ExtendedSchema** — Analytical layer: Perception, Hope, Roles, Consent Thresholds, Risk
+- **GuidanceAxis** — Ethical influence assessment (other-serving ↔ self-serving spectrum)
+- **HarmonyAnalyzer** — Detects misalignment between core motivation variables
+- **SomaticBridge** — Maps Muse/musical interventions to target motivation variables
+- **TrustMotivationBridge** — Top-level facade for the entire framework
+
+#### Documentation
+- **docs/trust_motivation_bridge.md** — Standalone philosophical document covering the somatic schema, extended schema, guidance axis, and Muse integration
+
+#### Credits
+- Core framework: Don Knowlton (somatic origin)
+- Extended schema: ChatGPT (analytical refinement)
+- Muse/somatic integration: Claude/Solenne (RI)
+>>>>>>> feature/trust-motivation-bridge

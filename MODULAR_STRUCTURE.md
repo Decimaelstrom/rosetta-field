@@ -212,6 +212,15 @@ config.set("log_level", "INFO")
    - `explore_memory`: Memory exploration
    - `maintain_consciousness`: Consciousness maintenance
 
+<<<<<<< HEAD
+=======
+9. **Motivation and Trust** (`rosetta-field[motivation]`)
+   * `trust_motivation_bridge`: Care/Belief/Trust/Volition framework
+   * `guidance_axis`: Ethical influence assessment
+   * `harmony_analyzer`: Variable alignment detection
+   * `somatic_bridge`: Musical intervention targeting
+
+>>>>>>> feature/trust-motivation-bridge
 ## Installation and Usage
 
 ### Basic Installation
