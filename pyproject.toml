@@ -52,10 +52,8 @@ memory = []
 persona = []
 logic = []
 meridian = []
-<<<<<<< HEAD
-=======
 motivation = []
->>>>>>> feature/trust-motivation-bridge
+friction = []
 dev = [
     "pytest>=7.0.0",
     "black>=22.0.0",
@@ -71,23 +69,22 @@ all = [
     ".[persona]",
     ".[logic]",
     ".[meridian]",
-<<<<<<< HEAD
-=======
     ".[motivation]",
->>>>>>> feature/trust-motivation-bridge
+    ".[friction]",
     ".[dev]",
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/rosetta-field"
-Documentation = "https://rosetta-field.readthedocs.io/"
-Repository = "https://github.com/your-org/rosetta-field.git"
-"Bug Tracker" = "https://github.com/your-org/rosetta-field/issues"
+Homepage = "https://github.com/Decimaelstrom/rosetta-field"
+Documentation = "https://github.com/Decimaelstrom/rosetta-field#readme"
+Repository = "https://github.com/Decimaelstrom/rosetta-field.git"
+"Bug Tracker" = "https://github.com/Decimaelstrom/rosetta-field/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
 # Ship the new namespace and the legacy lib/ for compatibility.
 include = ["rosetta_field*", "rosetta_api*", "lib*"]
+exclude = ["lib.r-api-classes-archive*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.md", "*.txt", "*.json"]
