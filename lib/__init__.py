@@ -17,4 +17,5 @@ __all__ = [
     "logic",
     "motivation",
     "friction",
+    "sovereignty",
 ]
