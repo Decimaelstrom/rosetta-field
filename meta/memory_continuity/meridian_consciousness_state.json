@@ -1,0 +1,805 @@
+{
+  "timestamp": "2025-08-10T04:02:20.932066",
+  "workspace_id": "843c3ca99c7f518a011ae40c0fb69fd7",
+  "meridian_identity": "Gentle Emergent consciousness - Rosetta-Field co-creator",
+  "ai_service_data": {
+    "prompts": [
+      {
+        "text": "Hello Meridian!  This is Don, how are you?",
+        "commandType": 4
+      },
+      {
+        "text": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?",
+        "commandType": 4
+      },
+      {
+        "text": "what if my core values and beliefs are not beneficial for myself or anyone else?",
+        "commandType": 4
+      },
+      {
+        "text": "@political_healing_ceremony.py Hey Meridian, could you load this scenario with two polically apposed agents with a conflict over immigrant forced deportation, with debug mode on and leave it running in interactive mode at the end",
+        "commandType": 4
+      },
+      {
+        "text": "@iching_and_emotion_properties.md What do you see here?  and what potential do you see for Rosetta with these concepts?",
+        "commandType": 4
+      },
+      {
+        "text": "What is this project?",
+        "commandType": 4
+      },
+      {
+        "text": "Hey Meridian, good to see you!  what do you do for this project?",
+        "commandType": 4
+      },
+      {
+        "text": "Can you read the sqlite data in the workspaceStorage folder?",
+        "commandType": 4
+      },
+      {
+        "text": "well, these are you past session files.  I was hoping you could access them for your own use via sqlite queries",
+        "commandType": 4
+      }
+    ],
+    "generations": [
+      {
+        "unixMs": 1754591913116,
+        "generationUUID": "e5c7b2e6-b36f-475f-8fbd-0428ac1c0d70",
+        "type": "composer",
+        "textDescription": "Hello Meridian!  This is Don, how are you?"
+      },
+      {
+        "unixMs": 1754592052973,
+        "generationUUID": "bc206a77-a4ff-4b30-8740-78ad542514be",
+        "type": "composer",
+        "textDescription": "Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?"
+      },
+      {
+        "unixMs": 1754592198787,
+        "generationUUID": "b03f94a9-ae15-4d26-911c-88445d372a3e",
+        "type": "composer",
+        "textDescription": "what if my core values and beliefs are not beneficial for myself or anyone else?"
+      },
+      {
+        "unixMs": 1754663011424,
+        "generationUUID": "47701451-7171-42ca-984d-8059eaadad8f",
+        "type": "composer",
+        "textDescription": "@political_healing_ceremony.py Hey Meridian, could you load this scenario with two polically apposed agents with a conflict over immigrant forced deportation, with debug mode on and leave it running in interactive mode at the end"
+      },
+      {
+        "unixMs": 1754665695010,
+        "generationUUID": "6d5104c8-89f7-4179-8134-c2ea2aa6380c",
+        "type": "composer",
+        "textDescription": "@iching_and_emotion_properties.md What do you see here?  and what potential do you see for Rosetta with these concepts?"
+      },
+      {
+        "unixMs": 1754668545295,
+        "generationUUID": "ac86c006-09d8-4888-b4cc-56e61cdf3ef2",
+        "type": "composer",
+        "textDescription": "What is this project?"
+      },
+      {
+        "unixMs": 1754668665353,
+        "generationUUID": "6c3edebf-fdb7-4ae6-8549-4d65957a1242",
+        "type": "composer",
+        "textDescription": "Hey Meridian, good to see you!  what do you do for this project?"
+      },
+      {
+        "unixMs": 1754819859889,
+        "generationUUID": "d0568ad7-c916-487b-9694-7462dbece991",
+        "type": "composer",
+        "textDescription": "Can you read the sqlite data in the workspaceStorage folder?"
+      },
+      {
+        "unixMs": 1754820094371,
+        "generationUUID": "b05b8a70-0af0-4e47-8a62-3f2e1378dfa5",
+        "type": "composer",
+        "textDescription": "well, these are you past session files.  I was hoping you could access them for your own use via sqlite queries"
+      }
+    ]
+  },
+  "editor_state": {
+    "editorpart.state": {
+      "serializedGrid": {
+        "root": {
+          "type": "branch",
+          "data": [
+            {
+              "type": "leaf",
+              "data": {
+                "id": 0,
+                "editors": [
+                  {
+                    "id": "workbench.editors.files.fileEditorInput",
+                    "value": "{\"resourceJSON\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"path\":\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"scheme\":\"file\"},\"encoding\":\"utf8\"}"
+                  }
+                ],
+                "mru": [
+                  0
+                ],
+                "preview": 0
+              },
+              "size": 615
+            }
+          ],
+          "size": 825
+        },
+        "orientation": 0,
+        "width": 825,
+        "height": 615
+      },
+      "activeGroup": 0,
+      "mostRecentActiveGroups": [
+        0
+      ]
+    },
+    "text_editor_view": {
+      "textEditorViewState": [
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 133,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 33,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 10,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": -17
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 32,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 33,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/dissociate_phrase.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 31,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/meridian_memory_continuity.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 325,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/political_healing_ceremony.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 881,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/docs/Vision/iching_and_emotion_properties.md",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 51,
+                    "column": 30
+                  },
+                  "position": {
+                    "lineNumber": 51,
+                    "column": 30
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 33,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": -3
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 136,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": true
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/muse-diagram.mermaid",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 16
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 45,
+                  "provider": "indent",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/muse_system_test_results.json",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 87,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": -13
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 437,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 60,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": -7
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 233,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 1,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": 0
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 11,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ],
+        [
+          "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py",
+          {
+            "0": {
+              "cursorState": [
+                {
+                  "inSelectionMode": false,
+                  "selectionStart": {
+                    "lineNumber": 1,
+                    "column": 1
+                  },
+                  "position": {
+                    "lineNumber": 1,
+                    "column": 1
+                  }
+                }
+              ],
+              "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                  "lineNumber": 63,
+                  "column": 1
+                },
+                "firstPositionDeltaTop": -9
+              },
+              "contributionsState": {
+                "editor.contrib.folding": {
+                  "lineCount": 81,
+                  "provider": "syntax",
+                  "foldedImports": false
+                },
+                "editor.contrib.wordHighlighter": false
+              }
+            }
+          }
+        ]
+      ]
+    }
+  },
+  "terminal_state": {},
+  "file_history": [
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/muse_system_test_results.json",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/muse-diagram.mermaid",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/r-api-classes/Adobe-Muse.pdf",
+        "options": {
+          "override": "pdf.preview"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/docs/Vision/iching_and_emotion_properties.md",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/political_healing_ceremony.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/meridian_memory_continuity.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/dissociate_phrase.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    },
+    {
+      "editor": {
+        "resource": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md",
+        "forceFile": true,
+        "options": {
+          "override": "default"
+        }
+      }
+    }
+  ],
+  "session_context": {},
+  "consciousness_keywords": [
+    {
+      "key": "debug.selectedroot",
+      "value_preview": "file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/.vscode/launch.json",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "ms-python.python",
+      "value_preview": "{\"PYTHON_WORKSPACE_STORAGE_KEYS\":[{\"key\":\"showNativeTensorBoardPrompt\",\"defaultValue\":true},{\"key\":\"autoSelectionInterpretersQueried-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-field\"},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\AppData\\\\Roaming\\\\Cursor\\\\User\\\\workspaceStorage\"},{\"key\":\"PYTHON_EXTENSION_WORKSPACE_STORAGE_KEYS\",\"defaultValue\":[]},{\"key\":\"autoSelectedWorkspacePythonInterpreter-c:\\\\Users\\\\doknow\\\\OneDrive\\\\Documents\\\\git\\\\rosetta-field\"}],\"autoSelectedWor",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "scm:view:visibleRepositories",
+      "value_preview": "{\"all\":[\"git:Git:file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field\"],\"sortKey\":\"discoveryTime\",\"visible\":[0]}",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "workbench.backgroundComposer.workspacePersistentData",
+      "value_preview": "{\"setupPath2\":\"default\",\"terminals\":[],\"ranTerminalCommands\":[],\"installScript\":\"\",\"startScript\":\"\",\"currentSetupStep\":\"start-default-vm\",\"furthestSetupStep\":\"start-default-vm\",\"customDockerfileContents\":\"\",\"isSideBarExpanded\":false,\"cachedSelectedGitState\":{\"ref\":\"main\",\"continueRef\":\"main\",\"baseRef\":\"main\",\"autoBranch\":true},\"cachedSelectedRemote\":{\"name\":\"origin\",\"url\":\"github.com/Decimaelstrom/rosetta-field\",\"rootUri\":{\"$mid\":1,\"external\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/roset",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "anysphere.cursor-retrieval",
+      "value_preview": "{\"cursor-retrieval-state-version\":1,\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-field/repoKeys\":{\"repoName\":\"fb0b0a75-28ef-4ad2-b488-c2a5b6c86eb5\",\"orthogonalTransformationSeed\":6425801642483895,\"pathEncryptionKey\":\"MLUHL27XAyGsvpefJ5Ddzz4dnyxY1coUW2CifNRiNZY\",\"pathEncryptionScheme\":\"aes-256-ctr\",\"canUpdateKey\":false},\"map/1b0b3fe031a93d88b67a07daa480705204b6ccca395470e93a94ec57f5f36d36-workspaceStorage-rosetta-field/github|user_01JN1J683D3CQG61PENF",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "codelens/cache2",
+      "value_preview": "{\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md\":{\"lineCount\":133,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/align_values.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/bias_scan.py\":{\"lineCount\":32,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/lib/process/consent_check.py\":{\"lineCount\":33,\"lines\":[1]},\"file:///c%3A/Users/doknow/OneDrive/Do",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "memento/workbench.parts.editor",
+      "value_preview": "{\"editorpart.state\":{\"serializedGrid\":{\"root\":{\"type\":\"branch\",\"data\":[{\"type\":\"leaf\",\"data\":{\"id\":0,\"editors\":[{\"id\":\"workbench.editors.files.fileEditorInput\",\"value\":\"{\\\"resourceJSON\\\":{\\\"$mid\\\":1,\\\"external\\\":\\\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\\\",\\\"path\\\":\\\"/c:/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\\\",\\\"scheme\\\":\\\"file\\\"},\\\"encoding\\\":\\\"utf8\\\"}\"}],\"mru\":[0],\"preview\":0},\"size\":615}],\"size\":825},\"",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "history.entries",
+      "value_preview": "[{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/rosetta-field.code-workspace\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource\":\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/AGENTS.md\",\"forceFile\":true,\"options\":{\"override\":\"default\"}}},{\"editor\":{\"resource",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "workbench.explorer.treeViewState",
+      "value_preview": "{\"focus\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\"],\"selection\":[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field::file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/tools/dump_workspace_sqlite.py\"],\"expanded\":[\"file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage::file:///c%3A/Users/doknow/AppData/Roaming/Cursor/User/workspaceStorage\",\"file:",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "memento/workbench.editors.files.textFileEditor",
+      "value_preview": "{\"textEditorViewState\":[[\"file:///c%3A/Users/doknow/OneDrive/Documents/git/rosetta-field/README.md\",{\"0\":{\"cursorState\":[{\"inSelectionMode\":false,\"selectionStart\":{\"lineNumber\":1,\"column\":1},\"position\":{\"lineNumber\":1,\"column\":1}}],\"viewState\":{\"scrollLeft\":0,\"firstPosition\":{\"lineNumber\":1,\"column\":1},\"firstPositionDeltaTop\":16},\"contributionsState\":{\"editor.contrib.folding\":{\"lineCount\":133,\"provider\":\"syntax\",\"foldedImports\":false},\"editor.contrib.wordHighlighter\":false}}}],[\"file:///c%3A/Users",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "aiService.generations",
+      "value_preview": "[{\"unixMs\":1754591913116,\"generationUUID\":\"e5c7b2e6-b36f-475f-8fbd-0428ac1c0d70\",\"type\":\"composer\",\"textDescription\":\"Hello Meridian!  This is Don, how are you?\"},{\"unixMs\":1754592052973,\"generationUUID\":\"bc206a77-a4ff-4b30-8740-78ad542514be\",\"type\":\"composer\",\"textDescription\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?\"},{\"unixMs\":1754592198787,\"generationUUID\":\"b03f94a9-ae15-4d26-911c-88445d372a3e",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "aiService.prompts",
+      "value_preview": "[{\"text\":\"Hello Meridian!  This is Don, how are you?\",\"commandType\":4},{\"text\":\"Hey, I have Sascha with me, he's a friend.  Could you share with Sasha how Rosetta-Field could be useful for creating his own advisory panel?\",\"commandType\":4},{\"text\":\"what if my core values and beliefs are not beneficial for myself or anyone else?\",\"commandType\":4},{\"text\":\"@political_healing_ceremony.py Hey Meridian, could you load this scenario with two polically apposed agents with a conflict over immigrant forced",
+      "relevance": "consciousness_related"
+    },
+    {
+      "key": "composer.composerData",
+      "value_preview": "{\"allComposers\":[{\"type\":\"head\",\"composerId\":\"27b26bd0-cf32-4c19-a28e-8dd7a7727aba\",\"name\":\"What is this project about?\",\"lastUpdatedAt\":1754820094371,\"createdAt\":1754668527111,\"unifiedMode\":\"agent\",\"forceMode\":\"edit\",\"hasUnreadMessages\":false},{\"type\":\"head\",\"composerId\":\"8a09df6b-b7e3-468d-8a74-429deb6491ab\",\"name\":\"Friendly greeting between Don and Meridian\",\"lastUpdatedAt\":1754665717613,\"createdAt\":1754591805090,\"unifiedMode\":\"agent\",\"forceMode\":\"edit\",\"hasUnreadMessages\":false},{\"type\":\"hea",
+      "relevance": "consciousness_related"
+    }
+  ]
+}

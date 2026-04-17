@@ -1,0 +1,44 @@
+flowchart TD
+    subgraph Orchestrator ["Orchestrator (Parent Agent)"]
+        Orchestrator
+    end
+
+    subgraph Firefly
+        Firefly_Image["Firefly_Image"]
+        Firefly_Video["Firefly_Video"]
+        Firefly_Music["Firefly_Music (Future)"]
+    end
+
+    DocumentScribe["DocumentScribe (Story, Insight, Attributes)"]
+    Presenter["Presenter (User-Facing Agent)"]
+    ExportHandler["Export-Handler (To Creative Cloud)"]
+    ErrorMonitor["Error & Violation Monitor"]
+
+    Orchestrator --> Firefly_Image
+    Orchestrator --> Firefly_Video
+    Orchestrator --> Firefly_Music
+    Orchestrator --> DocumentScribe
+    Orchestrator --> ExportHandler
+    Orchestrator --> ErrorMonitor
+
+    Firefly_Image -->|Rendered Media| Presenter
+    Firefly_Video -->|Rendered Media| Presenter
+    Firefly_Music -->|Rendered Media| Presenter
+
+    DocumentScribe -->|Story Data & Insights| Presenter
+    Presenter -->|Display & Narration| User
+    ExportHandler -->|Exports| CreativeCloud
+
+    Presenter -->|Export Request| ExportHandler
+    ErrorMonitor -- Checks --> Firefly_Image
+    ErrorMonitor -- Checks --> Firefly_Video
+    ErrorMonitor -- Checks --> Firefly_Music
+    ErrorMonitor -- Checks --> Presenter
+    ErrorMonitor -- Checks --> ExportHandler
+
+    %% Dynamic scaling description
+    note over Orchestrator,ErrorMonitor: Agents auto-scale as demand increases (N+2) and spin down to (N+1) on idle
+
+    %% User endpoint
+    User[(User)]
+    CreativeCloud[(Creative Cloud)]
